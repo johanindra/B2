@@ -40,10 +40,11 @@
 
                <!-- Login Form -->
                <div class="login form-peice">
-                  <form class="login-form" action="/dashboard" method="post">
+                  <form class="login-form" action="{{ route('login') }}" method="post">
+                     @csrf
                      <div class="form-group">
-                        <label for="loginemail">Email</label>
-                        <input type="email" name="loginemail" id="loginemail" required>
+                        <label for="loginUsername">username</label>
+                        <input type="text" name="loginUsername" id="loginUsername" required>
                      </div>
 
                      <div class="form-group">

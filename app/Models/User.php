@@ -17,9 +17,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     protected $table = "akun_admin";
+     protected $primaryKey = "username";
+     public $incrementing = false; //increment yang ada di sql
+     public $timestamps = false ; 
     protected $fillable = [
-        'name',
-        'email',
+        'username',
         'password',
     ];
 

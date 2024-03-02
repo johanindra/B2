@@ -52,7 +52,7 @@
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link " href="/">
+            <a class="nav-link " href="{{ route('logout')}}">
                 <i class="bi bi-arrow-right"></i>
                 <span>keluar</span>
             </a>
