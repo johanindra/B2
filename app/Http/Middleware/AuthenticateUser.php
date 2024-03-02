@@ -9,9 +9,9 @@ class AuthenticateUser
 {
     public function handle($request, Closure $next)
     {
-        // Cek apakah pengguna sudah login
-        if (Auth::check()) {
-            return redirect('/login')->with('error', 'Silakan login untuk mengakses halaman ini.');
+        
+        if (!Auth::check()) {
+            return redirect('login')->with('error', 'Silakan login untuk mengakses halaman ini.');
         }
         return $next($request);
     }

@@ -52,11 +52,16 @@
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link " href="{{ route('logout')}}">
-                <i class="bi bi-arrow-right"></i>
-                <span>keluar</span>
-            </a>
-        </li><!-- End Dashboard Nav -->
+            {{-- @auth --}}
+            <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button type="submit" class="nav-link">
+                    <i class="bi bi-arrow-right "></i>
+                    <span>keluar</span>
+                </button>
+            </form>
+            {{-- @endauth --}}
+        </li>           
     </ul>
 
 </aside><!-- End Sidebar-->

@@ -1,14 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\dashboard;
+use App\Models\laporan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SideBarController extends Controller
 {
     public function dashboard()
     {
-return view('Admin.dashboard');//untuk menampilkan halaman dashboard
+        $suratmasuk = laporan::getDataStatusMasuk();
+        $chart = dashboard::getDataPengajuanSurat();
+        $selesaibulanini = laporan::getDataSuratSelesaiBulanIni();
+
+        $chart->transform(function ($item) {
+            $item->tanggal = Carbon::parse($item->tanggal)->format('Y-m-d H:i:s');
+            return $item;
+        });
+
+        return view('Admin.dashboard', [
+            'dataMasuk' => $suratmasuk,
+            'data' => $chart,
+            'selesaibulanini' => $selesaibulanini
+        ]);
+        
     }
     public function pengajuan()
     {
@@ -33,5 +49,9 @@ return view('Admin.dashboard');//untuk menampilkan halaman dashboard
     public function keluar()
     {
         return view('welcome');//untuk keluar dan menampilkan landing page
+    }
+
+    public function side(){
+        return view('Admin.includes.sidebar');
     }
 }

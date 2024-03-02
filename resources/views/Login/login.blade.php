@@ -41,31 +41,77 @@
                <!-- Login Form -->
                <div class="login form-peice">
                   <form class="login-form" action="{{ route('login') }}" method="post">
-                     @csrf
-                     <div class="form-group">
-                        <label for="loginUsername">username</label>
-                        <input type="text" name="loginUsername" id="loginUsername" required>
-                     </div>
-
-                     <div class="form-group">
-                        <label for="loginPassword">Kata sandi</label>
-                        <input type="password" name="loginPassword" id="loginPassword" required>
-                     </div>
-
-                     <div class="CTA">
-                        <input type="submit" value="Masuk">
-                        <a href="#" class="switch">Lupa Katasandi</a>
-                     </div>
+                      @csrf
+              
+                      <div class="form-group">
+                          <label for="loginUsername">Username</label>
+                          <input type="text" name="loginUsername" id="loginUsername" required>
+                          @error('loginUsername')
+                              <span class="text-danger">{{ $message }}</span>
+                          @enderror
+                      </div>
+              
+                      <div class="form-group">
+                          <label for="loginPassword">Kata sandi</label>
+                          <input type="password" name="loginPassword" id="loginPassword" required>
+                          @error('loginPassword')
+                              <span class="text-danger">{{ $message }}</span>
+                          @enderror
+                      </div>
+              
+                      <div class="CTA">
+                          <input type="submit" value="Masuk">
+                          <a href="#" class="switch">Lupa Katasandi</a>
+                      </div>
+              
+                      @if(session('error'))
+                          <div class="text-danger">
+                              {{ session('error') }}
+                          </div>
+                      @endif
                   </form>
-               </div><!-- End Login Form -->
+              </div>
+              <div class="login form-peice">
+               <form class="login-form" action="{{ route('login') }}" method="post">
+                   @csrf
+           
+                   <div class="form-group">
+                     <label for="loginUsername">Username</label>
+                     <input type="text" name="loginUsername" id="loginUsername" required>
+                     @error('loginUsername')
+                         <span class="text-danger">{{ $message }}</span>
+                     @enderror
+                 </div>
+                 
+                 <div class="form-group">
+                     <label for="loginPassword">Kata sandi</label>
+                     <input type="password" name="loginPassword" id="loginPassword" required>
+                     @error('loginPassword')
+                         <span class="text-danger">{{ $message }}</span>
+                     @enderror
+                 </div>
+                 
+           
+                   <div class="CTA">
+                       <input type="submit" value="Masuk">
+                       <a href="#" class="switch">Lupa Katasandi</a>
+                   </div>
+           
+                   @if(session('error'))
+                       <div class="text-danger">
+                           {{ session('error') }}
+                       </div>
+                   @endif
+               </form>
+           </div>
+                         
+              <!-- End Login Form -->
 
 
                <!-- Signup Form -->
                <div class="signup form-peice switched">
                   <form class="signup-form" action="#" method="post">
-
-
-
+                     @csrf
                      <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" name="emailAdress" id="email" class="email">

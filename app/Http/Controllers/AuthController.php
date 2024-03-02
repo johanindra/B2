@@ -17,20 +17,22 @@ class AuthController extends Controller
     {
         $credentials = $request->only('loginUsername', 'loginPassword');
         $user = User::where('username', $credentials['loginUsername'])->first();
-    
+
         if ($user && $user->password === md5($credentials['loginPassword'])) {
             Auth::login($user);
             return redirect()->route('dashboard');
-            // return view('admin.dashboard');
-            // return redirect('/dashboard');
         } else {
-            return redirect()->route('login')->with('error', 'Invalid credentials');
+            return redirect()->route('login')->with('error', 'Username atau Password anda salah');
         }
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect('login');
+        // $request->session()->invalidate();
+ 
+        // $request->session()->regenerateToken();
+     
+        return redirect('/login');
     }
 }
