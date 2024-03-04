@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\dashboard;
 use App\Models\laporan;
+use App\Models\pengajuansurat;
+use App\Models\surat;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -11,18 +13,23 @@ class SideBarController extends Controller
     public function dashboard()
     {
         $suratmasuk = laporan::getDataStatusMasuk();
-        $chart = dashboard::getDataPengajuanSurat();
+        $chart = surat::getDataPengajuanSurat();
         $selesaibulanini = laporan::getDataSuratSelesaiBulanIni();
+        $tabel = pengajuansurat::getDataMingguIni();
 
         $chart->transform(function ($item) {
             $item->tanggal = Carbon::parse($item->tanggal)->format('Y-m-d H:i:s');
             return $item;
         });
+         
+
+        // dd($tabel);
 
         return view('Admin.dashboard', [
             'dataMasuk' => $suratmasuk,
             'data' => $chart,
-            'selesaibulanini' => $selesaibulanini
+            'selesaibulanini' => $selesaibulanini,
+            'tabel' => $tabel
         ]);
         
     }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class laporan extends Model
 {
@@ -14,16 +15,20 @@ class laporan extends Model
 
     public static function getDataStatusMasuk()
     {
-        return self::where('status', 'masuk')
+        return count(self::where('status', 'Masuk')
         ->whereDate('tanggal', now()->toDateString())
-        ->get();
+        ->get());
+        
     }
 
     public static function getDataSuratSelesaiBulanIni()
 {
-    return self::where('status', 'selesai')
-               ->whereMonth('tanggal', now()->month)
-               ->get();
+    
+
+    $totalLaporanBulanIni = laporan::where('status', 'Selesai')
+    ->whereDate('tanggal', now()->toDateString())
+    ->count();
+    return $totalLaporanBulanIni;
 }
 
 }

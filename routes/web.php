@@ -36,7 +36,7 @@ Route::get('pembuatan-surat', [SideBarController::class, 'pembuatan'])->name('Ad
 Route::get('laporan', [SideBarController::class, 'laporan'])->name('Admin.laporan');
 Route::get('profil-desa', [SideBarController::class, 'profilDesa'])->name('Admin.profil-desa');
 Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('Admin.kabar-desa');
-Route::get('/home', [SideBarController::class, 'keluar'])->name('home');
+// Route::get('/home', [SideBarController::class, 'keluar'])->name('home');
 
 
 //backend
@@ -53,8 +53,7 @@ Route::middleware(['auth.admin'])->group(function () {
         Route::get('pembuatan-surat', [SideBarController::class, 'pembuatan'])->name('Admin.pembuatan-surat');
         Route::get('laporan', [SideBarController::class, 'laporan'])->name('Admin.laporan');
         Route::get('profil-desa', [SideBarController::class, 'profilDesa'])->name('Admin.profil-desa');
-        Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('Admin.kabar-desa');
-       
+        Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('Admin.kabar-desa'); 
         
     });
 // });

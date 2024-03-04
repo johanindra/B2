@@ -15,25 +15,28 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
-    {
+    // public function show()
+    // {
         
-        $data = dashboard::getDataPengajuanSurat();
+    //     $data = dashboard::getDataPengajuanSurat();
+    //     $tabel = dashboard::getDataMingguIni();
 
         
-        return view('dashboard', ['data' => $data]);
-    
-    }
+    //     return view('dashboard', [
+    //         'data' => $data,
+    //         'tabel' => $tabel
+    // ]);
+    // }
 
-    public function getChartData()
-    {
-        // Lakukan query SQL di sini untuk mendapatkan data
-        $data = DB::select("SELECT COUNT(pengajuan_surat.id) AS total, surat.kode_surat, pengajuan_surat.tanggal 
-            FROM pengajuan_surat 
-            JOIN surat ON surat.kode_surat = pengajuan_surat.kode_surat 
-            WHERE pengajuan_surat.tanggal BETWEEN CURDATE() - INTERVAL 1 WEEK AND CURDATE()
-            GROUP BY surat.kode_surat, pengajuan_surat.tanggal");
+    // public function getChartData()
+    // {
+    //     // Lakukan query SQL di sini untuk mendapatkan data
+    //     $data = DB::select("SELECT COUNT(pengajuan_surat.id) AS total, surat.kode_surat, pengajuan_surat.tanggal 
+    //         FROM pengajuan_surat 
+    //         JOIN surat ON surat.kode_surat = pengajuan_surat.kode_surat 
+    //         WHERE pengajuan_surat.tanggal BETWEEN CURDATE() - INTERVAL 1 WEEK AND CURDATE()
+    //         GROUP BY surat.kode_surat, pengajuan_surat.tanggal");
 
-        return response()->json($data);
-    }
+    //     return response()->json($data);
+    // }
 }

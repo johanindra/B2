@@ -1,7 +1,7 @@
 <div class="col-12">
     <div class="card recent-sales overflow-auto">
 
-        <div class="filter">
+        {{-- <div class="filter">
             <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                 <li class="dropdown-header text-start">
@@ -12,10 +12,10 @@
                 <li><a class="dropdown-item" href="#">This Month</a></li>
                 <li><a class="dropdown-item" href="#">This Year</a></li>
             </ul>
-        </div>
+        </div> --}}
 
         <div class="card-body">
-            <h5 class="card-title">Laporan Bulan Ini</span></h5>
+            <h5 class="card-title">Laporan Minggu Ini</span></h5>
 
             <table class="table table-borderless datatable">
                 <thead>
@@ -28,62 +28,26 @@
                 </thead>
 
                 <tbody>
+                    @foreach($tabel as $item)
                     <tr>
-                        <td>prayoga</td>
-                        <td>Kematian</td>
-                        <td>11-02-2024</td>
-                        <td><span class="badge bg-success">Selesai</span></td>
+                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item->Keterangan }}</td>
+                        <td>{{ $item->tanggal }}</td>
+                        <td>
+                            @if($item->status === 'Selesai')
+                                <span class="badge bg-success">{{ $item->status }}</span>
+                            @elseif($item->status === 'Masuk')
+                                <span class="badge bg-primary">{{ $item->status }}</span>
+                            @else
+                                {{ $item->status }}
+                            @endif
+                        </td>
                     </tr>
-
-                    <tr>
-                        <td>Rocky Gerung</td>
-                        <td>Pengantar SKCK</td>
-                        <td>11-02-2024</td>
-                        <td><span class="badge bg-warning">proses</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Slepet Imin</td>
-                        <td>Perizinan</td>
-                        <td>11-02-2024</td>
-                        <td><span class="badge bg-danger">Ditolak</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Mas Anies</td>
-                        <td>Kematian</td>
-                        <td>11-02-2024</td>
-                        <td><span class="badge bg-warning">Proses</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Gilbran</td>
-                        <td>Kematian</td>
-                        <td>11-02-2024</td>
-                        <td><span class="badge bg-success">Selesai</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Prabroro</td>
-                        <td>Pengantar SKCK</td>
-                        <td>11-02-2024</td>
-                        <td><span class="badge bg-warning">Proses</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Ganjar</td>
-                        <td>Kematian</td>
-                        <td>11-02-2024</td>
-                        <td><span class="badge bg-danger">Ditolak</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Mahfud</td>
-                        <td>SKTM</td>
-                        <td>11-02-2024</td>
-                        <td><span class="badge bg-success">Selesai</span></td>
-                    </tr>
+                @endforeach
+                
                 </tbody>
+
+
                 <!-- <thead>
                       <tr>
                         <th scope="col">#</th>

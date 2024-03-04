@@ -98,7 +98,7 @@
                                             <i class="bi bi-envelope"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>{{ count($dataMasuk) }}</h6>
+                                            <h6>{{ $dataMasuk }}</h6>
                                             <span class="text-primary small pt-1 fw-bold">Hari Ini</span>
                                         </div>
                                     </div>
@@ -133,7 +133,7 @@
                                             <i class="bi bi-file-text"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>{{ count($selesaibulanini) }}</h6>
+                                            <h6>{{ $selesaibulanini }}</h6>
                                             <span class="text-success small pt-1 fw-bold">Bulan Ini</span>
                                         </div>
                                     </div>
@@ -297,7 +297,7 @@
 
                         <!-- Recent Sales -->
                         @include('Admin.Tabel.tabel-dashboard')
-                        <!-- End Recent Sales -->
+                       <!-- End Recent Sales -->
 
 
 
