@@ -37,6 +37,7 @@ Route::get('laporan', [SideBarController::class, 'laporan'])->name('Admin.lapora
 Route::get('profil-desa', [SideBarController::class, 'profilDesa'])->name('Admin.profil-desa');
 Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('Admin.kabar-desa');
 // Route::get('/home', [SideBarController::class, 'keluar'])->name('home');
+Route::post('pengajuansurat', [SideBarController::class, 'detailpengajuansurat'])->name('pengajuansurat');
 
 
 //backend

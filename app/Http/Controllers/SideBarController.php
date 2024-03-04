@@ -35,7 +35,11 @@ class SideBarController extends Controller
     }
     public function pengajuan()
     {
-        return view('Admin.pengajuan');//untuk menampilkan halaman pengajuan
+        $tabelpengajuan = pengajuansurat::getPengajuanSurat();
+
+        return view('Admin.pengajuan',[
+            'tabel'=> $tabelpengajuan
+        ]);//untuk menampilkan halaman pengajuan
     }
     public function pembuatan()
     {
@@ -43,7 +47,10 @@ class SideBarController extends Controller
     }
     public function laporan()
     {
-        return view('Admin.laporan');//untuk menampilkan halaman pengajuan
+        $tabellaporan = laporan::getDataTabel();
+        return view('Admin.laporan',[
+            'tabel' => $tabellaporan
+        ]);//untuk menampilkan halaman pengajuan
     }
     public function profilDesa()
     {
@@ -53,12 +60,15 @@ class SideBarController extends Controller
     {
         return view('Admin.kabar-desa');//untuk menampilkan halaman pengajuan
     }
-    public function keluar()
+    public function detailpengajuansurat(Request $request)
     {
-        return view('welcome');//untuk keluar dan menampilkan landing page
+        $id = $request->input('id');
+        return $id;
     }
 
     public function side(){
         return view('Admin.includes.sidebar');
     }
+
+
 }

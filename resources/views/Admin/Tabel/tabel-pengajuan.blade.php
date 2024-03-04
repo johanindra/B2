@@ -16,112 +16,36 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
+                
+                
+                {{-- <div style="opacity: 0%">{{$cnt =1}}</div> --}}
+                @php
                 $cnt = 1;
-                // Mulai looping data di sini
-                // Misalkan Anda memiliki array $data yang berisi data untuk ditampilkan
-                // foreach ($data as $row) {
-                ?>
+                @endphp
+                @foreach($tabel as $item)
                 <tr>
-                    <td><?php echo htmlentities($cnt); ?></td>
-                    <td>1234567891</td>
-                    <td>Pugruk</td>
-                    <td>Surat Kematian</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td>{{ $cnt++}}</td>
+                    <td>{{ $item->nik }}</td>
+                    <td>{{ $item->nama }}</td>
+                    <td>{{ $item->Keterangan }}</td>
+                    <td>{{ $item->tanggal }}</td>
+                    <td>
+                        <form action="{{ route('pengajuansurat') }}" method="POST">
+                            @csrf
+                            @method('POST')
+            
+                            <!-- Add a hidden input field for the id -->
+                            <input type="hidden" name="id" value="{{ $item->id }}">
+            
+                            <button type="submit" class="btn btn-primary">
+                                Button
+                            </button>
+                        </form>
+                        
+                    </td>
                 </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 1); ?></td>
-                    <td>1234567892</td>
-                    <td>Abdul</td>
-                    <td>Perizinan</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 2); ?></td>
-                    <td>1234567893</td>
-                    <td>Agus</td>
-                    <td>Pengantar SKCK</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 3); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 4); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 5); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 6); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 7); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 8); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 9); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 10); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <tr>
-                    <td><?php echo htmlentities($cnt + 11); ?></td>
-                    <td>1234567894</td>
-                    <td>Abdi</td>
-                    <td>SKTM</td>
-                    <td>21-02-2024</td>
-                    <td>detail</td>
-                </tr>
-                <?php
-                // }
-                // Akhir dari loop data
-                ?>
+            @endforeach
+               
             </tbody>
         </table>
     </div>

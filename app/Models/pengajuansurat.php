@@ -23,4 +23,15 @@ class pengajuansurat extends Model
 
 }
 
+public static function getPengajuanSurat(){
+    return self::join('surat', 'pengajuan_surat.kode_surat', '=', 'surat.kode_surat')
+    ->join('laporan', 'pengajuan_surat.id', '=', 'laporan.id')
+    ->where('laporan.status', 'Masuk')
+    ->select('pengajuan_surat.nik', 'pengajuan_surat.nama', 'pengajuan_surat.tanggal', 'pengajuan_surat.id', 'surat.Keterangan')
+    ->orderBy('pengajuan_surat.tanggal', 'desc') // Add this line to sort by tanggal in descending order
+    ->get();
+
+   
+}
+
 }
