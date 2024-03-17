@@ -5,8 +5,8 @@
 <section id="hero" class="d-flex align-items-center">
   <div class="hero-slider">
     <!-- Add your image URLs here -->
-    <img src="{{ asset('assets/img/foto perangkat desa.jpg')}}" alt="Slide 1">
-    <img src="{{ asset('assets/img/hero-bg.jpg')}}" alt="Slide 2">
+    <img src="{{ asset('assets/img/hero-bg.jpg')}}" alt="Slide 1">
+    <img src="{{ asset('assets/img/foto perangkat desa.jpg')}}" alt="Slide 2">
     <img src="{{ asset('assets/img/hero-bg2.jpg')}}" alt="Slide 3">
   </div>
 

@@ -81,7 +81,9 @@
                     <td>Pugruk</td>
                     <td>Surat Kematian</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 1); ?></td>
@@ -89,7 +91,9 @@
                     <td>Abdul</td>
                     <td>Perizinan</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 2); ?></td>
@@ -97,7 +101,9 @@
                     <td>Agus</td>
                     <td>Pengantar SKCK</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 3); ?></td>
@@ -105,7 +111,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 4); ?></td>
@@ -113,7 +121,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 5); ?></td>
@@ -121,7 +131,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 6); ?></td>
@@ -129,7 +141,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 7); ?></td>
@@ -137,7 +151,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 8); ?></td>
@@ -145,7 +161,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 9); ?></td>
@@ -153,7 +171,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 10); ?></td>
@@ -161,7 +181,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <tr>
                     <td><?php echo htmlentities($cnt + 11); ?></td>
@@ -169,7 +191,9 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
-                    <td>detail</td>
+                    <td class="text-center">
+                        <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
+                    </td>
                 </tr>
                 <?php
                 // }

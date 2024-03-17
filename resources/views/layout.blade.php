@@ -38,7 +38,7 @@
 
 <body>
 
-  @include('navbar')
+  @include('Landing.navbar')
 
   @yield('content')
 
@@ -53,8 +53,7 @@
               <h3>Hubungi Kami</h3>
               <p class="pb-3"><em>Pemerintah Desa Pesudukuh</em></p>
               <p>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15819.066793693024!2d111.86862000000002!3d-7.60035!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784b5a64ac9f07%3A0x427953bbea055486!2sBalai%20Desa%20Pesudukuh!5e0!3m2!1sid!2sid!4v1708931971602!5m2!1sid!2sid" 
-                width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15819.066793693024!2d111.86862000000002!3d-7.60035!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784b5a64ac9f07%3A0x427953bbea055486!2sBalai%20Desa%20Pesudukuh!5e0!3m2!1sid!2sid!4v1708931971602!5m2!1sid!2sid" width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br>
                 <strong>No.Telp(Wa):</strong> <a href="https://wa.me/62851272315874">(+62) 8512 7231 5874<br></a>
                 <strong>Email:</strong> <a href="mailto:desapesudukuh@gmail.com">desapesudukuh@gmail.com<br></a>
               </p>
@@ -83,43 +82,43 @@
             <a href="forms/berkas/apk/Mobile1.2.apk" class="btn btn-primary" style="margin-top: 10px;">Download Now</a>
           </div>
 
-    <div class="container d-md-flex py-4">
+          <div class="container d-md-flex py-4">
 
-      <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          <div class="logo-wrapper">
-            <img src="{{ asset('assets/img/logo.png') }}" height="50dp" width="50dp">
-          </div>
-          <div class="text-wrapper">
-            &copy; Copyright <strong><span>Kelompok Kocak</span></strong>. All Rights Reserved<br>
-            Designed by <a href="https://bootstrapmade.com/">Kocak Team</a>
-          </div>
-        </div>
+            <div class="me-md-auto text-center text-md-start">
+              <div class="copyright">
+                <div class="logo-wrapper">
+                  <img src="{{ asset('assets/img/logo.png') }}" height="50dp" width="50dp">
+                </div>
+                <div class="text-wrapper">
+                  &copy; Copyright <strong><span>Kelompok Kocak</span></strong>. All Rights Reserved<br>
+                  Designed by <a href="https://bootstrapmade.com/">Kocak Team</a>
+                </div>
+              </div>
 
-        <style>
-          .logo-wrapper {
-            float: left;
-            margin-right: 10px;
-          }
+              <style>
+                .logo-wrapper {
+                  float: left;
+                  margin-right: 10px;
+                }
 
-          .text-wrapper {
-            overflow: hidden;
-          }
-        </style>
+                .text-wrapper {
+                  overflow: hidden;
+                }
+              </style>
 
-      </div>
-      <div class="social-links text-center text-md-end pt-3 pt-md-0">
-        <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            </div>
+            <div class="social-links text-center text-md-end pt-3 pt-md-0">
+              <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
     <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
-        <a href="https://www.instagram.com/e_layangdesa?igsh=MXBkMTM3azExOTlqNw==" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://wa.me/6281357743268" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
-        <a href="https://github.com/johanindra/B2.git" class="linkedin"><i class="bx bxl-github"></i></a>
-      </div>
-    </div>
+              <a href="https://www.instagram.com/e_layangdesa?igsh=MXBkMTM3azExOTlqNw==" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://wa.me/6281357743268" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
+              <a href="https://github.com/johanindra/B2.git" class="linkedin"><i class="bx bxl-github"></i></a>
+            </div>
+          </div>
   </footer><!-- End Footer -->
 
 
-  
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
