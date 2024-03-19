@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>E-LaDes - Pembuatan Surat</title>
+    <title>E-LaDes - Detail Kabar Desa</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -43,16 +43,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-    <style>
-        /* CSS untuk menyembunyikan tombol Submit */
-        #submitBtn {
-            display: none;
-        }
-
-        #previewSuratContainer {
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -63,58 +53,42 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Pembuatan Surat</h1>
+            <h1>Detail Kabar Desa</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
-                    <li class="breadcrumb-item">Pembuatan Surat</li>
+                    <li class="breadcrumb-item"><a href="kabar-desa">Kabar Desa</a></li>
+                    <li class="breadcrumb-item active">Detail Kabar Desa</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
 
-        <section class="section">
-            <div class="row">
-                <!-- pembuatan surat -->
-                <div class="col-lg-6">
 
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Form pembuatan Surat</h5>
-
-                            <!-- form pembuatan surat -->
-                            @include('Admin.crud.pembuatan-surat')
-                            <!-- End form pembuatan surat -->
+        <!-- <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h5 class="card-title mb-0">Agenda dan Kabar Desa</h5>
+                        </div>
+                        <div class="col-md-6 mt-3 mt-md-0 text-md-end text-right">
+                            <button type="submit" id="selesai" class="btn btn-success">Selesai</button>
                         </div>
                     </div>
-                </div>
-
-
-                <!-- preview surat -->
-                <div class="col-lg-6" id="previewSuratContainer">
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Tampilan Surat</h5>
-
-                            <!-- Advanced Form Elements -->
-                            <table class="table table-bordered" id="dynamicTable">
-                                <!-- Tabel akan diperbarui secara dinamis -->
-                            </table>
-                            <div class="mb-3 text-right" id="btn-tampilan">
-                                <button type="submit" id="lihat" class="btn btn-warning">Lihat</button>
-                                <button type="submit" id="cetak" class="btn btn-primary">Cetak</button>
-                                <button type="submit" id="hapus" class="btn btn-danger">Hapus</button>
-                            </div>
-
-                            <!-- End General Form Elements -->
-
-                        </div>
-                    </div>
-
                 </div>
             </div>
-            <!-- preview surat end -->
+        </div> -->
 
+
+
+        <section class="section">
+            <div class="row">
+
+
+                @include('Admin.Tabel.detailkabardesa')
+
+
+            </div>
         </section>
 
     </main><!-- End #main -->
@@ -122,6 +96,15 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
+
+    <!-- tabel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Memuat DataTables -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+
+
     <script src="{{ asset('assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/chart.js/chart.umd.js') }}"></script>
@@ -133,7 +116,11 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/mainjs.js') }}"></script>
-    <script src="{{ asset('assets/js/jenis-surat.js') }}"></script>
+
+
+    <!-- kalau mau ubah js tabel di sini -->
+    <script src="{{ asset('assets/js/tabel.js') }}"></script>
+
 
 </body>
 

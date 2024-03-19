@@ -68,7 +68,7 @@
                 <div class="col-lg-12">
 
                     <div class="card">
-                        
+
                         @include('Admin.Tabel.tabel-pengajuan')
                     </div>
 
@@ -106,6 +106,9 @@
 
     <!-- kalau mau ubah js tabel di sini -->
     <script src="{{ asset('assets/js/tabel.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
 
 </body>

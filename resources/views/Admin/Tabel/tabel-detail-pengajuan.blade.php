@@ -27,8 +27,14 @@
             </tr>
             <!-- tambahono -->
         </table>
+    </div>
 
-
+    <!-- foto kelengkapan -->
+    <div class="mt-5">
+        <h5 class="card-title">Foto Kelengkapan Persyaratan</h5>
+        <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200" height="200">
+        <br>
+        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modalFoto">Lihat Foto</button>
     </div>
     <br><br>
 
@@ -46,6 +52,27 @@
             <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button>
         </div>
     </form>
+
+
+    <!-- Modal untuk Perbesar Foto -->
+    <div class="modal fade" id="modalFoto" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalFotoLabel">Foto Kelengkapan Persyaratan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body center-image">
+                    <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         function showFields() {

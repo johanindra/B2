@@ -4,6 +4,7 @@ use App\Http\Controllers\sideBarController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UploadKabarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,11 @@ Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('Admin.k
 Route::get('/home', [SideBarController::class, 'keluar'])->name('home');
 Route::get('/detail-pengajuan', [SideBarController::class, 'detailpengajuan'])->name('detailpengajuan');
 Route::get('/detail-laporan', [SideBarController::class, 'detaillaporan'])->name('detaillaporan');
+Route::get('/detail-kabar', [SideBarController::class, 'detailkabardesa'])->name('detailkabardesa');
+
+
+// upload kabar desa
+Route::get('/kabar-desa', [UploadKabarController::class, 'upload']);
+Route::post('/upload/proses', [UploadKabarController::class, 'proses_upload']);
+
+Route::get('/upload/hapus/{id}', [UploadKabarController::class, 'hapus'])->name('upload.hapus');

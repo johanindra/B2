@@ -42,4 +42,8 @@ class SideBarController extends Controller
     {
         return view('Admin.detail-laporan');
     }
+    public function detailkabardesa()
+    {
+        return view('Admin.detail-kabar');
+    }
 }

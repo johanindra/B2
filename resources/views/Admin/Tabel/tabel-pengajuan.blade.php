@@ -30,7 +30,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -41,7 +41,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +52,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -63,7 +63,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +74,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +85,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -96,7 +96,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -107,7 +107,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -118,7 +118,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -129,7 +129,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -140,7 +140,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <tr>
@@ -151,7 +151,7 @@
                     <td>21-02-2024</td>
                     <td class="text-center">
                         <a href="detail-pengajuan" class="btn btn-sm btn-primary">Detail</a>
-                        <a href="" class="btn btn-sm btn-danger">Tolak</a>
+                        <a href="#" class="btn btn-sm btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
                     </td>
                 </tr>
                 <?php
@@ -162,3 +162,57 @@
         </table>
     </div>
 </div>
+
+
+<script>
+    // Fungsi untuk menampilkan popup konfirmasi SweetAlert2 dengan input teks
+    function showRejectReasonPrompt() {
+        Swal.fire({
+            title: 'Masukkan alasan penolakan:',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Kirim',
+            cancelButtonText: 'Batal',
+            showLoaderOnConfirm: true,
+            preConfirm: (rejectReason) => {
+                // Lakukan sesuatu dengan alasan penolakan, misalnya mengirimkan ke server
+                // Di sini Anda dapat menambahkan kode AJAX untuk mengirim alasan penolakan ke server
+                // Misalnya, Anda dapat mengirim alasan ke URL tertentu menggunakan AJAX
+                return fetch('/path-to-your-api-endpoint', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            rejectReason: rejectReason
+                        }),
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Jika menggunakan Laravel, untuk CSRF token
+                        },
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .catch(error => {
+                        Swal.showValidationMessage(
+                            `Request failed: ${error}`
+                        );
+                    });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Tampilkan notifikasi bahwa alasan penolakan telah dikirim
+                Swal.fire(
+                    'Sukses!',
+                    'Alasan penolakan telah dikirim.',
+                    'success'
+                );
+            }
+        });
+    }
+</script>

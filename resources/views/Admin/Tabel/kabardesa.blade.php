@@ -1,163 +1,103 @@
-<div class="col-lg-6">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Judul Agenda di Desa Pesudukuh</h5>
+<div class="card-body">
+    <h5 class="card-title">Agenda Desa Pesudukuh</h5>
 
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/img/slides-1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque necessitatibus tempora mollitia ratione dolor esse cum deserunt sint. Amet quae, praesentium ullam sed incidunt alias natus aliquid doloremque, aliquam ut omnis reiciendis. Accusantium quaerat iure, fugit cum non reprehenderit nemo numquam, odit mollitia, asperiores sapiente neque enim corrupti tempore doloribus quia veniam. Vitae animi nemo quibusdam corrupti dolores consequuntur ipsum quasi culpa pariatur sed reprehenderit ducimus voluptates sint at nesciunt quidem veniam, harum eveniet sunt iste ullam doloremque ut. Ullam soluta natus excepturi molestias consequatur quas officiis fugit modi obcaecati ducimus provident, illum molestiae ex debitis nostrum corporis, rem dolores.</p>
-
-            </div>
-
-        </div>
+    <div class="text-right">
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahAgendaModal">Tambah</a>
     </div>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Judul Agenda di Desa Pesudukuh</h5>
-
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/img/slides-1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque necessitatibus tempora mollitia ratione dolor esse cum deserunt sint. Amet quae, praesentium ullam sed incidunt alias natus aliquid doloremque, aliquam ut omnis reiciendis. Accusantium quaerat iure, fugit cum non reprehenderit nemo numquam, odit mollitia, asperiores sapiente neque enim corrupti tempore doloribus quia veniam. Vitae animi nemo quibusdam corrupti dolores consequuntur ipsum quasi culpa pariatur sed reprehenderit ducimus voluptates sint at nesciunt quidem veniam, harum eveniet sunt iste ullam doloremque ut. Ullam soluta natus excepturi molestias consequatur quas officiis fugit modi obcaecati ducimus provident, illum molestiae ex debitis nostrum corporis, rem dolores.</p>
-
-            </div>
-
-        </div>
+    @if(count($errors) > 0)
+    <div class="alert alert-danger">
+        @foreach ($errors->all() as $error)
+        {{ $error }} <br />
+        @endforeach
     </div>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Judul Agenda di Desa Pesudukuh</h5>
+    @endif
+    <div class="table-responsive" style="margin-top: 10px;">
+        <table id="example" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+            <!-- Tabel Anda di sini -->
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Judul</th>
+                    <th>Tanggal Mulai</th>
+                    <th width="1%">Foto</th>
+                    <th>Deskripsi</th>
+                    <th width="15%">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($kabar_desa as $g)
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>Judul Agenda Desa Pesudukuh</td>
+                    <td>20-03-2024</td>
+                    <td><img width="150px" src="{{ url('/data_file/'.$g->file) }}"></td>
+                    <td>{{ $g->keterangan }}</td>
+                    <td class="text-center">
+                        <a href="detail-kabar" class="btn btn-sm btn-primary">Detail</a>
+                        <a class="btn btn-sm btn-danger" href="#" onclick="confirmDelete('/upload/hapus/{{ $g->id }}')">HAPUS</a>
+                    </td>
+                </tr>
+                @endforeach
 
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/img/slides-1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque necessitatibus tempora mollitia ratione dolor esse cum deserunt sint. Amet quae, praesentium ullam sed incidunt alias natus aliquid doloremque, aliquam ut omnis reiciendis. Accusantium quaerat iure, fugit cum non reprehenderit nemo numquam, odit mollitia, asperiores sapiente neque enim corrupti tempore doloribus quia veniam. Vitae animi nemo quibusdam corrupti dolores consequuntur ipsum quasi culpa pariatur sed reprehenderit ducimus voluptates sint at nesciunt quidem veniam, harum eveniet sunt iste ullam doloremque ut. Ullam soluta natus excepturi molestias consequatur quas officiis fugit modi obcaecati ducimus provident, illum molestiae ex debitis nostrum corporis, rem dolores.</p>
-
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-<div class="col-lg-6">
-
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Judul Agenda di Desa Pesudukuh</h5>
-
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/img/slides-1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque necessitatibus tempora mollitia ratione dolor esse cum deserunt sint. Amet quae, praesentium ullam sed incidunt alias natus aliquid doloremque, aliquam ut omnis reiciendis. Accusantium quaerat iure, fugit cum non reprehenderit nemo numquam, odit mollitia, asperiores sapiente neque enim corrupti tempore doloribus quia veniam. Vitae animi nemo quibusdam corrupti dolores consequuntur ipsum quasi culpa pariatur sed reprehenderit ducimus voluptates sint at nesciunt quidem veniam, harum eveniet sunt iste ullam doloremque ut. Ullam soluta natus excepturi molestias consequatur quas officiis fugit modi obcaecati ducimus provident, illum molestiae ex debitis nostrum corporis, rem dolores.</p>
-
-            </div>
-
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Judul Agenda di Desa Pesudukuh</h5>
-
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/img/slides-1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/img/slides-3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque necessitatibus tempora mollitia ratione dolor esse cum deserunt sint. Amet quae, praesentium ullam sed incidunt alias natus aliquid doloremque, aliquam ut omnis reiciendis. Accusantium quaerat iure, fugit cum non reprehenderit nemo numquam, odit mollitia, asperiores sapiente neque enim corrupti tempore doloribus quia veniam. Vitae animi nemo quibusdam corrupti dolores consequuntur ipsum quasi culpa pariatur sed reprehenderit ducimus voluptates sint at nesciunt quidem veniam, harum eveniet sunt iste ullam doloremque ut. Ullam soluta natus excepturi molestias consequatur quas officiis fugit modi obcaecati ducimus provident, illum molestiae ex debitis nostrum corporis, rem dolores.</p>
-
-            </div>
-
-        </div>
+            </tbody>
+            <!-- <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Judul</th>
+                    <th>Tanggal Mulai</th>
+                    <th>Tanggal Selesai</th>
+                    <th>Foto</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody> -->
+            <?php
+            $cnt = 1;
+            // Mulai looping data di sini
+            // Misalkan Anda memiliki array $data yang berisi data untuk ditampilkan
+            // foreach ($data as $row) {
+            ?>
+            <!-- <tr>
+                    <td><?php echo htmlentities($cnt); ?></td>
+                    <td>Grebeg Suro Desa Pesudukuh</td>
+                    <td>20-03-2024</td>
+                    <td>30-03-2024</td>
+                    <td>
+                        <img src="assets/img/slides-3.jpg" class="d-block w-100" alt="..." height="100" width="100">
+                    </td>
+                    <td class="text-center">
+                        <a href="detail-kabar" class="btn btn-sm btn-primary">Detail</a>
+                        <a href="" class="btn btn-sm btn-success">Selesai</a>
+                    </td>
+                </tr> -->
+            <?php
+            // }
+            // Akhir dari loop data
+            ?>
+            </tbody>
+        </table>
     </div>
 </div>
+
+@include('Admin.crud.kabardesa')
+
+<script>
+    // Tambahkan event listener untuk setiap tombol Hapus
+    function confirmDelete(url) {
+        Swal.fire({
+            title: 'Yakin ingin menghapus?',
+            text: "Anda tidak akan dapat mengembalikan data ini!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Jika konfirmasi, arahkan pengguna ke URL hapus
+                window.location = url;
+            }
+        });
+    }
+</script>
