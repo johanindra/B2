@@ -5,6 +5,7 @@ use App\Models\dashboard;
 use App\Models\laporan;
 use App\Models\pengajuansurat;
 use App\Models\surat;
+use App\Models\ttd;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class SideBarController extends Controller
         });
          
 
-        // dd($tabel);
+        // dd($selesaibulanini);
 
         return view('Admin.dashboard', [
             'dataMasuk' => $suratmasuk,
@@ -54,7 +55,13 @@ class SideBarController extends Controller
     }
     public function profilDesa()
     {
-        return view('Admin.profil-desa');//untuk menampilkan halaman pengajuan
+        $nama = ttd::getNama();
+
+        // dd($nama);
+
+        return view('Admin.profil-desa', [
+            'nama'=> $nama
+        ]);//untuk menampilkan halaman pengajuan
     }
     public function kabarDesa()
     {

@@ -89,7 +89,7 @@
                   </ul>
                 </div> --}}
 
-                                <div class="card-body">
+                                <a class="card-body" href="{{ route('pengajuan')}}">
                                     <h5 class="card-title">Surat Masuk</h5>
 
                                     <div class="d-flex align-items-center">
@@ -102,7 +102,7 @@
                                             <span class="text-primary small pt-1 fw-bold">Hari Ini</span>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <!-- End Surat Masuk Card -->
@@ -124,7 +124,7 @@
                   </ul>
                 </div> --}}
 
-                                <div class="card-body">
+                                <a class="card-body" href="{{ route('laporan')}}">
                                     <h5 class="card-title">Laporan</h5>
 
                                     <div class="d-flex align-items-center">
@@ -137,7 +137,7 @@
                                             <span class="text-success small pt-1 fw-bold">Bulan Ini</span>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
 
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                   </ul>
                 </div> --}}
 
-                                <div class="card-body">
+                                <a class="card-body" href="{{ route('kabar-desa')}}">
                                     <h5 class="card-title">Agenda Desa</h5>
 
                                     <div class="d-flex align-items-center">
@@ -173,8 +173,7 @@
                                             <span class="text-danger small pt-1 fw-bold">Tahun Ini</span>
                                         </div>
                                     </div>
-
-                                </div>
+                                </a>
                             </div>
                         </div>
                         <!-- End Customers Card -->

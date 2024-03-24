@@ -12,7 +12,7 @@
                     // Mendapatkan bulan saat ini
                     $current_month = date('m');
                     // Daftar nama bulan
-                    $months = array(
+                    $months = [
                         '01' => 'Januari',
                         '02' => 'Februari',
                         '03' => 'Maret',
@@ -24,11 +24,11 @@
                         '09' => 'September',
                         '10' => 'Oktober',
                         '11' => 'November',
-                        '12' => 'Desember'
-                    );
-
+                        '12' => 'Desember',
+                    ];
+                    
                     foreach ($months as $month_number => $month_name) {
-                        $selected = ($current_month == $month_number) ? 'selected' : '';
+                        $selected = $current_month == $month_number ? 'selected' : '';
                         echo "<option value='$month_number' $selected>$month_name</option>";
                     }
                     ?>
@@ -71,41 +71,42 @@
             </thead>
             <tbody>
                 @php
-                $cnt = 1;
+                    $cnt = 1;
                 @endphp
-                @foreach($tabel as $item)
-                <tr>
-                    <td>{{ $cnt++}}</td>
-                    <td>{{ $item->nik }}</td>
-                    <td>{{ $item->nama }}</td>
-                    <td>{{ $item->Keterangan }}</td>
-                    <td>{{ $item->tanggal }}</td>
-                    <td> @if($item->status === 'Selesai')
-                        <span class="badge bg-success">{{ $item->status }}</span>
-                    @elseif($item->status === 'Masuk')
-                        <span class="badge bg-primary">{{ $item->status }}</span>
-                    @elseif($item->status === 'Tolak')
-                    <span class="badge bg-danger">{{ $item->status }}</span>
-                    @else
-                        {{ $item->status }}
-                    @endif
-                    </td>
-                    <td>
-                        <form action="{{ route('pengajuansurat') }}" method="POST">
-                            @csrf
-                            @method('POST')
-            
-                            <!-- Add a hidden input field for the id -->
-                            <input type="hidden" name="id" value="{{ $item->id }}">
-            
-                            <button type="submit" class="btn btn-primary">
-                                Button
-                            </button>
-                        </form>
-                        
-                    </td>
-                </tr>
-            @endforeach
+                @foreach ($tabel as $item)
+                    <tr>
+                        <td>{{ $cnt++ }}</td>
+                        <td>{{ $item->nik }}</td>
+                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item->kode_surat }}</td>
+                        <td>{{ $item->tanggal }}</td>
+                        <td>
+                            @if ($item->status === 'Selesai')
+                                <span class="badge bg-success">{{ $item->status }}</span>
+                            @elseif($item->status === 'Masuk')
+                                <span class="badge bg-primary">{{ $item->status }}</span>
+                            @elseif($item->status === 'Tolak')
+                                <span class="badge bg-danger">{{ $item->status }}</span>
+                            @else
+                                {{ $item->status }}
+                            @endif
+                        </td>
+                        <td>
+                            <form action="{{ route('pengajuansurat') }}" method="POST">
+                                @csrf
+                                @method('POST')
+
+                                <!-- Add a hidden input field for the id -->
+                                <input type="hidden" name="id" value="{{ $item->id }}">
+
+                                <button type="submit" class="btn btn-primary">
+                                    Detail
+                                </button>
+                            </form>
+
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

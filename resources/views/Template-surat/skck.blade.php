@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKCK</title>
-    <link href="{{ asset('css/skck.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ asset('assets/css/surat.css') }}" rel="stylesheet" type="text/css">
+    {{-- <link href="{{ url('https://e-lades.tifnganjuk.com/template%20surat/skck.css') }}" rel="stylesheet" type="text/css" > --}}
     <style>
         /* Gaya tambahan, jika diperlukan */
     </style>
@@ -15,7 +16,7 @@
     <div class="page-container">
         <div class="kop-container">
             <div class="logo-container">
-                {{-- <img src="../gambar/logo surat.png" alt="Logo" style="width: 2.02cm;"> --}}
+                <img src="{{asset('assets/img/logoKab.png')}}" alt="Logo" style="width: 2.02cm;">
             </div>
             <div class="kop-surat">
                 <p>PEMERINTAH KABUPATEN NGANJUK</p>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Hash;
 
 class AuthController extends Controller
 {
@@ -30,9 +31,38 @@ class AuthController extends Controller
     {
         Auth::logout();
         // $request->session()->invalidate();
- 
+
         // $request->session()->regenerateToken();
-     
+
         return redirect('/login');
     }
+
+    public function gantipassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|min:8|confirmed',
+        ]);
+       
+        $user = Auth::User();
+        // dd($user->currentPasswordMD5);
+        $currentPasswordMD5 = md5($request->current_password);
+
+       
+
+        if ($currentPasswordMD5 !== $user->password) {
+            return back()->with('error', 'Current password is incorrect.');
+        }
+        // Encrypt new password with MD5 before saving
+        $newPasswordMD5 = md5($request->password);
+
+        $user->password = $newPasswordMD5;
+        $user->save();
+
+        return redirect()->route('profil-desa')->with('success', 'Password changed successfully.');
+    }
+
+
+
+
 }

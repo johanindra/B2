@@ -27,7 +27,7 @@
                     <td>{{ $cnt++}}</td>
                     <td>{{ $item->nik }}</td>
                     <td>{{ $item->nama }}</td>
-                    <td>{{ $item->Keterangan }}</td>
+                    <td>{{ $item->kode_surat }}</td>
                     <td>{{ $item->tanggal }}</td>
                     <td>
                         <form action="{{ route('pengajuansurat') }}" method="POST">
@@ -38,7 +38,7 @@
                             <input type="hidden" name="id" value="{{ $item->id }}">
             
                             <button type="submit" class="btn btn-primary">
-                                Button
+                                Detail
                             </button>
                         </form>
                         

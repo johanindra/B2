@@ -53,15 +53,15 @@
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
             {{-- @auth --}}
-            <form action="{{ route('logout') }}" method="post">
+            <form action="{{ route('logout') }}" method="post" class="nav-link">
                 @csrf
-                <button type="submit" class="nav-link">
+                <button type="submit" >
                     <i class="bi bi-arrow-right "></i>
                     <span>keluar</span>
                 </button>
             </form>
             {{-- @endauth --}}
-        </li>           
+        </li>
     </ul>
 
 </aside><!-- End Sidebar-->

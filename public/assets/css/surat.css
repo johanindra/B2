@@ -1,4 +1,3 @@
-/* skck.css */
 
 /* Gaya umum */
 body {
@@ -25,6 +24,7 @@ body {
 .logo-container {
     position: absolute;
     left: 1cm;
+    filter: grayscale();
 }
 
 /* Gaya untuk alamat */
@@ -85,7 +85,7 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     line-height: 0.5;
-}
+}   
 
 table, th, td {
     /* border: 1px solid #000; */

@@ -22,12 +22,13 @@ class laporan extends Model
     }
 
     public static function getDataSuratSelesaiBulanIni()
-{
-    $totalLaporanBulanIni = laporan::where('status', 'Selesai')
-    ->whereDate('tanggal', now()->toDateString())
-    ->count();
-    return $totalLaporanBulanIni;
-}
+    {
+        return self::where('status', 'Selesai')
+            ->whereYear('tanggal', now()->year)
+            ->whereMonth('tanggal', now()->month)
+            ->count();
+    }
+    
 
 public static function getDataTabel(){
     return self::
