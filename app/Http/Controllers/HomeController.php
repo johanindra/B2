@@ -16,4 +16,8 @@ class HomeController extends Controller
 
         return view('Login.login');
     }
+    public function agenda() {
+
+        return view('Landing.agenda-detail');
+    }
 }

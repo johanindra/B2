@@ -23,6 +23,7 @@ Route::get('dashboard', function () {
 
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('login', [HomeController::class, 'login'])->name('login');
+Route::get('agenda-detail', [HomeController::class, 'agenda'])->name('agenda-detail');
 
 Route::get('/', function () {
     return view('welcome');

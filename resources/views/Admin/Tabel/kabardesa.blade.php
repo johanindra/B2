@@ -12,15 +12,14 @@
     </div>
     @endif
     <div class="table-responsive" style="margin-top: 10px;">
-        <table id="example" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+        <table id="kabardesa" class="display table table-striped table-bordered" cellspacing="0" width="100%">
             <!-- Tabel Anda di sini -->
             <thead>
                 <tr>
                     <th>#</th>
                     <th>Judul</th>
-                    <th>Tanggal Mulai</th>
+                    <th>Tanggal</th>
                     <th width="1%">Foto</th>
-                    <th>Deskripsi</th>
                     <th width="15%">Aksi</th>
                 </tr>
             </thead>
@@ -31,7 +30,6 @@
                     <td>Judul Agenda Desa Pesudukuh</td>
                     <td>20-03-2024</td>
                     <td><img width="150px" src="{{ url('/data_file/'.$g->file) }}"></td>
-                    <td>{{ $g->keterangan }}</td>
                     <td class="text-center">
                         <a href="detail-kabar" class="btn btn-sm btn-primary">Detail</a>
                         <a class="btn btn-sm btn-danger" href="#" onclick="confirmDelete('/upload/hapus/{{ $g->id }}')">HAPUS</a>

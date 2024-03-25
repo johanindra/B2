@@ -1,1 +1,1 @@
-@extends('Landing.home')
+@extends('home')

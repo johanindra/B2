@@ -2,7 +2,7 @@
 <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
         <a href="" class="logo me-auto"><img src="{{ asset('assets/img/lPemerintah2.png') }}" alt="logo"></a>
-        
+
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
@@ -18,5 +18,3 @@
         <a href="{{ url('/login') }}" class="get-started-btn scrollto">Login</a>
     </div>
 </header><!-- End Header -->
-
-

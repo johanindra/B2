@@ -34,9 +34,10 @@
         <h5 class="card-title">Foto Kelengkapan Persyaratan</h5>
         <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200" height="200">
         <br>
-        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modalFoto">Lihat Foto</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFoto">Lihat Foto</button>
     </div>
     <br><br>
+
 
     <form method="post">
         <div class="mb-3">
@@ -47,10 +48,13 @@
                 <option value="Sekretaris Desa">Sekretaris Desa</option>
             </select>
         </div>
-        <div class="text-right" id="buttonGroup" style="display: none;">
-            <button type="submit" name="print" class="btn btn-primary">Cetak</button>
-            <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button>
-        </div>
+        <div>
+            <div class="text-right" id="buttonGroup">
+                <!-- jika mau tolak  style="display: none;" -->
+                <button type="submit" name="print" class="btn btn-primary">Cetak</button>
+                <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button>
+                <button type="button" class="btn btn-danger" onclick="showRejectReasonPrompt()">Tolak</button>
+            </div>
     </form>
 
 
@@ -68,24 +72,74 @@
                     <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <a type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        function showFields() {
-            var selectElement = document.getElementById("mengetahui");
-            var buttonGroup = document.getElementById("buttonGroup");
-
-            if (selectElement.value === "" || selectElement.value === "Pilih yang bertanda tangan") {
-                buttonGroup.style.display = "none"; // Sembunyikan tombol jika pilihan tidak valid
-            } else {
-                buttonGroup.style.display = "block"; // Tampilkan tombol jika pilihan valid
-            }
-        }
-    </script>
-
-
 </div>
+
+<script>
+    function showFields() {
+        var selectElement = document.getElementById("mengetahui");
+        var buttonGroup = document.getElementById("buttonGroup");
+
+        if (selectElement.value === "" || selectElement.value === "Pilih yang bertanda tangan") {
+            buttonGroup.style.display = "none"; // Sembunyikan tombol jika pilihan tidak valid
+        } else {
+            buttonGroup.style.display = "block"; // Tampilkan tombol jika pilihan valid
+        }
+    }
+
+
+    // Fungsi untuk menampilkan popup konfirmasi SweetAlert2 dengan input teks
+    function showRejectReasonPrompt() {
+        Swal.fire({
+            title: 'Masukkan alasan penolakan:',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Kirim',
+            cancelButtonText: 'Batal',
+            showLoaderOnConfirm: true,
+            preConfirm: (rejectReason) => {
+                // Lakukan sesuatu dengan alasan penolakan, misalnya mengirimkan ke server
+                // Di sini Anda dapat menambahkan kode AJAX untuk mengirim alasan penolakan ke server
+                // Misalnya, Anda dapat mengirim alasan ke URL tertentu menggunakan AJAX
+                return fetch('/path-to-your-api-endpoint', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            rejectReason: rejectReason
+                        }),
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Jika menggunakan Laravel, untuk CSRF token
+                        },
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .catch(error => {
+                        Swal.showValidationMessage(
+                            `Request failed: ${error}`
+                        );
+                    });
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Tampilkan notifikasi bahwa alasan penolakan telah dikirim
+                Swal.fire(
+                    'Sukses!',
+                    'Alasan penolakan telah dikirim.',
+                    'success'
+                );
+            }
+        });
+    }
+</script>
