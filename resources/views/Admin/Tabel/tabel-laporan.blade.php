@@ -56,7 +56,7 @@
 
     <!-- tabel laporan -->
     <div class="table-responsive" style="margin-top: 10px;">
-        <table id="example" class="display table table-striped table-bordered" cellspacing="0" width="100%">
+        <table id="laporan" class="display table table-striped table-bordered" cellspacing="0" width="100%">
             <!-- Tabel Anda di sini -->
             <thead>
                 <tr>
@@ -65,6 +65,7 @@
                     <th>Nama Lengkap</th>
                     <th>Tipe Surat</th>
                     <th>tanggal Pengajuan</th>
+                    <th>Status</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -81,6 +82,7 @@
                     <td>Pugruk</td>
                     <td>Surat Kematian</td>
                     <td>21-02-2024</td>
+                    <td>Ditolak</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -91,6 +93,7 @@
                     <td>Abdul</td>
                     <td>Perizinan</td>
                     <td>21-02-2024</td>
+                    <td>Ditolak</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -101,6 +104,7 @@
                     <td>Agus</td>
                     <td>Pengantar SKCK</td>
                     <td>21-02-2024</td>
+                    <td>selesai</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -111,6 +115,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>selesai</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -121,6 +126,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>selesai</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -131,6 +137,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>selesai</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -141,6 +148,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>selesai</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -151,6 +159,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>Ditolak</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -161,6 +170,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>selesai</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -171,6 +181,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>Ditolak</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -181,6 +192,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>selesai</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
@@ -191,6 +203,7 @@
                     <td>Abdi</td>
                     <td>SKTM</td>
                     <td>21-02-2024</td>
+                    <td>selesai</td>
                     <td class="text-center">
                         <a href="detail-laporan" class="btn btn-sm btn-primary">Detail</a>
                     </td>
