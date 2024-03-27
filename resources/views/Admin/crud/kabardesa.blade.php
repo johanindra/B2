@@ -38,12 +38,8 @@
                             <input type="text" class="form-control" id="judul" placeholder="Masukkan judul agenda">
                         </div>
                         <div class="form-group">
-                            <label for="tanggal_mulai"><b>Tanggal Mulai</b></label>
-                            <input type="date" class="form-control" id="tanggal_mulai">
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal_selesai"><b>Tanggal Selesai</b></label>
-                            <input type="date" class="form-control" id="tanggal_selesai">
+                            <label for="tanggal"><b>Tanggal</b></label>
+                            <input type="date" class="form-control" id="tanggal">
                         </div>
                         <div class="form-group">
                             <label for="tanggal_selesai"><b>Foto</b></label>
