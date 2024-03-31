@@ -34,8 +34,7 @@
                     <br>
                     <div class="agenda-details">
                         <div class="agenda-date">
-                            <h6><b>Tanggal Mulai :</b> 20-03-2024</h6>
-                            <h6><b>Tanggal Selesai :</b> 30-03-2024</h6>
+                            <h6><b>Tanggal :</b> 20-03-2024</h6>
                         </div>
                         <div class="agenda-description">
                             <h6><b>Deskripsi :</b></h6>

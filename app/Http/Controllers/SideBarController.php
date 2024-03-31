@@ -2,17 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dashboard;
+use App\Models\laporan;
+use App\Models\pengajuansurat;
+use App\Models\surat;
+use App\Models\ttd;
+use App\Models\kabarDesa;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SideBarController extends Controller
 {
     public function dashboard()
     {
-        return view('Admin.dashboard'); //untuk menampilkan halaman dashboard
+        $suratmasuk = laporan::getDataStatusMasuk();
+        $chart = surat::getDataPengajuanSurat();
+        $selesaibulanini = laporan::getDataSuratSelesaiBulanIni();
+        $tabel = pengajuansurat::getDataMingguIni();
+
+        $chart->transform(function ($item) {
+            $item->tanggal = Carbon::parse($item->tanggal)->format('Y-m-d H:i:s');
+            return $item;
+        });
+         
+
+        // dd($selesaibulanini);
+
+        return view('Admin.dashboard', [
+            'dataMasuk' => $suratmasuk,
+            'data' => $chart,
+            'selesaibulanini' => $selesaibulanini,
+            'tabel' => $tabel
+        ]);
+        
     }
     public function pengajuan()
     {
-        return view('Admin.pengajuan'); //untuk menampilkan halaman pengajuan
+        $tabelpengajuan = pengajuansurat::getPengajuanSurat();
+
+        return view('Admin.pengajuan',[
+            'tabel'=> $tabelpengajuan
+        ]);//untuk menampilkan halaman pengajuan
     }
     public function pembuatan()
     {
@@ -20,27 +50,45 @@ class SideBarController extends Controller
     }
     public function laporan()
     {
-        return view('Admin.laporan'); //untuk menampilkan halaman pengajuan
+        $tabellaporan = laporan::getDataTabel();
+        return view('Admin.laporan',[
+            'tabel' => $tabellaporan
+        ]);//untuk menampilkan halaman pengajuan
     }
     public function profilDesa()
     {
-        return view('Admin.profil-desa'); //untuk menampilkan halaman pengajuan
+        $nama = ttd::getNama();
+
+        // dd($nama);
+
+        return view('Admin.profil-desa', [
+            'nama'=> $nama
+        ]);//untuk menampilkan halaman pengajuan
     }
     public function kabarDesa()
-    {
-        return view('Admin.kabar-desa'); //untuk menampilkan halaman pengajuan
+    { $kabardesa = kabarDesa::getdata();
+        return view('Admin.kabar-desa',[
+            'kabar_desa' => $kabardesa,
+        ]); //untuk menampilkan halaman pengajuan
     }
     public function keluar()
     {
         return view('welcome'); //untuk keluar dan menampilkan landing page
     }
-    public function detailpengajuan()
+    public function detailpengajuan(Request $request)
     {
-        return view('Admin.detail-pengajuan');
+        $id = $request->input('id');
+        return view('Admin.detail-pengajuan',
+        ['id' => $id,
+        ]);
+        // return $id;
     }
-    public function detaillaporan()
+    public function detaillaporan(Request $request)
     {
-        return view('Admin.detail-laporan');
+        $id = $request->input('id');
+        return view('Admin.detail-laporan',
+         ['id' => $id,
+            ]);
     }
     public function detailkabardesa()
     {
