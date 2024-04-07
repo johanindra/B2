@@ -17,13 +17,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-
-     protected $table = "akun_admin";
-     protected $primaryKey = "username";
-     public $incrementing = false; //increment yang ada di sql
-     public $timestamps = false ; 
     protected $fillable = [
-        'username',
+        'name',
+        'email',
         'password',
     ];
 
@@ -34,6 +30,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'remember_token',
     ];
 
     /**
