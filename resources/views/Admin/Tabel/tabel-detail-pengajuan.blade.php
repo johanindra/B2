@@ -7,7 +7,7 @@
             <!-- Tabel Anda di sini -->
             <tr>
                 <th>ID Pengajuan</th>
-                <td>{{$id}}</td>
+                <td>1</td>
             </tr>
             <tr>
                 <th>NIK</th>
@@ -32,12 +32,9 @@
     <!-- foto kelengkapan -->
     <div class="mt-5">
         <h5 class="card-title">Foto Kelengkapan Persyaratan</h5>
-        <button type="button " class="btn btn-secondary" data-toggle="modal" data-target="#modalFoto">
-            <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200" height="200" >
-            <br>
-            <div class="text-center "><b>KTP</b></div>
-        </button>
-        
+        <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200" height="200">
+        <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFoto">Lihat Foto</button>
     </div>
     <br><br>
 

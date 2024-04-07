@@ -1,6 +1,19 @@
 <div class="col-12">
     <div class="card recent-sales overflow-auto">
 
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+        </div>
+
         <div class="card-body">
             <h5 class="card-title">Laporan Bulan Ini</span></h5>
 
@@ -15,32 +28,108 @@
                 </thead>
 
                 <tbody>
-                    @foreach ($tabel as $item)
-                        <tr>
-                            <td>{{ $item->nama }}</td>
-                            <td>{{ $item->Keterangan }}</td>
-                            <td>{{ $item->tanggal }}</td>
-                            <td>
-                                @if ($item->status === 'Selesai')
-                                    <span class="badge bg-success">{{ $item->status }}</span>
-                                @elseif($item->status === 'Masuk')
-                                    <span class="badge bg-primary">{{ $item->status }}</span>
-                                @else
-                                    {{ $item->status }}
-                                @endif
-                            </td>
-                        </tr>
-                    @endforeach
+                    <tr>
+                        <td>prayoga</td>
+                        <td>Kematian</td>
+                        <td>11-02-2024</td>
+                        <td><span class="badge bg-success">Selesai</span></td>
+                    </tr>
 
+                    <tr>
+                        <td>Rocky Gerung</td>
+                        <td>Pengantar SKCK</td>
+                        <td>11-02-2024</td>
+                        <td><span class="badge bg-warning">proses</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Slepet Imin</td>
+                        <td>Perizinan</td>
+                        <td>11-02-2024</td>
+                        <td><span class="badge bg-danger">Ditolak</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Mas Anies</td>
+                        <td>Kematian</td>
+                        <td>11-02-2024</td>
+                        <td><span class="badge bg-warning">Proses</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Gilbran</td>
+                        <td>Kematian</td>
+                        <td>11-02-2024</td>
+                        <td><span class="badge bg-success">Selesai</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Prabroro</td>
+                        <td>Pengantar SKCK</td>
+                        <td>11-02-2024</td>
+                        <td><span class="badge bg-warning">Proses</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Ganjar</td>
+                        <td>Kematian</td>
+                        <td>11-02-2024</td>
+                        <td><span class="badge bg-danger">Ditolak</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Mahfud</td>
+                        <td>SKTM</td>
+                        <td>11-02-2024</td>
+                        <td><span class="badge bg-success">Selesai</span></td>
+                    </tr>
                 </tbody>
-                <script>
-                    $(document).ready(function() {
-                        $('.datatable').DataTable({
-                            searching: false // menghilangkan fitur pencarian
-                        });
-                    });
-                </script>
-                
+                <!-- <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#">#2457</a></th>
+                        <td>Brandon Jacob</td>
+                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                        <td>$64</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Bridie Kessler</td>
+                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                        <td>$47</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2049</a></th>
+                        <td>Ashleigh Langosh</td>
+                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                        <td>$147</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Angus Grady</td>
+                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                        <td>$67</td>
+                        <td><span class="badge bg-danger">Rejected</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Raheem Lehner</td>
+                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+                        <td>$165</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                    </tbody> -->
             </table>
 
         </div>

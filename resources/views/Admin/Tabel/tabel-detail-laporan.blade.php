@@ -7,7 +7,7 @@
             <!-- Tabel Anda di sini -->
             <tr>
                 <th>ID Laporan</th>
-                <td>{{$id}}</td>
+                <td>1</td>
             </tr>
             <tr>
                 <th>NIK</th>
