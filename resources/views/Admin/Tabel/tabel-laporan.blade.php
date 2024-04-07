@@ -100,6 +100,7 @@
 
                             <!-- Add a hidden input field for the id -->
                             <input type="hidden" name="id" value="{{ $item->id }}">
+                            <input type="hidden" name="kode_surat" value="{{ $item->kode_surat }}">
 
                             <button type="submit" class="btn btn-primary">
                                 Detail

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UploadKabarController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfilDesaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,24 +45,26 @@ Route::any('/detail-kabar', [SideBarController::class, 'detailkabardesa'])->name
 
 // upload kabar desa
 // Route::get('/kabar-desa', [UploadKabarController::class, 'upload'])->name('upload');
-Route::post('/upload/proses', [UploadKabarController::class, 'proses_upload']);
+Route::post('/upload/proses', [UploadKabarController::class, 'proses_upload'])->name('uploadgambar');
 
 Route::get('/upload/hapus/{id}', [UploadKabarController::class, 'hapus'])->name('upload.hapus');
 
 
-//backend
-// Route::middleware(['auth.admin'])->group(function () {
-//     Route::get('dashboard', [SideBarController::class, 'dashboard'])->name('dashboard');
-//     Route::get('pengajuan', [SideBarController::class, 'pengajuan'])->name('pengajuan');
-//     Route::get('pembuatan-surat', [SideBarController::class, 'pembuatan'])->name('pembuatan-surat');
-//     Route::get('laporan', [SideBarController::class, 'laporan'])->name('laporan');
-//     Route::get('profil-desa', [SideBarController::class, 'profilDesa'])->name('profil-desa');
-//     Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('kabar-desa');
-// });
+// backend
+Route::middleware(['auth.admin'])->group(function () {
+    Route::get('dashboard', [SideBarController::class, 'dashboard'])->name('dashboard');
+    Route::get('pengajuan', [SideBarController::class, 'pengajuan'])->name('pengajuan');
+    Route::get('pembuatan-surat', [SideBarController::class, 'pembuatan'])->name('pembuatan-surat');
+    Route::get('laporan', [SideBarController::class, 'laporan'])->name('laporan');
+    Route::get('profil-desa', [SideBarController::class, 'profilDesa'])->name('profil-desa');
+    Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('kabar-desa');
+});
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 //porfil-desa
 route::post('ubahpassword', [AuthController::class, 'gantipassword'])->name('ubahpassword');
+route::post('updateperangkat',[ProfilDesaController::class, 'update'])->name('updateperangkat');
+Route::post('visi-misi', [ProfilDesaController::class, 'visimisi'])->name('visimisi');
 

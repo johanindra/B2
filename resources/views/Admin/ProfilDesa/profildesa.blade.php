@@ -4,11 +4,13 @@
 
     <h5 class="card-title">Perangkat Desa</h5>
 
-    @foreach($nama as $nama)
+    @foreach($nama as $item)
     <div class="row">
         <div class="col-lg-3 col-md-4 label ">
-            {{ str_Ireplace('Pesudukuh', '',$nama->pangkat)}}</div>
-        <div class="col-lg-9 col-md-8">{{$nama->nama }}</div>
+            {{ str_Ireplace('Pesudukuh', '',$item['pangkat'])}}</div>
+        <div class="col-lg-9 col-md-8">{{$item['nama'] }}</div>
     </div>
 @endforeach
 </div>
+
+{{-- {{ dd($nama)}} --}}

@@ -1,45 +1,44 @@
+<!-- resources/views/nama_view.blade.php -->
+
+@if(session('successvisimisi'))
+    <div class="alert alert-success">
+        {{ session('successvisimisi') }}
+    </div>
+@endif
+
+@if(session('errorvisimis'))
+    <div class="alert alert-danger">
+        {{ session('errorvisimis') }}
+    </div>
+@endif
+
 <!-- Settings Form -->
-<form>
+<form action="{{ route('visimisi') }}" method="post">
+    @csrf
 
     <div class="row mb-3">
-        {{-- <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
-        <div class="col-md-8 col-lg-9">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="changesMade" checked>
-                <label class="form-check-label" for="changesMade">
-                    Changes made to your account
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="newProducts" checked>
-                <label class="form-check-label" for="newProducts">
-                    Information on new products and services
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="proOffers">
-                <label class="form-check-label" for="proOffers">
-                    Marketing and promo offers
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
-                <label class="form-check-label" for="securityNotify">
-                    Security alerts
-                </label>
-            </div>
-        </div> --}}
-
         <div class="text-center mb-3">
-            <label for="textarea">
-                <h4>visi-misi</h4>
+            <label for="visi">
+                <h4>visi</h4>
         </div>
         <div class="input-group">
-            <textarea id="textarea" class="form-control" aria-label="With textarea"></textarea>
+            <textarea id="visi" name="visi" class="form-control" aria-label="With textarea" style="min-height: 100px; height:200px;">
+            {{$visimisi->where('id','visi')->first()->isi ?? ''}}</textarea>
+          </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="text-center mb-3">
+            <label for="misi">
+                <h4>misi</h4>
+        </div>
+        <div class="input-group">
+            <textarea id="misi" name="misi" class="form-control" aria-label="With textarea" style="min-height:100px; height: 200px;">
+                {{$visimisi->where('id','misi')->first()->isi ?? ''}}</textarea>
           </div>
     </div>
 
     <div class="text-center">
         <button type="submit" class="btn btn-primary">Save Changes</button>
     </div>
-</form><!-- End settings Form -->
+</form>

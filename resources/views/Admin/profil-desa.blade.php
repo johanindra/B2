@@ -83,7 +83,7 @@
                                 <div class="tab-pane fade pt-3 @if(session('activeTab') == 'profile-change-password') show active @endif" id="profile-change-password">
                                     @include('Admin.ProfilDesa.ubahpassword')
                                 </div>
-                                <script>
+                                {{-- <script>
                                     document.addEventListener("DOMContentLoaded", function() {
                                         // Dapatkan tab yang harus aktif dari data yang dikirimkan dari controller
                                         var activeTab = "{{ session('activeTab') }}";
@@ -98,7 +98,7 @@
                                             tabToActivate.classList.add("active");
                                         }
                                     });
-                                </script>
+                                </script> --}}
                                 
                             </div><!-- End Bordered Tabs -->
                         </div>
