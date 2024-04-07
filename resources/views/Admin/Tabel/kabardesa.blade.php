@@ -27,12 +27,16 @@
                 @foreach($kabar_desa as $g)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>Judul Agenda Desa Pesudukuh</td>
-                    <td>20-03-2024</td>
+                    <td>{{$g->judul}}</td>
+                    <td>{{$g->tanggal}}</td>
                     <td><img width="150px" src="{{ url('/data_file/'.$g->file) }}"></td>
-                    <td class="text-center">
-                        <a href="detail-kabar" class="btn btn-sm btn-primary">Detail</a>
+                    <td class="">
+                        <form action="" method="post">
+                            <input name="id" id="id" type="hidden" value="{{ $g->id}}">
+                        <button type="submit" class="btn btn-sm btn-primary">Detail</button>
+                        
                         <a class="btn btn-sm btn-danger" href="#" onclick="confirmDelete('/upload/hapus/{{ $g->id }}')">HAPUS</a>
+                    </form>
                     </td>
                 </tr>
                 @endforeach

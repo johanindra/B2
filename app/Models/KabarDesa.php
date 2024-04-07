@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class KabarDesa extends Model
 {
     use HasFactory;
+
+    protected $table = "berita";
+    protected $primarykey = "id_berita";
+
+    public static function getData()
+    {
+        // Mengambil data dari tabel "berita"
+        $data = self::all();
+
+        return $data;
+    }
+
 }

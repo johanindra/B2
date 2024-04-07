@@ -3,54 +3,51 @@
     <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p> -->
 
     <div class="panel-body p-20" style="margin-top: 10px;">
-        <table id="example" class="table table-bordered" cellspacing="0" width="100%">
-            <!-- Tabel Anda di sini -->
-            <tr>
-                <th>ID Pengajuan</th>
-                <td>1</td>
-            </tr>
-            <tr>
-                <th>NIK</th>
-                <td>1234567890123456</td>
-            </tr>
-            <tr>
-                <th>Nama Lengkap</th>
-                <td>prayogay</td>
-            </tr>
-            <tr>
-                <th>Alamat</th>
-                <td>dsn pugruk</td>
-            </tr>
-            <tr>
-                <th>RT/RW</th>
-                <td>01/01</td>
-            </tr>
-            <!-- tambahono -->
+        <table id="example" class="table table-bordered table-striped-columns" cellspacing="0" width="100%">
+            @if ($detail_surat)
+                <tbody>
+                    @foreach ($detail_surat->toArray() as $columnName => $value)
+                        <tr>
+                            <td style="width: 40%;"><strong>{{ $columnName }}</strong></td>
+                            <td>{{ $value }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            @else
+                <p>Detail surat tidak ditemukan</p>
+            @endif
         </table>
     </div>
+        
 
     <!-- foto kelengkapan -->
     <div class="mt-5">
         <h5 class="card-title">Foto Kelengkapan Persyaratan</h5>
-        <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200" height="200">
-        <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFoto">Lihat Foto</button>
+        <button type="button " class="btn btn-secondary" data-toggle="modal" data-target="#modalFoto">
+            <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200" height="200" >
+            <br>
+            <div class="text-center "><b>KTP</b></div>
+        </button>
+        
     </div>
     <br><br>
 
 
-    <form method="post">
+    <form method="post" action="{{ route('ceksurat')}}">
+        @csrf
         <div class="mb-3">
             <label for="mengetahui" class="form-label"><b>Mengetahui :</b></label>
-            <select class="form-select" id="mengetahui" aria-label="mengetahui ttd" onchange="showFields()">
+            <select class="form-select" id="mengetahui" name="mengetahui" aria-label="mengetahui ttd" onchange="showFields()">
                 <option value="" selected disabled>Pilih yang bertanda tangan</option>
-                <option value="Kepala Desa">Kepala Desa</option>
-                <option value="Sekretaris Desa">Sekretaris Desa</option>
+                <option value="kepaladesa">Kepala Desa</option>
+                <option value="carik">Sekretaris Desa</option>
             </select>
         </div>
         <div>
             <div class="text-right" id="buttonGroup">
                 <!-- jika mau tolak  style="display: none;" -->
+                <input id="no_pengajuan" name="no_pengajuan" value="{{ $detail_surat->no_pengajuan}}" type="hidden">
+                <input id="kode_surat" name="kode_surat" value="{{ $detail_surat->kode_surat}}" type="hidden">
                 <button type="submit" name="print" class="btn btn-primary">Cetak</button>
                 <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button>
                 <button type="button" class="btn btn-danger" onclick="showRejectReasonPrompt()">Tolak</button>
@@ -142,4 +139,6 @@
             }
         });
     }
+
+    showFields();
 </script>

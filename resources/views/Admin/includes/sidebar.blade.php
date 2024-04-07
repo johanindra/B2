@@ -52,7 +52,10 @@
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link " href="/">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="bi bi-arrow-right"></i>
                 <span>keluar</span>
             </a>

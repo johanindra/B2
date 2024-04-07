@@ -3,32 +3,20 @@
     <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p> -->
 
     <div class="panel-body p-20" style="margin-top: 10px;">
-        <table id="example" class="table table-bordered" cellspacing="0" width="100%">
-            <!-- Tabel Anda di sini -->
-            <tr>
-                <th>ID Laporan</th>
-                <td>1</td>
-            </tr>
-            <tr>
-                <th>NIK</th>
-                <td>1234567890123456</td>
-            </tr>
-            <tr>
-                <th>Nama Lengkap</th>
-                <td>prayogay</td>
-            </tr>
-            <tr>
-                <th>Alamat</th>
-                <td>dsn pugruk</td>
-            </tr>
-            <tr>
-                <th>RT/RW</th>
-                <td>01/01</td>
-            </tr>
-            <!-- tambahono -->
+        <table id="example" class="table table-bordered table-striped-columns" cellspacing="0" width="100%">
+            @if ($detail_surat)
+                <tbody>
+                    @foreach ($detail_surat->toArray() as $columnName => $value)
+                        <tr>
+                            <td style="width: 40%;"><strong>{{ $columnName }}</strong></td>
+                            <td>{{ $value }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            @else
+                <p>Detail surat tidak ditemukan</p>
+            @endif
         </table>
-
-
     </div>
     <!-- foto kelengkapan -->
     <div class="mt-5">
