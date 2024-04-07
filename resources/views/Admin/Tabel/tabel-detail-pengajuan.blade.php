@@ -33,18 +33,21 @@
     <br><br>
 
 
-    <form method="post">
+    <form method="post" action="{{ route('ceksurat')}}">
+        @csrf
         <div class="mb-3">
             <label for="mengetahui" class="form-label"><b>Mengetahui :</b></label>
-            <select class="form-select" id="mengetahui" aria-label="mengetahui ttd" onchange="showFields()">
+            <select class="form-select" id="mengetahui" name="mengetahui" aria-label="mengetahui ttd" onchange="showFields()">
                 <option value="" selected disabled>Pilih yang bertanda tangan</option>
-                <option value="Kepala Desa">Kepala Desa</option>
-                <option value="Sekretaris Desa">Sekretaris Desa</option>
+                <option value="kepaladesa">Kepala Desa</option>
+                <option value="carik">Sekretaris Desa</option>
             </select>
         </div>
         <div>
             <div class="text-right" id="buttonGroup">
                 <!-- jika mau tolak  style="display: none;" -->
+                <input id="no_pengajuan" name="no_pengajuan" value="{{ $detail_surat->no_pengajuan}}" type="hidden">
+                <input id="kode_surat" name="kode_surat" value="{{ $detail_surat->kode_surat}}" type="hidden">
                 <button type="submit" name="print" class="btn btn-primary">Cetak</button>
                 <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button>
                 <button type="button" class="btn btn-danger" onclick="showRejectReasonPrompt()">Tolak</button>
@@ -136,4 +139,6 @@
             }
         });
     }
+
+    showFields();
 </script>

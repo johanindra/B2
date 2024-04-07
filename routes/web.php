@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UploadKabarController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfilDesaController;
+use App\Http\Controllers\SuratController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,3 +69,7 @@ route::post('ubahpassword', [AuthController::class, 'gantipassword'])->name('uba
 route::post('updateperangkat',[ProfilDesaController::class, 'update'])->name('updateperangkat');
 Route::post('visi-misi', [ProfilDesaController::class, 'visimisi'])->name('visimisi');
 
+//surat
+Route::post('cek-surat', [SuratController::class, 'cek'])->name('ceksurat');
+
+// Route::get('skck')
