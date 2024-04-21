@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UploadKabarController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfilDesaController;
+use App\Http\Controllers\CekSuratController;
 use App\Http\Controllers\SuratController;
 
 /*
@@ -70,6 +71,10 @@ route::post('updateperangkat',[ProfilDesaController::class, 'update'])->name('up
 Route::post('visi-misi', [ProfilDesaController::class, 'visimisi'])->name('visimisi');
 
 //surat
-Route::post('cek-surat', [SuratController::class, 'cek'])->name('ceksurat');
+Route::post('cek-surat', [CekSuratController::class, 'cek'])->name('ceksurat');
 
-// Route::get('skck')
+Route::get('/skck', [SuratController::class, 'skck'])->name('skck');
+Route::get('/surat-ijin', [SuratController::class, 'suratIjin'])->name('surat-ijin');
+Route::get('/surat-mati', [SuratController::class, 'suratMati'])->name('surat-mati');
+Route::get('/surat-penghasilan', [SuratController::class, 'suratPenghasilan'])->name('surat-penghasilan');
+Route::get('/sktm', [SuratController::class, 'sktm'])->name('sktm');
