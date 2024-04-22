@@ -70,7 +70,7 @@ route::post('ubahpassword', [AuthController::class, 'gantipassword'])->name('uba
 route::post('updateperangkat',[ProfilDesaController::class, 'update'])->name('updateperangkat');
 Route::post('visi-misi', [ProfilDesaController::class, 'visimisi'])->name('visimisi');
 
-//surat
+
 Route::post('cek-surat', [CekSuratController::class, 'cek'])->name('ceksurat');
 
 Route::get('/skck', [SuratController::class, 'skck'])->name('skck');
