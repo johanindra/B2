@@ -17,7 +17,6 @@ class CekSuratController extends Controller {
 
         $kode_surat = $request->input( 'kode_surat' );
 
-        // Mengambil data surat berdasarkan kode surat dan no_pengajuan
         switch ( $kode_surat ) {
             case 'skck':
             $detail_surat = skck::where( 'no_pengajuan', $no_pengajuan )->first();

@@ -9,6 +9,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\CekSuratController;
 use App\Http\Controllers\SuratController;
+use App\Http\Controllers\PembuatanSurat;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +79,9 @@ Route::get('/surat-ijin', [SuratController::class, 'suratIjin'])->name('surat-ij
 Route::get('/surat-mati', [SuratController::class, 'suratMati'])->name('surat-mati');
 Route::get('/surat-penghasilan', [SuratController::class, 'suratPenghasilan'])->name('surat-penghasilan');
 Route::get('/sktm', [SuratController::class, 'sktm'])->name('sktm');
+
+
+
+//pembuatan surat
+route::post('/pembuatan-surat/insert',[PembuatanSurat::class, 'insert'])->name('insertsurat');
+route::post('/pembuatan-surat/preview',[PembuatanSurat::class, 'preview'])->name('previewsurat');
