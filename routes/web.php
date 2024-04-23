@@ -81,6 +81,7 @@ Route::get('/surat-penghasilan', [SuratController::class, 'suratPenghasilan'])->
 Route::get('/sktm', [SuratController::class, 'sktm'])->name('sktm');
 
 
+
 //pembuatan surat
 route::post('/pembuatan-surat/insert',[PembuatanSurat::class, 'insert'])->name('insertsurat');
 route::post('/pembuatan-surat/preview',[PembuatanSurat::class, 'preview'])->name('previewsurat');
