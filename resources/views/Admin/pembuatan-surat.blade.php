@@ -75,7 +75,7 @@
         <section class="section">
             <div class="row">
                 <!-- pembuatan surat -->
-                <div class="col-lg-6">
+                <div class="col-lg-12">
 
                     <div class="card">
                         <div class="card-body">
@@ -90,7 +90,7 @@
 
 
                 <!-- preview surat -->
-                <div class="col-lg-6" id="previewSuratContainer">
+                {{-- <div class="col-lg-6" id="previewSuratContainer">
 
                     <div class="card">
                         <div class="card-body">
@@ -111,7 +111,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> --}}
             </div>
             <!-- preview surat end -->
 

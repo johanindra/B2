@@ -1,20 +1,98 @@
-<form>
+<form method="post">
+    @csrf
     <div class="mb-3">
         <label for="jenisSurat" class="form-label"><b>Jenis Surat</b></label>
-        <select class="form-select" id="jenisSurat" aria-label="Jenis Surat" onchange="showFields()">
-            <option selected>Pilih Jenis Surat</option>
-            <option value="pengantar_SKCK">Pengantar SKCK</option>
-            <option value="SKTM">SKTM</option>
-            <option value="surat_izin">Surat Izin</option>
-            <option value="surat_kematian">Surat Kematian</option>
-            <option value="slip_gaji">Keterangan Penghasilan</option>
+        <select class="form-select" id="jenisSurat" name="jenisSurat" aria-label="Jenis Surat" onchange="showFields()">
+            <option value="" selected>Pilih Jenis Surat</option>
+            <option value="skck">Pengantar SKCK</option>
+            <option value="sktm">SKTM</option>
+            <option value="surat_ijin">Surat Izin</option>
+            <option value="surat_mati">Surat Kematian</option>
+            <option value="surat_penghasilan">Keterangan Penghasilan</option>
         </select>
     </div>
     <div id="fieldsContainer">
-        <!-- Fields will be displayed here -->
     </div>
-    <div class="mb-3 text-right" id="submitBtn">
+    <script>
+        function showFields() {
+            var jenisSurat = document.getElementById("jenisSurat").value;
+            var fieldsContainer = document.getElementById("fieldsContainer");
+            var formContent = "";
+    
+            // Hapus semua elemen form yang ada di dalam fieldsContainer
+            while (fieldsContainer.firstChild) {
+                fieldsContainer.removeChild(fieldsContainer.firstChild);
+            }
+    
+            // Tambahkan form yang sesuai berdasarkan pilihan
+            switch (jenisSurat) {
+                case "skck":
+                    formContent = `
+                        <form id="skckForm">
+                            @include('Admin.pembuatan-surat.skck')
+                        </form>
+                    `;
+                    break;
+                case "sktm":
+                    formContent = `
+                        <form id="SKTMForm">
+                            @include('Admin.pembuatan-surat.sktm')
+                        </form>
+                    `;
+                    break;
+                case "surat_ijin":
+                    formContent = `
+                        <form id="suratIzinForm">
+                            @include('Admin.pembuatan-surat.surat-ijin')
+                        </form>
+                    `;
+                    break;
+                case "surat_mati":
+                    formContent = `
+                        <form id="suratKematianForm">
+                            @include('Admin.pembuatan-surat.surat-mati')
+                        </form>
+                    `;
+                    break;
+                case "surat_penghasilan":
+                    formContent = `
+                        <form id="suratPenghasilanForm">
+                            @include('Admin.pembuatan-surat.surat-penghasilan')
+                        </form>
+                    `;
+                    break;
+                default:
+                    // Kosongkan formContent jika tidak ada pilihan yang dipilih
+                    break;
+            }    
+            // Tambahkan formContent ke dalam fieldsContainer
+            fieldsContainer.innerHTML = formContent;
+
+
+            var ttd = document.getElementById("ttdcontainer");
+
+            if(jenisSurat){
+                ttd.style.display = 'block';
+            }
+        }
+    </script>
+    
+    {{-- <div class="mb-3 text-right" id="submitBtn">
         <button type="submit" class="btn btn-primary">Buat</button>
         <button type="reset" class="btn btn-danger" onclick="clearForm()">Hapus</button>
+    </div> --}}
+    <div class="mb-3 " id="ttdcontainer" style="display: none;">
+        <label for="mengetahui" class="form-label"><b>Mengetahui</b></label>
+        <select class="form-select" id="mengetahuittd" aria-label="Yang bertanda tangan">
+            <option selected>Yang bertanda tangan</option>
+            <option value="kades">Kepala Desa</option>
+            <option value="sekertaris">Sekertaruat Desa</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary mt-3" 
+        formaction="{{  route('insertsurat') }}" 
+        >Simpan dan Cetak</button>
+        <button type="button" onclick="openNewTab('{{ route('previewsurat') }}')" class="btn btn-warning">Preview</button>
+
     </div>
 </form>
