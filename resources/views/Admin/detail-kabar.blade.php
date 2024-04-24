@@ -56,10 +56,10 @@
             <h1>Detail Kabar Desa</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
-                    <li class="breadcrumb-item"><a href="kabar-desa">Kabar Desa</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('kabar-desa') }}">Kabar Desa</a></li>
                     <li class="breadcrumb-item active">Detail Kabar Desa</li>
-                </ol>
+                </ol>                
             </nav>
         </div><!-- End Page Title -->
 

@@ -4,19 +4,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <!-- ini untuk judul dari agenda desanya -->
-                    <h5 class="card-title">Grebeg Suro Desa Pesudukuh</h5>
+                    <h5 class="card-title">{{$kabar_desa->judul}}</h5>
 
                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="assets/img/slides-1.jpg" class="d-block w-100" alt="...">
+                                <img src="{{ url('/data_foto_berita/'.$kabar_desa->foto) }}" class="d-block w-100" alt="...">
                             </div>
-                            <div class="carousel-item">
+                            {{-- <div class="carousel-item">
                                 <img src="assets/img/slides-2.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
                                 <img src="assets/img/slides-3.jpg" class="d-block w-100" alt="...">
-                            </div>
+                            </div> --}}
                         </div>
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -34,11 +34,11 @@
                     <br>
                     <div class="agenda-details">
                         <div class="agenda-date">
-                            <h6><b>Tanggal :</b> 20-03-2024</h6>
+                            <h6><b>Tanggal :</b> {{$kabar_desa->tanggal}}</h6>
                         </div>
                         <div class="agenda-description">
                             <h6><b>Deskripsi :</b></h6>
-                            <p>untuk memperingati acara suroan di desa pesudukuh mengadakan acara grebeg suro yang mungkin acara ini akan dilakukan selama sepuluh hari di lapangan desa pesudukuh. Juga akan ada pagelaran wayang kulit semalam suntuk dengan dalang ki rudi gareng asal blitar</p>
+                            <p>{{$kabar_desa->isi}}</p>
                         </div>
                     </div>
                 </div>

@@ -48,9 +48,11 @@ Route::any('/detail-kabar', [SideBarController::class, 'detailkabardesa'])->name
 
 // upload kabar desa
 // Route::get('/kabar-desa', [UploadKabarController::class, 'upload'])->name('upload');
-Route::post('/upload/proses', [UploadKabarController::class, 'proses_upload'])->name('uploadgambar');
+Route::post('/upload/proses', [UploadKabarController::class, 'proses_upload'])->name('uploadKabar');
 
 Route::get('/upload/hapus/{id}', [UploadKabarController::class, 'hapus'])->name('upload.hapus');
+Route::get('/detail-kabar/{id}', [SideBarController::class, 'detailkabardesa'])->name('detail.kabar');
+
 
 
 // backend

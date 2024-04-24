@@ -6,15 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class dashboard extends Model
+class uploadberita extends Model
 {
     use HasFactory;
-    protected $table = "pengajuan_surat";
-    protected $primaryKey = "id";
-    public $incrementing = false; //increment yang ada di sql
+    protected $table = "berita";
+    protected $primaryKey = "id_berita";//increment yang ada di sql
     public $timestamps = false;
     protected $fillable = [
-        'username',
-        'password',
+        'judul',
+        'isi',
+        'foto',
+        'tanggal',
     ];
 }

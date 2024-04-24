@@ -121,7 +121,39 @@
     <script src="{{ asset('assets/js/tabel.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const inputForm = document.getElementById('inputForm');
+        inputForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+  
+          const formData = new FormData(inputForm);
+  
+          fetch(inputForm.getAttribute('action'), {
+              method: 'POST',
+              body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Success',
+                  text: 'Paket berhasil ditambahkan.'
+                }).then((result) => {
+                  if (result.isConfirmed || result.isDismissed) {
+                    window.location.reload();
+                  }
+                });
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        });
+      });
+    </script>
 
 
 </body>
