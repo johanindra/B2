@@ -5,6 +5,7 @@
 <div class="mb-3">
     <label for="jenis_kelamin" class="form-label"><b>Jenis Kelamin</b></label>
     <select class="form-select" id="jenis_kelamin" aria-label="Jenis Kelamin" name="jenis_kelamin">
+
         <option selected>Pilih Jenis Kelamin</option>
         <option value="laki-laki">Laki-laki</option>
         <option value="perempuan">Perempuan</option>
@@ -17,4 +18,5 @@
 <div class="mb-3">
     <label for="tanggal_kematian" class="form-label"><b>Tanggal Kematian</b></label>
     <input type="date" class="form-control" id="tanggal_kematian" name="tanggal_kematian" required>
+
 </div>

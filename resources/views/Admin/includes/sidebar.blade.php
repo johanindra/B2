@@ -16,37 +16,37 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="dashboard">
+            <a class="nav-link " href="{{ route('dashboard') }}">
                 <i class="bi bi-house-door"></i>
                 <span>Dashboard</span>
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link " href="pengajuan">
+            <a class="nav-link " href="{{ route('pengajuan') }}">
                 <i class="bi bi-envelope"></i>
                 <span>Pengajuan Surat</span>
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link " href="pembuatan-surat">
+            <a class="nav-link " href="{{ route('pembuatan-surat') }}">
                 <i class="bi bi-pencil"></i>
                 <span>Pembuatan Surat</span>
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link " href="laporan">
+            <a class="nav-link " href="{{ route('laporan') }}">
                 <i class="bi bi-file-text"></i>
                 <span>laporan</span>
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link " href="profil-desa">
+            <a class="nav-link " href="{{ route('profil-desa') }}">
                 <i class="bi bi-people"></i>
                 <span>Profil Desa</span>
             </a>
         </li><!-- End Dashboard Nav -->
         <li class="nav-item">
-            <a class="nav-link " href="kabar-desa">
+            <a class="nav-link " href="{{ route('kabar-desa') }}">
                 <i class="bi bi-newspaper"></i>
                 <span>kabar Desa</span>
             </a>

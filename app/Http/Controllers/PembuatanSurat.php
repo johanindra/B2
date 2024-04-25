@@ -44,5 +44,4 @@ class PembuatanSurat extends Controller {
             break;
         }
     }
-
 }

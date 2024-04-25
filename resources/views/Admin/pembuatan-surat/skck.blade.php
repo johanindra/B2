@@ -21,6 +21,7 @@
 <div class="mb-3">
     <label for="agama" class="form-label"><b>Agama</b></label>
     <select class="form-select" id="agama" name="agama" aria-label="Agama">
+
         <option selected>Pilih Agama</option>
         <option value="islam">Islam</option>
         <option value="kristen">Kristen</option>
@@ -33,6 +34,7 @@
 <div class="mb-3">
     <label for="jenis_kelamin" class="form-label"><b>Jenis Kelamin</b></label>
     <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" aria-label="Jenis Kelamin">
+
         <option selected>Pilih Jenis Kelamin</option>
         <option value="laki-laki">Laki-laki</option>
         <option value="perempuan">Perempuan</option>
@@ -41,6 +43,7 @@
 <div class="mb-3">
     <label for="status_perkawinan" class="form-label"><b>Status Perkawinan</b></label>
     <select class="form-select" id="status_perkawinan" name="status_perkawinan" aria-label="Status Perkawinan">
+
         <option selected>Pilih Status Perkawinan</option>
         <option value="belum_kawin">Belum Kawin</option>
         <option value="sudah_kawin">Sudah Kawin</option>
@@ -49,7 +52,9 @@
 </div>
 <div class="mb-3">
     <label for="pekerjaan" class="form-label"><b>Pekerjaan</b></label>
+
     <select class="form-select" id="pekerjaan" name="pekerjaan" required onchange="checkOther()">
+
         <option value="" selected>Pilih Pekerjaan</option>
         <option value="PNS">PNS (Pegawai Negeri Sipil)</option>
         <option value="Wiraswasta">Wiraswasta</option>
@@ -80,3 +85,4 @@
     <input type="text" class="form-control" id="tempat_tinggal" name="tempat_tinggal" required>
 </div>
 <br>
+

@@ -2,7 +2,6 @@
         $detail_surat = session('detail_surat');
         $ttd = session('ttd');
         $laporan = session('laporan');
-        // dd($ttd);
     @endphp
     <!DOCTYPE html>
     <html lang="id">
@@ -38,6 +37,7 @@
                             $tahun_sekarang = date('Y');
                             echo $tahun_sekarang;
                         @endphp.
+
                     </p>
                 </div>
                 <p class="isi-surat1">Kami Kepala Desa Pesudukuh Kecamatan Bagor Kabupaten Nganjuk menerangkan dengan
@@ -135,6 +135,7 @@
                     @else
                         {{ \Carbon\Carbon::now()->locale('id')->translatedFormat('d F Y') }}
                     @endif
+
                     (tiga bulan sejak dikeluarkan)
                 </p>
                 <div class="tanda-tangan">
@@ -147,6 +148,7 @@
                                 @else
                                     {{ \Carbon\Carbon::now()->locale('id')->translatedFormat('d F Y') }}
                                 @endif
+
                             </td>
                         </tr>
                         <tr>

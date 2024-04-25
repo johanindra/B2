@@ -30,25 +30,26 @@
                 <div class="modal-body">
 
 
-                    <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+                    {{-- <form action="/upload/proses" method="POST" enctype="multipart/form-data"> --}}
+                        <form id="inputForm" action="{{ route('uploadKabar') }}" method="POST">
                         {{ csrf_field() }}
 
                         <div class="form-group">
                             <label for="judul"><b>Judul</b></label>
-                            <input type="text" class="form-control" id="judul" placeholder="Masukkan judul agenda">
+                            <input type="text" class="form-control" id="judul" placeholder="Masukkan judul agenda" name="judul">
                         </div>
                         <div class="form-group">
                             <label for="tanggal"><b>Tanggal</b></label>
-                            <input type="date" class="form-control" id="tanggal">
+                            <input type="date" class="form-control" id="tanggal" name="tanggal">
                         </div>
                         <div class="form-group">
-                            <label for="tanggal_selesai"><b>Foto</b></label>
-                            <input type="file" name="file">
+                            <label for="tanggal_selesai"><b>Foto</b></label><br>
+                            <input type="file" name="foto">
                         </div>
 
                         <div class="form-group">
                             <label for="tanggal_selesai"><b>Deskripsi</b></label>
-                            <textarea class="form-control" name="keterangan"></textarea>
+                            <textarea class="form-control" name="isi" placeholder="Masukkan keterangan"></textarea>
                         </div>
                         <div class="text-right">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

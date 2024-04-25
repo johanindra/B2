@@ -1,4 +1,6 @@
+
 <form method="post" id="form">
+
     @csrf
     <div class="mb-3">
         <label for="jenisSurat" class="form-label"><b>Jenis Surat</b></label>
@@ -8,6 +10,7 @@
             <option value="sktm">SKTM</option>
             <option value="surat_ijin">Surat Izin</option>
             <option value="surat_kematian">Surat Kematian</option>
+
             <option value="surat_penghasilan">Keterangan Penghasilan</option>
         </select>
     </div>
@@ -64,7 +67,7 @@
                 default:
                     // Kosongkan formContent jika tidak ada pilihan yang dipilih
                     break;
-            }
+                    }
             // Tambahkan formContent ke dalam fieldsContainer
             fieldsContainer.innerHTML = formContent;
 
@@ -76,7 +79,6 @@
             }
         }
     </script>
-
     {{-- <div class="mb-3 text-right" id="submitBtn">
         <button type="submit" class="btn btn-primary">Buat</button>
         <button type="reset" class="btn btn-danger" onclick="clearForm()">Hapus</button>
