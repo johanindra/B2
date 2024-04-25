@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class surat_mati extends Model
+class detail_surat extends Model
 {
     use HasFactory;
-
-    protected $table = 'surat_kematian';
 }

@@ -1,10 +1,10 @@
 <div class="mb-3">
-    <label for="nama_kematian" class="form-label"><b>Nama</b></label>
-    <input type="text" class="form-control" id="nama_kematian" name="nama_kematian" required>
+    <label for="nama" class="form-label"><b>Nama</b></label>
+    <input type="text" class="form-control" id="nama" name="nama" required>
 </div>
 <div class="mb-3">
-    <label for="jenisKelamin" class="form-label"><b>Jenis Kelamin</b></label>
-    <select class="form-select" id="jenisKelamin" aria-label="Jenis Kelamin" name="jenisKelamin">
+    <label for="jenis_kelamin" class="form-label"><b>Jenis Kelamin</b></label>
+    <select class="form-select" id="jenis_kelamin" aria-label="Jenis Kelamin" name="jenis_kelamin">
         <option selected>Pilih Jenis Kelamin</option>
         <option value="laki-laki">Laki-laki</option>
         <option value="perempuan">Perempuan</option>
@@ -15,6 +15,6 @@
     <input type="text" class="form-control" id="alamat" name="alamat" required>
 </div>
 <div class="mb-3">
-    <label for="tanggal" class="form-label"><b>Tanggal Kematian</b></label>
-    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+    <label for="tanggal_kematian" class="form-label"><b>Tanggal Kematian</b></label>
+    <input type="date" class="form-control" id="tanggal_kematian" name="tanggal_kematian" required>
 </div>

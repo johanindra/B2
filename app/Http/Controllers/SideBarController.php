@@ -108,7 +108,7 @@ class SideBarController extends Controller
                 $detail_surat = surat_ijin::where('no_pengajuan', $no_pengajuan)->first();
                 break;
             case 'surat_kematian':
-                $detail_surat = surat_kematian::where('no_pengajuan', $no_pengajuan)->first();
+                $detail_surat = surat_mati::where('no_pengajuan', $no_pengajuan)->first();
                 break;
             case 'surat_penghasilan':
                 $detail_surat = surat_penghasilan::where('no_pengajuan', $no_pengajuan)->first();

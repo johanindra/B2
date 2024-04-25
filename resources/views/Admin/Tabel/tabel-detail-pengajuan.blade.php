@@ -38,7 +38,7 @@
         <div class="mb-3">
             <label for="mengetahui" class="form-label"><b>Mengetahui :</b></label>
             <select class="form-select" id="mengetahui" name="mengetahui" aria-label="mengetahui ttd" onchange="showFields()">
-                <option value="" selected disabled>Pilih yang bertanda tangan</option>
+                <option value="" selected >Pilih yang bertanda tangan</option>
                 <option value="kepaladesa">Kepala Desa</option>
                 <option value="carik">Sekretaris Desa</option>
             </select>

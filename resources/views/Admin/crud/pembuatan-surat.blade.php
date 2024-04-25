@@ -7,7 +7,7 @@
             <option value="skck">Pengantar SKCK</option>
             <option value="sktm">SKTM</option>
             <option value="surat_ijin">Surat Izin</option>
-            <option value="surat_mati">Surat Kematian</option>
+            <option value="surat_kematian">Surat Kematian</option>
             <option value="surat_penghasilan">Keterangan Penghasilan</option>
         </select>
     </div>
@@ -47,7 +47,7 @@
                         </form>
                     `;
                     break;
-                case "surat_mati":
+                case "surat_kematian":
                     formContent = `
                         <form id="suratKematianForm">
                             @include('Admin.pembuatan-surat.surat-mati')
@@ -82,11 +82,11 @@
         <button type="reset" class="btn btn-danger" onclick="clearForm()">Hapus</button>
     </div> --}}
     <div class="mb-3 " id="ttdcontainer" style="display: none;">
-        <label for="mengetahuittd" class="form-label"><b>Mengetahui</b></label>
-        <select class="form-select" id="mengetahuittd" aria-label="Yang bertanda tangan">
+        <label for="mengetahui" class="form-label"><b>Mengetahui</b></label>
+        <select class="form-select" id="mengetahui" name="mengetahui" aria-label="Yang bertanda tangan">
             <option selected>Yang bertanda tangan</option>
-            <option value="kades">Kepala Desa</option>
-            <option value="sekertaris">Sekertaruat Desa</option>
+            <option value="kepaladesa">Kepala Desa</option>
+            <option value="carik">Sekertaris Desa</option>
         </select>
 
         <div class="mt-3">
