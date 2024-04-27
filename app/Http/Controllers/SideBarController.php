@@ -90,53 +90,50 @@ class SideBarController extends Controller
     }
 
     public function detailpengajuan(Request $request)
-    {
-        // Ambil ID pengajuan dan kode surat dari data tersembunyi dalam formulir
-        $id_pengajuan = $request->input('id');
-        $kode_surat = $request->input('kode_surat');
+{
+    // Ambil ID pengajuan dan kode surat dari data tersembunyi dalam formulir
+    $id_pengajuan = $request->input('id');
+    $kode_surat = $request->input('kode_surat');
 
-        // Temukan pengajuan berdasarkan ID
-        $pengajuan = pengajuansurat::find($id_pengajuan);
+    // Temukan pengajuan berdasarkan ID
+    $pengajuan = pengajuansurat::find($id_pengajuan);
 
-        if ($pengajuan) {
-            // Ambil no_pengajuan setelah menemukan pengajuan
-            $no_pengajuan = $pengajuan->no_pengajuan;
+    if ($pengajuan) {
+        // Ambil no_pengajuan setelah menemukan pengajuan
+        $no_pengajuan = $pengajuan->no_pengajuan;
 
-            // Mengambil data surat berdasarkan kode surat dan no_pengajuan
-            switch ($kode_surat) {
-                case 'skck':
-                    $detail_surat = skck::where('no_pengajuan', $no_pengajuan)->first();
-                    break;
-                case 'sktm':
-                    $detail_surat = sktm::where('no_pengajuan', $no_pengajuan)->first();
-                    break;
-                case 'surat_ijin':
-                    $detail_surat = surat_ijin::where('no_pengajuan', $no_pengajuan)->first();
-                    break;
-                case 'surat_kematian':
-                    $detail_surat = surat_mati::where('no_pengajuan', $no_pengajuan)->first();
-                    break;
-                case 'surat_penghasilan':
-                    $detail_surat = surat_penghasilan::where('no_pengajuan', $no_pengajuan)->first();
-                    break;
-                    // Tambahkan case lain jika ada jenis surat lainnya
-                default:
-                    $detail_surat = null;
-                    break;
-            }
+        // Mengambil data surat berdasarkan kode surat dan no_pengajuan
+        switch ($kode_surat) {
+            case 'skck':
+                $detail_surat = skck::where('no_pengajuan', $no_pengajuan)->first();
+                break;
+            case 'sktm':
+                $detail_surat = sktm::where('no_pengajuan', $no_pengajuan)->first();
+                break;
+            case 'surat_ijin':
+                $detail_surat = surat_ijin::where('no_pengajuan', $no_pengajuan)->first();
+                break;
+            case 'surat_kematian':
+                $detail_surat = surat_mati::where('no_pengajuan', $no_pengajuan)->first();
+                break;
+            case 'surat_penghasilan':
+                $detail_surat = surat_penghasilan::where('no_pengajuan', $no_pengajuan)->first();
+                break;
+            // Tambahkan case lain jika ada jenis surat lainnya
+            default:
+                $detail_surat = null;
+                break;
+        }
 
-            if ($detail_surat) {
-                // Jika ditemukan, arahkan ke halaman detail surat dengan data surat yang ditemukan
-                return view('Admin.detail-pengajuan', compact('detail_surat'));
-            } else {
-                // Jika tidak ditemukan, arahkan kembali ke halaman sebelumnya atau berikan respons yang sesuai
-                return back()->with('error', 'Detail surat not found');
-            }
+        if ($detail_surat) {
+            // Jika ditemukan, arahkan ke halaman detail surat dengan data surat yang ditemukan
+            return view('Admin.detail-pengajuan', compact('detail_surat'));
         } else {
             // Jika pengajuan tidak ditemukan, arahkan kembali ke halaman sebelumnya atau berikan respons yang sesuai
             return back()->with('error', 'Pengajuan not found');
         }
     }
+}
 
     public function detaillaporan(Request $request)
     {

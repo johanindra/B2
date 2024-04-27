@@ -43,6 +43,7 @@ class CekSuratController extends Controller {
 
         $ttd = ttd::find( $request->input( 'mengetahui' ) );
 
+
         switch ( $kode_surat ) {
             case 'skck':
             return redirect()->route( 'skck' )->with( compact( 'detail_surat', 'ttd', 'laporan' ) );
@@ -50,7 +51,6 @@ class CekSuratController extends Controller {
             case 'surat_ijin':
             return redirect()->route( 'surat-ijin' )->with( compact( 'detail_surat', 'ttd', 'laporan' ) );
             break;
-            case 'surat_mati':
             return redirect()->route( 'surat-mati' )->with( compact( 'detail_surat', 'ttd', 'laporan' ) );
             break;
             case 'surat_penghasilan':
