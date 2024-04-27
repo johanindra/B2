@@ -16,36 +16,14 @@
         <h5 class="card-title">Agenda Desa | Kabar Desa</span></h5>
 
         <div class="news">
+            @foreach($kabar_desa as $g)
             <div class="post-item clearfix">
-                <img src="{{ asset('assets/img/news-1.jpg') }}" alt="">
-                <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-            </div>
-
-            <div class="post-item clearfix">
-                <img src="{{ asset('assets/img/news-2.jpg') }}" alt="">
-                <h4><a href="#">Quidem autem et impedit</a></h4>
-                <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
-            </div>
-
-            <div class="post-item clearfix">
-                <img src="{{ asset('assets/img/news-3.jpg') }}" alt="">
-                <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
-            </div>
-
-            <div class="post-item clearfix">
-                <img src="{{ asset('assets/img/news-4.jpg') }}" alt="">
-                <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
-            </div>
-
-            <div class="post-item clearfix">
-                <img src="{{ asset('assets/img/news-5.jpg') }}" alt="">
-                <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
-            </div>
-
+                {{-- <img src="150px" src="{{ url('/data_foto_berita/'.$g->foto) }}" alt=""> --}}
+                <img width="150px" src="{{ url('/data_foto_berita/'.$g->foto) }}">
+                <h4><a href="{{ route('detail.kabar', ['id' => $g->id_berita]) }}">{{$g->judul}}</a></h4>
+                <p>{{ Str::limit($g->isi, 100) }}</p>
+            </div><br>
+            @endforeach
         </div><!-- End sidebar recent posts-->
 
     </div>

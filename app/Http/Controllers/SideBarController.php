@@ -27,6 +27,9 @@ class SideBarController extends Controller
         $chart = surat::getDataPengajuanSurat();
         $selesaibulanini = laporan::getDataSuratSelesaiBulanIni();
         $tabel = pengajuansurat::getDataMingguIni();
+        $kabar_desa = uploadberita::get();
+
+        $jumlahkabardesa = uploadberita::count();
 
         $chart->transform(function ($item) {
             $item->tanggal = Carbon::parse($item->tanggal)->format('Y-m-d H:i:s');
@@ -40,7 +43,9 @@ class SideBarController extends Controller
             'dataMasuk' => $suratmasuk,
             'data' => $chart,
             'selesaibulanini' => $selesaibulanini,
-            'tabel' => $tabel
+            'tabel' => $tabel,
+            'jumlahkabardesa' => $jumlahkabardesa,
+            'kabar_desa' => $kabar_desa
         ]);
     }
     public function pengajuan()
