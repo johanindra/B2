@@ -27,6 +27,7 @@ class SideBarController extends Controller
         $chart = surat::getDataPengajuanSurat();
         $selesaibulanini = laporan::getDataSuratSelesaiBulanIni();
         $tabel = pengajuansurat::getDataMingguIni();
+
         $kabar_desa = uploadberita::get();
 
         $jumlahkabardesa = uploadberita::count();
@@ -44,8 +45,10 @@ class SideBarController extends Controller
             'data' => $chart,
             'selesaibulanini' => $selesaibulanini,
             'tabel' => $tabel,
+
             'jumlahkabardesa' => $jumlahkabardesa,
             'kabar_desa' => $kabar_desa
+
         ]);
     }
     public function pengajuan()
