@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\CekSuratController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\PembuatanSurat;
+use App\Http\Controllers\;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Route::get('dashboard', function () {
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('login', [HomeController::class, 'login'])->name('login');
 Route::get('agenda-detail', [HomeController::class, 'agenda'])->name('agenda-detail');
+Route::get('/visi-misi', [VisiMisiController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
