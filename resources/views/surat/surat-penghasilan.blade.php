@@ -32,7 +32,7 @@
         </div>
         <div class="isi-surat">
             <div class="nomer-surat">
-                <p>SURAT KETERANGAN PENGHASILANA</p>
+                <p>SURAT KETERANGAN jumlah_penghasilan</p>
                 <p>Nomor : 140 / .... / 411.501.03 /
                     @php
                     $tahun_sekarang = date('Y');
@@ -73,7 +73,7 @@
                     <td>Tempat Tgl.Lahir/Umur</td>
                     <td>:</td>
                     <td>
-                        {{$detail_surat->tempat_lahir}}, {{$detail_surat->tanggal}}
+                        {{$detail_surat->tempat_lahir}}, {{ \Carbon\Carbon::parse($detail_surat->tanggal)->locale('id')->translatedFormat('d F Y') }}
                     </td>
                 </tr>
                 <tr>
@@ -97,7 +97,7 @@
             <p class="isi-surat1">Adalah benar – benar penduduk Desa Pesudukuh Kecamatan Bagor Kabupaten Nganjuk.</p>
 
 
-            <p class="keterangan">Orang tersebut diatas berpenghasilan yaitu sekitar {{$detail_surat->jumlah_penghasilan}} perbulan. <br>
+            <p class="keterangan">Orang tersebut diatas berpenghasilan yaitu sekitar Rp.{{ number_format($detail_surat->jumlah_penghasilan)}} perbulan. 
                 Surat keterangan ini diberikan sebagai {{$detail_surat->kegunaan_surat}}
             </p>
             <p>Demikian surat keterangan ini dibuat dengan sebenarnya atas keterangan

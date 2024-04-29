@@ -129,11 +129,11 @@
             </table>
             <p class="keterangan">Sesuai dengan nama yang tertera diatas, surat keterangan / pengantar ini
                 digunakan untuk keperluan ijin tidak masuk kerja pada tanggal
-                @if (isset($detail_surat->tanggal))
-                    {{ \Carbon\Carbon::parse($detail_Surat->Tanggal)->locale('id')->translatedFormat('d F Y') }}
-                @else
-                    {{ \Carbon\Carbon::now()->locale('id')->translatedFormat('d F Y') }}
-                @endif .
+                @if ($laporan && isset($laporan[0]->tanggal))
+                        {{ \Carbon\Carbon::parse($laporan[0]->tanggal)->locale('id')->translatedFormat('d F Y') }}
+                    @else
+                        {{ \Carbon\Carbon::now()->locale('id')->translatedFormat('d F Y') }}
+                    @endif .
                 pada tempat kerja yang Bapak/Ibu pimpin karena
                 {{ $detail_surat->Alasan }}.
             </p>
