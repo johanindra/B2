@@ -14,10 +14,13 @@ class KabarDesa extends Model
 
     public static function getData()
     {
-        // Mengambil data dari tabel "berita"
         $data = self::all();
 
         return $data;
+    }
+
+    public static function getDataPerTahun(){
+        return self::whereYear('tanggal', now()->year)->get()->count();
     }
 
 }
