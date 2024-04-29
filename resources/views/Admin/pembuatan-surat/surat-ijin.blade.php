@@ -1,26 +1,30 @@
 <div class="mb-3">
     <label for="Nik" class="form-label"><b>NIK</b></label>
-    <input type="text" class="form-control" id="Nik" name="Nik" required>
+
+    <input type="text" class="form-control" id="Nik" required>
 </div>
 <div class="mb-3">
     <label for="Nama" class="form-label"><b>Nama Lengkap</b></label>
-    <input type="text" class="form-control" id="Nama" name="Nama" required>
+    <input type="text" class="form-control" id="Nama" required>
 </div>
 <div class="mb-3">
     <label for="Jenis_kelamin" class="form-label"><b>Jenis Kelamin</b></label>
-    <select class="form-select" id="Jenis_kelamin" name="Jenis_kelamin" aria-label="Jenis Kelamin">
+    <select class="form-select" id="Jenis_kelamin" aria-label="Jenis Kelamin">
+
         <option selected>Pilih Jenis Kelamin</option>
         <option value="laki-laki">Laki-laki</option>
         <option value="perempuan">Perempuan</option>
     </select>
 </div>
 <div class="mb-3">
-    <label for="Tempat_tanggal_lahir" class="form-label"><b>Tempat, Tanggal Lahir</b></label>
-    <input type="text" class="form-control" id="Tempat_tanggal_lahir" name="Tempat_tanggal_lahir" required>
+
+    <label for="Tempat_tanggal_lahir" class="form-label"><b>Tempat Lahir</b></label>
+    <input type="text" class="form-control" id="Tempat_tanggal_lahir" required>
 </div>
 {{-- <div class="mb-3">
     <label for="tanggalLahir" class="form-label"><b>Tanggal Lahir</b></label>
-    <input type="date" class="form-control" id="tanggalLahir" name="tanggalLahir" required>
+    <input type="date" class="form-control" id="tanggalLahir" required>
+
 </div> --}}
 <div class="mb-3">
     <label for="kewarganegaraan" class="form-label"><b>Kewarganegaraan</b></label>

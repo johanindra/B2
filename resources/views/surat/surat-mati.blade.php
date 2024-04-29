@@ -102,6 +102,7 @@
                 Kecamatan Bagor Kabupaten Nganjuk pada 
                 {{ \Carbon\Carbon::parse($detail_surat->tanggal)->locale('id')->translatedFormat('d F Y') }}
 
+
                 .</p>
             <p>Demikian surat keterangan ini dibuat dengan sebenarnya atas keterangan
 

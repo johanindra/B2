@@ -129,7 +129,9 @@
                                             <i class="bi bi-newspaper"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>{{$berita}}</h6>
+
+                                            <h6>{{ $jumlahkabardesa }}</h6>
+
                                             <span class="text-danger small pt-1 fw-bold">Tahun Ini</span>
                                         </div>
                                     </div>
