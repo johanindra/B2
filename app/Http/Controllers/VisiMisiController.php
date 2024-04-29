@@ -1,3 +1,4 @@
+<?php
 // app/Http/Controllers/VisiMisiController.php
 namespace App\Http\Controllers;
 
@@ -11,6 +12,6 @@ class VisiMisiController extends Controller
         $visi = VisiMisi::where('id', 'visi')->first();
         $misi = VisiMisi::where('id', 'misi')->first();
 
-        return view('visi-misi', compact('visi', 'misi'));
+        return view('services', compact('visi', 'misi'));
     }
 }

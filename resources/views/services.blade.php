@@ -1,5 +1,5 @@
 // resources/views/visi-misi.blade.php
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
 <!-- Services Section -->

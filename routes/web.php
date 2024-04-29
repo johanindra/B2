@@ -10,7 +10,9 @@ use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\CekSuratController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\PembuatanSurat;
-use App\Http\Controllers\;
+use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\TeamController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +31,11 @@ Route::get('dashboard', function () {
 
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('login', [HomeController::class, 'login'])->name('login');
+Route::get('visi-misi', [VisiMisiController::class, 'index'])->name('services');
+Route::get('/team', [TeamController::class, 'index'])->name('team');;
 Route::get('agenda-detail', [HomeController::class, 'agenda'])->name('agenda-detail');
-Route::get('/visi-misi', [VisiMisiController::class, 'index']);
+
+// Route::get('/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
 
 Route::get('/', function () {
     return view('welcome');
