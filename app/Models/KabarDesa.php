@@ -9,8 +9,10 @@ class KabarDesa extends Model
 {
     use HasFactory;
 
-    protected $table = "berita";
-    protected $primarykey = "id_berita";
+    protected $table = 'berita'; // Nama tabel
+    protected $primaryKey = 'id_berita'; // Primary key yang benar
+    public $incrementing = true; // Jika primary key auto-increment
+    protected $keyType = 'int'; // Tipe data dari primary key
 
     public static function getData()
     {

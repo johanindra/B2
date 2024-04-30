@@ -50,34 +50,40 @@
         <h3>Sambutan Kepala Desa Pesudukuh</h3>
         <p>
           Kami senang Anda sudah berkunjung, semoga melalui situs web ini kami dapat memberikan segala kemudahan dalam pengajuan surat - surat kepada pemerintah desa kami. Situs web ini merupakan salah satu wujud dari komitmen pemerintah desa, pada pentingnya digitalisasi dan efisienensi zaman.
-          <br><br>Romi Yumiani, Kepala Desa Pesudukuh
+          <br><br>{{ $kepalaDesa->nama }}, Kepala Desa Pesudukuh
         </p>
       </div>
 
       <div class="row">
         <div class="col-md-6">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-            <!-- Ganti icon pertama sesuai dengan ikon yang sesuai untuk Visi Desa -->
             <i class="bi bi-briefcase"></i>
             <h4><a href="#">Visi Desa Pesudukuh</a></h4>
-            <p>Terwujudnya Tata Kelola Pemerintahan Desa yang Baik dan Transparan Guna Mewujudkan Desa yang Bermarwah.</p>
+            <p>{{ $visi->isi }}</p>
           </div>
         </div>
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-            <!-- Ganti icon kedua sesuai dengan ikon yang sesuai untuk Misi Desa -->
             <i class="bi bi-card-checklist"></i>
             <h4><a href="#">Misi Desa Pesudukuh</a></h4>
-            <p>1.Meningkatkan Budaya Gotong Gorong
-              <br>2.keamanan dan ketertiban di lingkungan desa Teluk Dalam
-              <br>3.Meningkatkan Program kesehatan, kebersihan desa serta mengusahakan KIS atau BPJS untuk Seluruh Masyarakat melalui Program Pemerintah
-              <br>4.Mewujudkan dan meningkatkan serta meneruskan tata kelola Pemerintahan Desa yang baik
-              <br>5.Meningkatkan pelayanan yang maksimal kepada masyarakat Desa.
-            </p>
+            @php
+            // Memisahkan teks berdasarkan titik dan menghapus item yang tidak diperlukan
+            $misiItems = explode('.', $misi->isi);
+
+            // Menghapus item yang hanya angka atau kosong
+            $misiItems = array_unique(array_filter($misiItems, function($item) {
+            return !empty(trim($item)) && !is_numeric(trim($item));
+            }));
+            @endphp
+
+            <ol>
+              @foreach($misiItems as $item)
+              <li>{{ trim($item) }}</li>
+              @endforeach
+            </ol>
           </div>
         </div>
       </div>
-
     </div>
   </section>
   <!-- End Services Section -->
@@ -112,7 +118,7 @@
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                 <i class="bx bx-file-blank"></i>
                 <h4>Pengajuan Surat Izin</h4>
-                <p>Pengajuan Surat Izin Tidak Masuk Kerja/Sekolah</p>
+                <p>Pengajuan Surat Izin Tidak Masuk Kerja</p>
               </div>
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                 <i class="bx bx-file-blank"></i>
@@ -134,75 +140,53 @@
   <!-- ======= Counts Section ======= -->
   <section id="counts" class="counts">
     <div class="container" data-aos="fade-up">
-
-      <div class="row d-flex justify-content-center"> <!-- Change justify-content-between to justify-content-center -->
-
-        <div class="col-lg-2 col-md-4 mt-5 mt-md-0"> <!-- Adjusted column width -->
+      <div class="row">
+        <div class="col-lg-2 col-md-4">
           <div class="count-box">
             <i class="bi bi-file-earmark-text"></i>
-            <span id="skckCounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Pengajuan Pengantar SKCK</p>
+            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratSkck }}" data-purecounter-duration="1"></span>
+            <p>Surat Keterangan Catatan Kepolisian</p>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-4 mt-5 mt-md-0"> <!-- Adjusted column width -->
+        <div class="col-lg-2 col-md-4">
           <div class="count-box">
-            <i class="bi bi-file-earmark-text"></i>
-            <span id="sktmCounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Pengajuan SKTM<br><br></p>
+            <i class="bi bi-file-earmark-person-fill"></i>
+            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratSktm }}" data-purecounter-duration="1"></span>
+            <p>Surat Keterangan Tidak Mampu</p>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-4 mt-5 mt-md-0"> <!-- Adjusted column width -->
+        <div class="col-lg-2 col-md-4">
           <div class="count-box">
-            <i class="bi bi-file-earmark-text"></i>
-            <span id="izinCounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Pengajuan Surat Izin</p>
+            <i class="bi bi-file-earmark-bar-graph-fill"></i>
+            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratIzin }}" data-purecounter-duration="1"></span>
+            <p>Surat Izin Tidak Masuk Kerja</p>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-4 mt-5 mt-md-0"> <!-- Adjusted column width -->
+        <div class="col-lg-2 col-md-4">
           <div class="count-box">
-            <i class="bi bi-file-earmark-text"></i>
-            <span id="kematianCounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Pengajuan Surat Kematian</p>
+            <i class="bi bi-file-earmark-medical-fill"></i>
+            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratKematian }}" data-purecounter-duration="1"></span>
+            <p>Surat Keterangan Kematian</p>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-4 mt-5 mt-md-0"> <!-- Adjusted column width -->
+        <div class="col-lg-2 col-md-4">
           <div class="count-box">
-            <i class="bi bi-file-earmark-text"></i>
-            <span id="gajiCounter" data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Pengajuan Surat Keterangan Gaji</p>
+            <i class="bi bi-briefcase-fill"></i>
+            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratPenghasilan }}" data-purecounter-duration="1"></span>
+            <p>Surat Keterangan Penghasilan</p>
           </div>
         </div>
-
       </div>
-
     </div>
   </section><!-- End Counts Section -->
-
-  <script>
-    // Simulasi data dinamis
-    const skckCounter = 50; // Ganti dengan jumlah pengajuan SKCK yang sebenarnya
-    const sktmCounter = 30; // Ganti dengan jumlah pengajuan SKTM yang sebenarnya
-    const izinCounter = 20; // Ganti dengan jumlah pengajuan Surat Izin yang sebenarnya
-    const kematianCounter = 10; // Ganti dengan jumlah pengajuan Surat Keterangan Kematian yang sebenarnya
-    const gajiCounter = 5; // Ganti dengan jumlah pengajuan Surat Keterangan Gaji yang sebenarnya
-
-    // Update nilai counter
-    document.getElementById('skckCounter').setAttribute('data-purecounter-end', skckCounter);
-    document.getElementById('sktmCounter').setAttribute('data-purecounter-end', sktmCounter);
-    document.getElementById('izinCounter').setAttribute('data-purecounter-end', izinCounter);
-    document.getElementById('kematianCounter').setAttribute('data-purecounter-end', kematianCounter);
-    document.getElementById('gajiCounter').setAttribute('data-purecounter-end', gajiCounter);
-  </script>
-
 
   <!-- ======= Tabs Section ======= -->
   <section id="tabs" class="tabs">
     <div class="container" data-aos="fade-up">
-
       <ul class="nav nav-tabs row d-flex">
         <li class="nav-item col-3">
           <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
@@ -356,189 +340,57 @@
   <!-- ======= Agenda Desa Section ======= -->
   <section id="portfolio" class="portfolio section-bg">
     <div class="container" data-aos="fade-up">
-
       <div class="section-title">
         <h2>Agenda Desa</h2>
         <p>Berikut adalah agenda terkini dari Desa Pesudukuh untuk kepentingan bersama:</p>
       </div>
 
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
+        @foreach($agendaDesa as $agenda)
         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
           <div class="portfolio-wrap">
-            <img src="assets/img/agenda/agenda-1.jpg" class="img-fluid" alt="">
+            <img src="{{ asset('assets/img/agenda/' . $agenda->foto) }}" class="img-fluid" alt="Agenda {{ $agenda->judul }}">
             <div class="portfolio-info">
-              <h4>Pengumuman 1</h4>
-              <p>Pengumuman</p>
+              <h4>{{ $agenda->judul }}</h4>
+              <p>{{ $agenda->tanggal }}</p>
               <div class="portfolio-links">
-                <a href="assets/img/agenda/agenda-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pengumuman 1"><i class="bx bx-plus"></i></a>
-                <a href="{{ url('/agenda-detail') }}" title="Lihat Detail"><i class="bx bx-link"></i></a>
+                <a href="{{ asset('assets/img/agenda/' . $agenda->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $agenda->judul }}"><i class="bx bx-plus"></i></a>
+                <a href="{{ route('agenda.show', ['id_berita' => $agenda->id_berita]) }}" title="Lihat Detail">
+                  <i class="bx bx-link"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/agenda/agenda-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Pengumuman 2</h4>
-              <p>Pengumuman</p>
-              <div class="portfolio-links">
-                <a href="assets/img/agenda/agenda-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pengumuman 2"><i class="bx bx-plus"></i></a>
-                <a href="{{ url('/agenda-detail') }}" title="Lihat Detail"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/agenda/agenda-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Pengumuman 3</h4>
-              <p>Pengumuman</p>
-              <div class="portfolio-links">
-                <a href="assets/img/agenda/agenda-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pengumuman 3"><i class="bx bx-plus"></i></a>
-                <a href="{{ url('/agenda-detail') }}" title="Lihat Detail"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        @endforeach
       </div>
-
     </div>
   </section><!-- End Agenda Desa Section -->
 
   <!-- ======= Struktur Staff Desa Section ======= -->
-  <section id="team" class="team">
-    <div class="container" data-aos="fade-up">
+  <section id="team" class="team_member section-padding">
+    <div class="container">
       <div class="section-title">
         <h2>Struktur Pemerintahan Desa</h2>
-        <p>Tata letak struktur pemerintahan desa dalam bentuk pohon rantai.</p>
+        <p>Berikut adalah struktur pemerintahan desa kami.</p>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tree">
-            <ul>
-              <li>
-                <a href="#">
-                  <div class="container" data-aos="fade-up">
-                    <div class="row">
-                      Kepala Desa
-                    </div>
-                    <div class="row" style="margin-top: 20px;">
-                      Romi Yumiani
-                    </div>
-                  </div>
-                </a>
-                <ul>
-                  <li>
-                    <a href="#">
-                      <div class="container" data-aos="fade-up">
-                        <div class="row">
-                          Sekretaris Desa
-                        </div>
-                        <div class="row" style="margin-top: 20px;">
-                          Siti Zubaedah
-                        </div>
-                      </div>
-                    </a>
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <div class="container" data-aos="fade-up">
-                            <div class="row">
-                              Kepala<br>Urusan Keuangan
-                            </div>
-                            <div class="row" style="margin-top: 20px;">
-                              Cak Kabol
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div class="container" data-aos="fade-up">
-                            <div class="row">
-                              Kepala<br>Urusan Umum
-                            </div>
-                            <div class="row" style="margin-top: 20px;">
-                              Sukijan
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div class="container" data-aos="fade-up">
-                            <div class="row">
-                              Kepala<br>Urusan Perencanaan
-                            </div>
-                            <div class="row" style="margin-top: 20px;">
-                              Budi Sudarsono
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="container" data-aos="fade-up">
-                        <div class="row">
-                          Kepala<br>Seksi Pelayanan
-                        </div>
-                        <div class="row" style="margin-top: 20px;">
-                          Alex Subagyo
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="container" data-aos="fade-up">
-                        <div class="row">
-                          Kepala<br>Seksi Kesejahteraan
-                        </div>
-                        <div class="row" style="margin-top: 20px;">
-                          Robert Widodo
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="container" data-aos="fade-up">
-                        <div class="row">
-                          Kepala<br>Seksi Pemerintahan
-                        </div>
-                        <div class="row" style="margin-top: 20px;">
-                          Samsudin Jadab
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="container" data-aos="fade-up">
-                        <div class="row">
-                          Kepala Dusun
-                        </div>
-                        <div class="row" style="margin-top: 20px;">
-                          Sukiyem<br>Yanto<br>Pendik<br>Bambang
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+      <div class="row text-center">
+        @foreach($strukturDesa as $anggota)
+        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+          <div class="our-team">
+            <div class="team_img">
+              <img src="{{ asset('assets/img/team/team-1.jpg') }}" alt="Profil {{ $anggota->nama }}">
+            </div>
+            <div class="team-content">
+              <h3 class="title">{{ $anggota->nama }}</h3>
+              <span class="post">{{ $anggota->pangkat }}</span>
+            </div>
           </div>
+          <br>
         </div>
-      </div>
-    </div>
+        @endforeach
+      </div><!--- END ROW -->
+    </div><!--- END CONTAINER -->
   </section>
 
 </main><!-- End #main -->

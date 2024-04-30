@@ -8,6 +8,7 @@ use App\Http\Controllers\UploadKabarController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\CekSuratController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\PembuatanSurat;
 use App\Http\Controllers\VisiMisiController;
@@ -29,17 +30,12 @@ Route::get('dashboard', function () {
     return view('Admin.login.dashboard');
 });
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('login', [HomeController::class, 'login'])->name('login');
-Route::get('visi-misi', [VisiMisiController::class, 'index'])->name('services');
-Route::get('/team', [TeamController::class, 'index'])->name('team');;
-Route::get('agenda-detail', [HomeController::class, 'agenda'])->name('agenda-detail');
-
-// Route::get('/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingPageController::class, 'index'])->name('home');
+Route::get('/agenda-detail/{id_berita}', [LandingPageController::class, 'show'])->name('agenda.show');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('dashboard', [SideBarController::class, 'dashboard'])->name('dashboard');
 Route::get('pengajuan', [SideBarController::class, 'pengajuan'])->name('pengajuan');
