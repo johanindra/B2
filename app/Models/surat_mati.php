@@ -10,4 +10,14 @@ class surat_mati extends Model
     use HasFactory;
 
     protected $table = 'surat_kematian';
+    
+    public $timestamps = false;
+
+    protected $fillable = [
+        'nama',
+        'alamat',
+        'jenis_kelamin',
+        'tanggal_kematian',
+        'username',
+    ];
 }
