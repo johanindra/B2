@@ -5,27 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\detail_surat;
 use App\Models\ttd;
+use App\Models\surat_mati;
 
 class PembuatanSurat extends Controller {
+
     public static function insert( Request $request ) {
-        $data = $request->except( '_token' );
+        $data = $request->except( '_token', 'jenisSurat' );
 
         $detail_surat = new detail_surat();
         foreach ( $data as $key => $value ) {
             $detail_surat->$key = $value;
         }
+        $detail_surat->username = 'admin';
         // dd( $data );
         $kode_surat = $request->input( 'jenisSurat' );
         $ttd = ttd::find( $request->input( 'mengetahui' ) );
         // dd( $ttd );
         switch ( $kode_surat ) {
             case 'skck':
+            
+                $detail_surat->save()::skck();
             return redirect()->route( 'skck' )->with( compact( 'detail_surat', 'ttd' ) );
             break;
             case 'surat_ijin':
                 return redirect()->route( 'surat-ijin' )->with( compact( 'detail_surat', 'ttd' ) );
                 break;
             case 'surat_kematian':
+                $surat_kematian =  new surat_mati($detail_surat->toArray());
+
+                
+                $surat_kematian->save();
             return redirect()->route( 'surat-mati' )->with( compact( 'detail_surat', 'ttd' ) );
             break;
             case 'surat_penghasilan':

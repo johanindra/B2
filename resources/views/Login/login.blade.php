@@ -9,7 +9,7 @@
         rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet'
-        href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css') }}">
+    href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style1.css') }}">
 
 </head>
@@ -42,7 +42,7 @@
                 <div class="col-sm-6 form">
 
                     <!-- Login Form -->
-                    <div class="login form-peice">
+                    <div class="login form-peice ">
                         <form class="login-form" action="{{ route('login') }}" method="post">
                             @csrf
 
@@ -68,11 +68,10 @@
                             </div>
 
                             @if (session('error'))
-                                <div class="text-danger text-center"
-                                    style="margin-top: 30px; padding-top: 10px; ">
+                                <div class="text-danger text-center" style="margin-top: 30px; padding-top: 10px; ">
                                     {{ session('error') }}
                                 </div>
-                                @endif
+                            @endif
                         </form>
                     </div>
 
@@ -82,18 +81,13 @@
 
                     <!-- Signup Form -->
                     <div class="signup form-peice switched">
-                        <form class="signup-form" action="#" method="post">
+                        <form class="" action="#" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" name="emailAdress" id="email" class="email">
                                 <span class="error"></span>
                             </div>
-
-                            <!-- <div class="form-group">
-                       <label for="phone">Phone Number - <small>Optional</small></label>
-                       <input type="text" name="phone" id="phone">
-                    </div> -->
 
                             <div class="form-group">
                                 <label for="password">Password</label>
@@ -102,10 +96,21 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="passwordCon">Konfirmasi Password</label>
-                                <input type="password" name="passwordCon" id="passwordCon" class="passConfirm">
+                                <label for="konfirmasi_passowrd">Konfirmasi Password</label>
+                                <input type="password" name="konfirmasi_passowrd" id="konfirmasi_passowrd"
+                                    class="passConfirm">
                                 <span class="error"></span>
                             </div>
+
+                            <div class="form-group">
+                                <label for="kode_otp" class="col-sm-2 col-form-label">Kode OTP</label>
+                                <div class="col-sm-10 d-flex">
+                                    <input type="password" name="kode_otp" id="kode_otp" class="form-control">
+                                    <button class="btn btn-primary btn-sm ms-2">Kirim Kode OTP</button>
+                                </div>
+                            </div>
+
+
 
                             <div class="CTA">
                                 <input type="submit" value="Konfirmasi" id="submit">
@@ -121,12 +126,12 @@
 
     </div>
     <!-- partial -->
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js') }}"></script>
+
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
 </body>
 
 </html>
-    

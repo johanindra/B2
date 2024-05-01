@@ -22,10 +22,7 @@ class User extends Authenticatable
      protected $primaryKey = "username";
      public $incrementing = false; //increment yang ada di sql
      public $timestamps = false ; 
-    protected $fillable = [
-        'username',
-        'password',
-    ];
+   
 
     /**
      * The attributes that should be hidden for serialization.
