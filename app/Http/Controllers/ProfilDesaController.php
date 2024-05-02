@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ttd;
 use App\Models\visimisi;
+use Illuminate\Database\QueryException;
 
 class ProfilDesaController extends Controller
 {
     public function edit($id)
 {
     // Temukan entitas Desa berdasarkan ID
-    $desa = Desa::findOrFail($id);
+    $desa = ttd::findOrFail($id);
 
     // Kirim nilai default ke formulir untuk diedit
     return view('edit-form', [

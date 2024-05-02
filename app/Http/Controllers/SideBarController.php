@@ -63,13 +63,56 @@ class SideBarController extends Controller
     {
         return view('Admin.pembuatan-surat'); //untuk menampilkan halaman pengajuan
     }
-    public function laporan()
+    public function laporan(Request $request)
     {
-        $tabellaporan = laporan::getDataTabel();
+        $months = [
+            '01' => 'Januari',
+            '02' => 'Februari',
+            '03' => 'Maret',
+            '04' => 'April',
+            '05' => 'Mei',
+            '06' => 'Juni',
+            '07' => 'Juli',
+            '08' => 'Agustus',
+            '09' => 'September',
+            '10' => 'Oktober',
+            '11' => 'November',
+            '12' => 'Desember'
+        ];
+
+        $current_year = date('Y');
+        $current_month = date('m');
+
+        $years = range($current_year, $current_year - 10);
+
+        $bulan = $request->input('filter_month', $current_month);
+        $tahun = $request->input('filter_year', date('Y'));
+
+        $tabellaporan = Laporan::getDataTabel($bulan, $tahun);
+
+        // Cek apakah ada data yang ditemukan
+        if ($tabellaporan->isEmpty()) {
+            // Buat pesan sesuai dengan bulan dan tahun yang dipilih
+            $bulan_tahun = $months[$bulan] . ' ' . $tahun;
+            $pesan = "Tidak ada laporan pada bulan {$bulan_tahun}";
+
+            return view('Admin.laporan', [
+                'pesan' => $pesan,
+                'months' => $months,
+                'years' => $years,
+                'current_month' => $current_month
+            ]);
+        }
+
+        // Jika ada data, tampilkan data normal
         return view('Admin.laporan', [
-            'tabel' => $tabellaporan
-        ]); //untuk menampilkan halaman pengajuan
+            'tabel' => $tabellaporan,
+            'months' => $months,
+            'years' => $years,
+            'current_month' => $current_month
+        ]);
     }
+
     public function profilDesa()
     {
         $nama = ttd::getNama();
@@ -93,50 +136,50 @@ class SideBarController extends Controller
     }
 
     public function detailpengajuan(Request $request)
-{
-    // Ambil ID pengajuan dan kode surat dari data tersembunyi dalam formulir
-    $id_pengajuan = $request->input('id');
-    $kode_surat = $request->input('kode_surat');
+    {
+        // Ambil ID pengajuan dan kode surat dari data tersembunyi dalam formulir
+        $id_pengajuan = $request->input('id');
+        $kode_surat = $request->input('kode_surat');
 
-    // Temukan pengajuan berdasarkan ID
-    $pengajuan = pengajuansurat::find($id_pengajuan);
+        // Temukan pengajuan berdasarkan ID
+        $pengajuan = pengajuansurat::find($id_pengajuan);
 
-    if ($pengajuan) {
-        // Ambil no_pengajuan setelah menemukan pengajuan
-        $no_pengajuan = $pengajuan->no_pengajuan;
+        if ($pengajuan) {
+            // Ambil no_pengajuan setelah menemukan pengajuan
+            $no_pengajuan = $pengajuan->no_pengajuan;
 
-        // Mengambil data surat berdasarkan kode surat dan no_pengajuan
-        switch ($kode_surat) {
-            case 'skck':
-                $detail_surat = skck::where('no_pengajuan', $no_pengajuan)->first();
-                break;
-            case 'sktm':
-                $detail_surat = sktm::where('no_pengajuan', $no_pengajuan)->first();
-                break;
-            case 'surat_ijin':
-                $detail_surat = surat_ijin::where('no_pengajuan', $no_pengajuan)->first();
-                break;
-            case 'surat_kematian':
-                $detail_surat = surat_mati::where('no_pengajuan', $no_pengajuan)->first();
-                break;
-            case 'surat_penghasilan':
-                $detail_surat = surat_penghasilan::where('no_pengajuan', $no_pengajuan)->first();
-                break;
-            // Tambahkan case lain jika ada jenis surat lainnya
-            default:
-                $detail_surat = null;
-                break;
-        }
+            // Mengambil data surat berdasarkan kode surat dan no_pengajuan
+            switch ($kode_surat) {
+                case 'skck':
+                    $detail_surat = skck::where('no_pengajuan', $no_pengajuan)->first();
+                    break;
+                case 'sktm':
+                    $detail_surat = sktm::where('no_pengajuan', $no_pengajuan)->first();
+                    break;
+                case 'surat_ijin':
+                    $detail_surat = surat_ijin::where('no_pengajuan', $no_pengajuan)->first();
+                    break;
+                case 'surat_kematian':
+                    $detail_surat = surat_mati::where('no_pengajuan', $no_pengajuan)->first();
+                    break;
+                case 'surat_penghasilan':
+                    $detail_surat = surat_penghasilan::where('no_pengajuan', $no_pengajuan)->first();
+                    break;
+                    // Tambahkan case lain jika ada jenis surat lainnya
+                default:
+                    $detail_surat = null;
+                    break;
+            }
 
-        if ($detail_surat) {
-            // Jika ditemukan, arahkan ke halaman detail surat dengan data surat yang ditemukan
-            return view('Admin.detail-pengajuan', compact('detail_surat'));
-        } else {
-            // Jika pengajuan tidak ditemukan, arahkan kembali ke halaman sebelumnya atau berikan respons yang sesuai
-            return back()->with('error', 'Pengajuan not found');
+            if ($detail_surat) {
+                // Jika ditemukan, arahkan ke halaman detail surat dengan data surat yang ditemukan
+                return view('Admin.detail-pengajuan', compact('detail_surat'));
+            } else {
+                // Jika pengajuan tidak ditemukan, arahkan kembali ke halaman sebelumnya atau berikan respons yang sesuai
+                return back()->with('error', 'Pengajuan not found');
+            }
         }
     }
-}
 
     public function detaillaporan(Request $request)
     {
@@ -194,5 +237,4 @@ class SideBarController extends Controller
         }
         return view('Admin.detail-kabar', compact('kabar_desa'));
     }
-
 }
