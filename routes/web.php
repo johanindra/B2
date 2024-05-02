@@ -38,6 +38,7 @@ Route::get('dashboard', [SideBarController::class, 'dashboard'])->name('dashboar
 Route::get('pengajuan', [SideBarController::class, 'pengajuan'])->name('pengajuan');
 Route::get('pembuatan-surat', [SideBarController::class, 'pembuatan'])->name('pembuatan-surat');
 Route::get('laporan', [SideBarController::class, 'laporan'])->name('laporan');
+Route::post('laporan', [SideBarController::class, 'laporan'])->name('filter.laporan');
 Route::get('profil-desa', [SideBarController::class, 'profilDesa'])->name('profil-desa');
 Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('kabar-desa');
 Route::get('/home', [SideBarController::class, 'keluar'])->name('home');

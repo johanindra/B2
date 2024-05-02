@@ -11,6 +11,7 @@ use App\Models\surat_ijin;
 use App\Models\surat_mati;
 use App\Models\surat_penghasilan;
 
+
 class PembuatanSurat extends Controller {
 
     public static function insert( Request $request ) {
@@ -30,6 +31,7 @@ class PembuatanSurat extends Controller {
                 $surat = new skck($detail_surat->toArray());
                 $surat->save();
                 return redirect()->route('skck')->with(compact('detail_surat', 'ttd'));
+
             case 'surat_ijin':
                 $surat = new surat_ijin($detail_surat->toArray());
                 $surat->save();

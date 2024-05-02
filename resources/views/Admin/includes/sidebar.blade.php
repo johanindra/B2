@@ -55,11 +55,36 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
-            <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a class="nav-link" href="#" onclick="confirmLogout();">
                 <i class="bi bi-arrow-right"></i>
                 <span>keluar</span>
-            </a>
+            </a>            
         </li><!-- End Dashboard Nav -->
     </ul>
 
 </aside><!-- End Sidebar-->
+
+<!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+<!-- SweetAlert2 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmLogout() {
+        Swal.fire({
+            title: 'Konfirmasi?',
+            text: "Anda akan keluar dari sesi ini!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Keluar!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit form when confirmed
+                document.getElementById('logout-form').submit();
+            }
+        });
+    }
+</script>
