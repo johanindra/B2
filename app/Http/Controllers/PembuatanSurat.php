@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\detail_surat;
 use App\Models\ttd;
+use App\Models\skck;
+use App\Models\sktm;
+use App\Models\surat_ijin;
 use App\Models\surat_mati;
+use App\Models\surat_penghasilan;
 
 class PembuatanSurat extends Controller {
 
@@ -21,32 +25,31 @@ class PembuatanSurat extends Controller {
         $kode_surat = $request->input( 'jenisSurat' );
         $ttd = ttd::find( $request->input( 'mengetahui' ) );
         // dd( $ttd );
-        switch ( $kode_surat ) {
+        switch ($kode_surat) {
             case 'skck':
-            
-                $detail_surat->save()::skck();
-            return redirect()->route( 'skck' )->with( compact( 'detail_surat', 'ttd' ) );
-            break;
+                $surat = new skck($detail_surat->toArray());
+                $surat->save();
+                return redirect()->route('skck')->with(compact('detail_surat', 'ttd'));
             case 'surat_ijin':
-                return redirect()->route( 'surat-ijin' )->with( compact( 'detail_surat', 'ttd' ) );
-                break;
+                $surat = new surat_ijin($detail_surat->toArray());
+                $surat->save();
+                return redirect()->route('surat-ijin')->with(compact('detail_surat', 'ttd'));
             case 'surat_kematian':
-                $surat_kematian =  new surat_mati($detail_surat->toArray());
-
-                
-                $surat_kematian->save();
-            return redirect()->route( 'surat-mati' )->with( compact( 'detail_surat', 'ttd' ) );
-            break;
+                $surat = new surat_kematian($detail_surat->toArray());
+                $surat->save();
+                return redirect()->route('surat-mati')->with(compact('detail_surat', 'ttd'));
             case 'surat_penghasilan':
-            return redirect()->route( 'surat-penghasilan' )->with( compact( 'detail_surat', 'ttd' ) );
-            break;
+                $surat = new surat_penghasilan($detail_surat->toArray());
+                $surat->save();
+                return redirect()->route('surat-penghasilan')->with(compact('detail_surat', 'ttd'));
             case 'sktm':
-            return redirect()->route( 'sktm' )->with( compact( 'detail_surat', 'ttd' ) );
-            break;
+                $surat = new sktm($detail_surat->toArray());
+                $surat->save();
+                return redirect()->route('sktm')->with(compact('detail_surat', 'ttd'));
             default:
-            return redirect()->abort( 404 );
-            break;
+                return redirect()->abort(404);
         }
+        
     }
 
     public static function preview( Request $request ) {
