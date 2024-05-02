@@ -380,7 +380,7 @@
         <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
           <div class="our-team">
             <div class="team_img">
-              <img src="{{ asset('assets/img/team/team-1.jpg') }}" alt="Profil {{ $anggota->nama }}">
+              <img src="{{ url('/data_perangkat/' . $anggota->foto_profil) }}" alt="Profil {{ $anggota->nama }}">
             </div>
             <div class="team-content">
               <h3 class="title">{{ $anggota->nama }}</h3>

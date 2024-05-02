@@ -30,7 +30,9 @@ class LandingPageController extends Controller
         $agendaDesa = KabarDesa::orderBy('created', 'desc')->get();
 
         // Section keempat: Struktur Pemerintahan Desa
-        $strukturDesa = Ttd::all(); // Atau pilih dengan kriteria tertentu
+        $strukturDesa = Ttd::orderByRaw(
+            "FIELD(id, 'kepaladesa', 'bendahara', 'carik', 'kasikesejahteraan', 'kasipelayanan', 'kasipemerintahan', 'kaurperencanaan', 'kaurumum')"
+        )->get();
 
         return view('home', compact('kepalaDesa', 'visi', 'misi', 'suratSkck', 'suratSktm', 'suratIzin', 'suratKematian', 'suratPenghasilan', 'agendaDesa', 'strukturDesa'));
     }
