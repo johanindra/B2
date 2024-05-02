@@ -35,7 +35,7 @@ class PembuatanSurat extends Controller {
                 $surat->save();
                 return redirect()->route('surat-ijin')->with(compact('detail_surat', 'ttd'));
             case 'surat_kematian':
-                $surat = new surat_kematian($detail_surat->toArray());
+                $surat = new surat_mati($detail_surat->toArray());
                 $surat->save();
                 return redirect()->route('surat-mati')->with(compact('detail_surat', 'ttd'));
             case 'surat_penghasilan':
