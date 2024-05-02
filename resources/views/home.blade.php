@@ -58,14 +58,14 @@
         <div class="col-md-6">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
             <i class="bi bi-briefcase"></i>
-            <h4><a href="#">Visi Desa Pesudukuh</a></h4>
+            <h4>Visi Desa Pesudukuh</h4>
             <p>{{ $visi->isi }}</p>
           </div>
         </div>
         <div class="col-md-6 mt-4 mt-md-0">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
             <i class="bi bi-card-checklist"></i>
-            <h4><a href="#">Misi Desa Pesudukuh</a></h4>
+            <h4>Misi Desa Pesudukuh</h4>
             @php
             // Memisahkan teks berdasarkan titik dan menghapus item yang tidak diperlukan
             $misiItems = explode('.', $misi->isi);
@@ -137,11 +137,12 @@
     </div>
   </section><!-- End About Section -->
 
-  <!-- ======= Counts Section ======= -->
+  <!-- Counts Section -->
   <section id="counts" class="counts">
     <div class="container" data-aos="fade-up">
-      <div class="row">
-        <div class="col-lg-2 col-md-4">
+      <!-- Memusatkan baris dan kolom -->
+      <div class="row justify-content-center">
+        <div class="col-lg-2 col-md-4 col-12"> <!-- col-12 memastikan kolom satu-satu pada layar kecil -->
           <div class="count-box">
             <i class="bi bi-file-earmark-text"></i>
             <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratSkck }}" data-purecounter-duration="1"></span>
@@ -149,7 +150,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-4">
+        <div class="col-lg-2 col-md-4 col-12"> <!-- col-12 untuk layar kecil -->
           <div class="count-box">
             <i class="bi bi-file-earmark-person-fill"></i>
             <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratSktm }}" data-purecounter-duration="1"></span>
@@ -157,7 +158,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-4">
+        <div class="col-lg-2 col-md-4 col-12">
           <div class="count-box">
             <i class="bi bi-file-earmark-bar-graph-fill"></i>
             <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratIzin }}" data-purecounter-duration="1"></span>
@@ -165,7 +166,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-4">
+        <div class="col-lg-2 col-md-4 col-12">
           <div class="count-box">
             <i class="bi bi-file-earmark-medical-fill"></i>
             <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratKematian }}" data-purecounter-duration="1"></span>
@@ -173,7 +174,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-4">
+        <div class="col-lg-2 col-md-4 col-12">
           <div class="count-box">
             <i class="bi bi-briefcase-fill"></i>
             <span class="purecounter" data-purecounter-start="0" data-purecounter-end="{{ $suratPenghasilan }}" data-purecounter-duration="1"></span>
@@ -182,7 +183,7 @@
         </div>
       </div>
     </div>
-  </section><!-- End Counts Section -->
+  </section>
 
   <!-- ======= Tabs Section ======= -->
   <section id="tabs" class="tabs">
@@ -349,12 +350,12 @@
         @foreach($agendaDesa as $agenda)
         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
           <div class="portfolio-wrap">
-            <img src="{{ asset('assets/img/agenda/' . $agenda->foto) }}" class="img-fluid" alt="Agenda {{ $agenda->judul }}">
+            <img src="{{ url('/data_foto_berita/' . $agenda->foto) }}" class="img-fluid" alt="Agenda {{ $agenda->judul }}">
             <div class="portfolio-info">
               <h4>{{ $agenda->judul }}</h4>
               <p>{{ $agenda->tanggal }}</p>
               <div class="portfolio-links">
-                <a href="{{ asset('assets/img/agenda/' . $agenda->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $agenda->judul }}"><i class="bx bx-plus"></i></a>
+                <a href="{{ url('/data_foto_berita/' . $agenda->foto) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ $agenda->judul }}"><i class="bx bx-plus"></i></a>
                 <a href="{{ route('agenda.show', ['id_berita' => $agenda->id_berita]) }}" title="Lihat Detail">
                   <i class="bx bx-link"></i>
                 </a>
