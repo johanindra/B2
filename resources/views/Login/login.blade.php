@@ -97,7 +97,7 @@
 
                             <div class="form-group">
                                 <label for="konfirmasi_passowrd">Konfirmasi Password</label>
-                                <input type="password" name="konfirmasi_passowrd" id="konfirmasi_passowrd"
+                                <input type="password" name="konfirmasi_passowrd" id="konfirmasi_passoword"
                                     class="passConfirm">
                                 <span class="error"></span>
                             </div>
@@ -126,9 +126,8 @@
 
     </div>
     <!-- partial -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')}}"></script>
 
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
