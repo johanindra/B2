@@ -12,7 +12,7 @@
                     @foreach ($months as $month_number => $month_name)
                         <option value="{{ $month_number }}" {{ $month_number == $current_month ? 'selected' : '' }}>{{ $month_name }}</option>
                     @endforeach
-                </select>              
+                </select>
 
                 <label for="filter_year">Pilih Tahun:</label>
                 <select name="filter_year" id="filter_year" class="form-control mr-2">

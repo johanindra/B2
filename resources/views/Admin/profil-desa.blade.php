@@ -15,7 +15,9 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <!-- <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet"> -->
@@ -66,24 +68,49 @@
         <section class="section profile">
             <div class="row">
                 {{-- <div class="col-xl-8"> --}}
-                    <div class="card">
-                        <div class="card-body pt-3">
-                            <!-- Bordered Tabs -->
-                            @include('Admin.includes.profilDesa')
-                            <div class="tab-content pt-2">
-                                <!-- ini bagian profil desa -->
-                                @include('Admin.ProfilDesa.profildesa')
-                                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-                                    <!-- bagian perangkat desa -->
-                                    @include('Admin.ProfilDesa.perangkatdesa')
-                                </div>
-                                <div class="tab-pane fade pt-3" id="profile-settings">
-                                    @include('Admin.ProfilDesa.editdatadesa')
-                                </div>
-                                <div class="tab-pane fade pt-3 @if(session('activeTab') == 'profile-change-password') show active @endif" id="profile-change-password">
-                                    @include('Admin.ProfilDesa.ubahpassword')
-                                </div>
-                                {{-- <script>
+                <div class="card">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <!-- Tampilkan pesan sukses jika ada -->
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    <!-- Tampilkan pesan error jika ada -->
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+                    <div class="card-body pt-3">
+                        <!-- Bordered Tabs -->
+                        @include('Admin.includes.profilDesa')
+                        <div class="tab-content pt-2">
+                            <!-- ini bagian profil desa -->
+                            @include('Admin.ProfilDesa.profildesa')
+                            <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                                <!-- bagian perangkat desa -->
+                                @include('Admin.ProfilDesa.perangkatdesa')
+                            </div>
+                            <div class="tab-pane fade pt-3" id="profile-settings">
+                                @include('Admin.ProfilDesa.editdatadesa')
+                            </div>
+                            <div class="tab-pane fade pt-3 @if (session('activeTab') == 'profile-change-password') show active @endif"
+                                id="profile-change-password">
+                                @include('Admin.ProfilDesa.ubahpassword')
+                            </div>
+                            {{-- <script>
                                     document.addEventListener("DOMContentLoaded", function() {
                                         // Dapatkan tab yang harus aktif dari data yang dikirimkan dari controller
                                         var activeTab = "{{ session('activeTab') }}";
@@ -99,10 +126,10 @@
                                         }
                                     });
                                 </script> --}}
-                                
-                            </div><!-- End Bordered Tabs -->
-                        </div>
+
+                        </div><!-- End Bordered Tabs -->
                     </div>
+                </div>
                 {{-- </div> --}}
                 {{-- <div class="col-xl-4">
                     <!-- foto perangkat -->
@@ -114,12 +141,14 @@
     </main><!-- End #main -->
 
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
 
     <!-- tabel -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Memuat DataTables -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

@@ -6,16 +6,18 @@
         <div class="col ">
             <div class="text-center">
                 <h4>Visi</h4>
-                {{ $visimisi->where('id', 'visi')->first()->isi ?? '' }}
             </div>
+                <pre>{{ $visimisi->where('id', 'visi')->first()->isi ?? '' }}</pre>
+           
            
         </div>
 
         <div class="col">
             <div class="text-center">
                 <h4>Misi</h4>
-                {{ $visimisi->where('id', 'misi')->first()->isi ?? '' }}
             </div>
+                <pre>{{ $visimisi->where('id', 'misi')->first()->isi ?? '' }}</pre>
+            
            
         </div>
     </div>

@@ -70,7 +70,7 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 //porfil-desa
-route::post('ubahpassword', [AuthController::class, 'gantipassword'])->name('ubahpassword');
+route::post('ubahpassword', [ProfilDesaController::class, 'gantipassword'])->name('ubahpassword');
 route::post('updateperangkat',[ProfilDesaController::class, 'update'])->name('updateperangkat');
 Route::post('visi-misi', [ProfilDesaController::class, 'visimisi'])->name('visimisi');
 
