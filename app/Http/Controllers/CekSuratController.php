@@ -45,7 +45,7 @@ class CekSuratController extends Controller {
         $ttd = ttd::find( $request->input( 'mengetahui' ) );
         $ttd->print = true;
         if($simpan){
-            
+            laporan::updatestatus($no_pengajuan, $kode_surat);
         }
         // dd($ttd);
 
