@@ -11,6 +11,7 @@ class laporan extends Model
     use HasFactory;
 
     protected $table = 'laporan';
+    public $timestamps = false;
 
     public static function getDataStatusMasuk()
     {
@@ -56,5 +57,15 @@ class laporan extends Model
             ->where('pengajuan_surat.kode_surat', $kode_surat)
             ->select('laporan.tanggal as tanggal')
             ->get();
+    }
+
+    public static function updatestatus($no_pengajuan,$kode_surat){
+       return self::join('pengajuan_surat', 'laporan.id', '=', 'pengajuan_surat.id')
+    ->where('pengajuan_surat.kode_surat', $kode_surat)
+    ->where('pengajuan_surat.no_pengajuan', $no_pengajuan)
+    ->update([
+        'status' => 'Selesai',
+        'alasan' => 'Silahkan Ambil Surat di Kantor Desa Pesudukuh'
+    ]);
     }
 }

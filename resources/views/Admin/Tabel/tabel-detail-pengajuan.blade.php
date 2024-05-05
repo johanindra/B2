@@ -49,7 +49,8 @@
                 <input id="no_pengajuan" name="no_pengajuan" value="{{ $detail_surat->no_pengajuan}}" type="hidden">
                 <input id="kode_surat" name="kode_surat" value="{{ $detail_surat->kode_surat}}" type="hidden">
                 <button type="submit" name="print" class="btn btn-primary">Cetak</button>
-                <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button>
+                {{-- <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button> --}}
+                <button type="submit" formaction="{{route('ceksuratpreview')}}" formmethod="POST" formtarget="_blank" class="btn btn-warning">Preview</button>
                 <button type="button" class="btn btn-danger" onclick="showRejectReasonPrompt()">Tolak</button>
             </div>
     </form>

@@ -2,7 +2,7 @@
     $detail_surat = session('detail_surat');
     $ttd = session('ttd');
     $laporan = session('laporan');
-    // dd($detail_surat);
+    // dd($ttd);
 @endphp
 <!DOCTYPE html>
 <html lang="id">
@@ -12,6 +12,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surat Kematian</title>
     <link rel="stylesheet" href="{{ asset('assets/css/surat.css') }}">
+    <script>
+        function printPage() {
+            window.print();
+        }
+
+        window.onload = function() {
+            if ({{ $ttd->print ?? 'false' }}) {
+                printPage();
+            }
+        };
+    </script>
     <style>
         /* Gaya tambahan, jika diperlukan */
     </style>

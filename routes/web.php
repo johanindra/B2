@@ -75,7 +75,8 @@ route::post('updateperangkat',[ProfilDesaController::class, 'update'])->name('up
 Route::post('visi-misi', [ProfilDesaController::class, 'visimisi'])->name('visimisi');
 
 
-Route::post('cek-surat', [CekSuratController::class, 'cek'])->name('ceksurat');
+Route::post('cek-surat', [CekSuratController::class, 'print'])->name('ceksurat');
+Route::post('cek-surat/preview', [CekSuratController::class, 'preview'])->name('ceksuratpreview');
 
 Route::get('/skck', [SuratController::class, 'skck'])->name('skck');
 Route::get('/surat-ijin', [SuratController::class, 'suratIjin'])->name('surat-ijin');

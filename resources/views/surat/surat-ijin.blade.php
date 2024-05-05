@@ -11,6 +11,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SURAT IJIN</title>
     <link rel="stylesheet" href="{{ asset('assets/css/surat.css') }}">
+    <script>
+        function printPage() {
+            window.print();
+        }
+
+        window.onload = function() {
+            if ({{ $ttd->print ?? 'false' }}) {
+                printPage();
+            }
+        };
+    </script>
     <style>
         /* Gaya tambahan, jika diperlukan */
     </style>
