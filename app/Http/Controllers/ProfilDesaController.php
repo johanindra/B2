@@ -31,7 +31,6 @@ class ProfilDesaController extends Controller {
                 // Temukan entitas Desa berdasarkan pangkat
 
                 $desa = ttd::where( 'id', $pangkat )->first();
-                
                 // dd( $desa );
                 // Perbarui nama jika entitas ditemukan
                 if ( $desa ) {
