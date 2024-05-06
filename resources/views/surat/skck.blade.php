@@ -11,6 +11,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SKCK</title>
         <link rel="stylesheet" href="{{ asset('assets/css/surat.css') }}">
+        <script>
+            function printPage() {
+                window.print();
+            }
+
+            window.onload = function() {
+                if ({{ $ttd->print ?? 'false' }}) {
+                    printPage();
+                }
+            };
+        </script>
         <style>
             /* Gaya tambahan, jika diperlukan */
         </style>
@@ -128,7 +139,6 @@
                 <p class="keterangan">Sepanjang pengetahuan kami orang tersebut diatas selama bertempat tinggal di Desa
                     Pesudukuh, Kecamatan Bagor Kabupaten Nganjuk berkelakuan baik, tidak pernah tersangkut perkara
                     polisi.
-                </p>
                 <p>Surat keterangan ini berlaku sejak dikeluarkan sampai dengan Tanggal
                     @if ($laporan && isset($laporan[0]->tanggal))
                         {{ \Carbon\Carbon::parse($laporan[0]->tanggal)->locale('id')->translatedFormat('d F Y') }}

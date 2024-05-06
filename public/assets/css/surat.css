@@ -88,14 +88,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    line-height: 0.5;
+    /* line-height: 0.5; */
 }   
 
 td {
 /* vertical-align: bottom; */
 word-wrap: break-word;
 white-space: nowarp;
-line-height: 1;
+line-height: 0.7;
 }
 
 th, td {

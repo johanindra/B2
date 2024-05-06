@@ -70,12 +70,13 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 //porfil-desa
-route::post('ubahpassword', [AuthController::class, 'gantipassword'])->name('ubahpassword');
+route::post('ubahpassword', [ProfilDesaController::class, 'gantipassword'])->name('ubahpassword');
 route::post('updateperangkat',[ProfilDesaController::class, 'update'])->name('updateperangkat');
 Route::post('visi-misi', [ProfilDesaController::class, 'visimisi'])->name('visimisi');
 
 
-Route::post('cek-surat', [CekSuratController::class, 'cek'])->name('ceksurat');
+Route::post('cek-surat', [CekSuratController::class, 'print'])->name('ceksurat');
+Route::post('cek-surat/preview', [CekSuratController::class, 'preview'])->name('ceksuratpreview');
 
 Route::get('/skck', [SuratController::class, 'skck'])->name('skck');
 Route::get('/surat-ijin', [SuratController::class, 'suratIjin'])->name('surat-ijin');

@@ -88,6 +88,10 @@ class SideBarController extends Controller
         $bulan = $request->input('filter_month', $current_month);
         $tahun = $request->input('filter_year', date('Y'));
 
+        // Store the selected month and year in the session
+        session(['selected_month' => $bulan]);
+        session(['selected_year' => $tahun]);
+
         $tabellaporan = Laporan::getDataTabel($bulan, $tahun);
 
         // Cek apakah ada data yang ditemukan

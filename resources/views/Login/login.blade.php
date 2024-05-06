@@ -42,7 +42,7 @@
                 <div class="col-sm-6 form">
 
                     <!-- Login Form -->
-                    <div class="login form-peice ">
+                    <div class="login form-peice switched">
                         <form class="login-form" action="{{ route('login') }}" method="post">
                             @csrf
 
@@ -80,7 +80,7 @@
 
 
                     <!-- Signup Form -->
-                    <div class="signup form-peice switched">
+                    <div class="signup form-peice ">
                         <form class="" action="#" method="post">
                             @csrf
                             <div class="form-group">
@@ -97,7 +97,7 @@
 
                             <div class="form-group">
                                 <label for="konfirmasi_passowrd">Konfirmasi Password</label>
-                                <input type="password" name="konfirmasi_passowrd" id="konfirmasi_passowrd"
+                                <input type="password" name="konfirmasi_passowrd" id="konfirmasi_passoword"
                                     class="passConfirm">
                                 <span class="error"></span>
                             </div>
@@ -126,9 +126,8 @@
 
     </div>
     <!-- partial -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')}}"></script>
 
     <script src="{{ asset('assets/js/script.js') }}"></script>
 

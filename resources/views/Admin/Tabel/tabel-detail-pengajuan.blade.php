@@ -18,27 +18,29 @@
             @endif
         </table>
     </div>
-        
+
 
     <!-- foto kelengkapan -->
     <div class="mt-5">
         <h5 class="card-title">Foto Kelengkapan Persyaratan</h5>
         <button type="button " class="btn btn-secondary" data-toggle="modal" data-target="#modalFoto">
-            <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200" height="200" >
+            <img src="{{ $photo = $detail_surat->foto_ktp ?? $detail_surat->foto_kk }}" alt="Foto Persyaratan"
+                class="img-thumbnail" width="200" height="200">
             <br>
-            <div class="text-center "><b>KTP</b></div>
+            {{-- <div class="text-center "><b>KTP</b></div> --}}
         </button>
-        
+
     </div>
     <br><br>
 
 
-    <form method="post" action="{{ route('ceksurat')}}">
+    <form method="post" action="{{ route('ceksurat') }}">
         @csrf
         <div class="mb-3">
             <label for="mengetahui" class="form-label"><b>Mengetahui :</b></label>
-            <select class="form-select" id="mengetahui" name="mengetahui" aria-label="mengetahui ttd" onchange="showFields()">
-                <option value="" selected >Pilih yang bertanda tangan</option>
+            <select class="form-select" id="mengetahui" name="mengetahui" aria-label="mengetahui ttd"
+                onchange="showFields()">
+                <option value="" selected>Pilih yang bertanda tangan</option>
                 <option value="kepaladesa">Kepala Desa</option>
                 <option value="carik">Sekretaris Desa</option>
             </select>
@@ -46,34 +48,36 @@
         <div>
             <div class="text-right" id="buttonGroup">
                 <!-- jika mau tolak  style="display: none;" -->
-                <input id="no_pengajuan" name="no_pengajuan" value="{{ $detail_surat->no_pengajuan}}" type="hidden">
-                <input id="kode_surat" name="kode_surat" value="{{ $detail_surat->kode_surat}}" type="hidden">
+                <input id="no_pengajuan" name="no_pengajuan" value="{{ $detail_surat->no_pengajuan }}" type="hidden">
+                <input id="kode_surat" name="kode_surat" value="{{ $detail_surat->kode_surat }}" type="hidden">
                 <button type="submit" name="print" class="btn btn-primary">Cetak</button>
-                <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button>
+                {{-- <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button> --}}
+                <button type="submit" formaction="{{ route('ceksuratpreview') }}" formmethod="POST" formtarget="_blank"
+                    class="btn btn-warning">Preview</button>
                 <button type="button" class="btn btn-danger" onclick="showRejectReasonPrompt()">Tolak</button>
             </div>
     </form>
 
 
     <!-- Modal untuk Perbesar Foto -->
-    <div class="modal fade" id="modalFoto" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalFotoLabel">Foto Kelengkapan Persyaratan</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body center-image">
-                    <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail">
-                </div>
-                <div class="modal-footer">
-                    <a type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</a>
-                </div>
+    <!-- Modal template -->
+<div class="modal fade" id="modalFoto" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFotoLabel">Foto Kelengkapan Persyaratan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="{{$syaratFoto = $detail_surat->foto_ktp?? $detail_surat->foto_kk;}}" alt="Foto Persyaratan" class="img-fluid" width="100%" height="auto">
+                <br>
+                {{-- <div class="text-center "><b>KTP</b></div> --}}
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script>
@@ -112,7 +116,8 @@
                         }),
                         headers: {
                             'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Jika menggunakan Laravel, untuk CSRF token
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
+                                'content') // Jika menggunakan Laravel, untuk CSRF token
                         },
                     })
                     .then(response => {

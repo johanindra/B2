@@ -37,23 +37,7 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    public function gantipassword(Request $request)
-{
-    // Mendapatkan pengguna yang sedang login
-    $user = Auth::User();
-
-    // Memeriksa apakah password lama yang dimasukkan sesuai dengan password yang tersimpan di basis data
-    if (Hash::check($request->passwordsekarang, $user->password)) {
-        // Password lama sesuai, mengubah password baru
-        $user->password = Hash::make($request->konfirmasipassword);
-        $user->save();
-
-        return redirect()->back()->with('ubahpassword', 'Password berhasil diperbarui!')->with('activeTab', 'profile-change-password');
-    } else {
-        // Password lama tidak sesuai, tampilkan pesan kesalahan
-        return redirect()->back()->with('ubahpassword', 'Password lama yang dimasukkan salah.')->with('activeTab', 'profile-change-password');
-    }
-}
+    
 
 
 
