@@ -2,7 +2,6 @@
         $detail_surat = session('detail_surat');
         $ttd = session('ttd');
         $laporan = session('laporan');
-        // dd($laporan);
     @endphp
     <!DOCTYPE html>
     <html lang="id">
@@ -12,6 +11,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SKCK</title>
         <link rel="stylesheet" href="{{ asset('assets/css/surat.css') }}">
+        <script>
+            function printPage() {
+                window.print();
+            }
+
+            window.onload = function() {
+                if ({{ $ttd->print ?? 'false' }}) {
+                    printPage();
+                }
+            };
+        </script>
         <style>
             /* Gaya tambahan, jika diperlukan */
         </style>
@@ -37,7 +47,8 @@
                         @php
                             $tahun_sekarang = date('Y');
                             echo $tahun_sekarang;
-                        @endphp
+                        @endphp.
+
                     </p>
                 </div>
                 <p class="isi-surat1">Kami Kepala Desa Pesudukuh Kecamatan Bagor Kabupaten Nganjuk menerangkan dengan
@@ -82,7 +93,7 @@
                         <td>5. Agama</td>
                         <td>:</td>
                         <td>
-                            {{ $detail_surat->status }}
+                            {{ $detail_surat->agama }}
                         </td>
                     </tr>
                     <tr>
@@ -130,7 +141,12 @@
                     polisi.
                 </p>
                 <p>Surat keterangan ini berlaku sejak dikeluarkan sampai dengan Tanggal
-                    {{$laporan[0]->tanggal}}
+                    @if ($laporan && isset($laporan[0]->tanggal))
+                        {{ \Carbon\Carbon::parse($laporan[0]->tanggal)->locale('id')->translatedFormat('d F Y') }}
+                    @else
+                        {{ \Carbon\Carbon::now()->locale('id')->translatedFormat('d F Y') }}
+                    @endif
+
                     (tiga bulan sejak dikeluarkan)
                 </p>
                 <div class="tanda-tangan">
@@ -138,7 +154,12 @@
                         <tr>
                             <td style="width: 55%;"></td>
                             <td>Pesudukuh,
-                                {{$laporan}}
+                                @if ($laporan && isset($laporan[0]->tanggal))
+                                    {{ \Carbon\Carbon::parse($laporan[0]->tanggal)->locale('id')->translatedFormat('d F Y') }}
+                                @else
+                                    {{ \Carbon\Carbon::now()->locale('id')->translatedFormat('d F Y') }}
+                                @endif
+
                             </td>
                         </tr>
                         <tr>

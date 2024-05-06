@@ -15,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    return 'awokaowkaokawokoakokaokwkaowk';
+});
+
+Route::get('/loginmobile', function(){
+return 'yowes ndang login';
+});
+
+Route::prefix('/MobileAPI')->group(function () {
+
+    Route::get('/login');
+    
 });

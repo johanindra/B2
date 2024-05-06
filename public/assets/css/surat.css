@@ -11,6 +11,10 @@ body {
     position: relative;
 }
 
+.text-center{
+    text-align: center;
+}
+
 .kop-container {
     display: flex;
     align-items: center;
@@ -87,14 +91,17 @@ table {
     line-height: 0.5;
 }   
 
-table, th, td {
-    /* border: 1px solid #000; */
+td {
+/* vertical-align: bottom; */
+word-wrap: break-word;
+white-space: nowarp;
+line-height: 1;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
-    /* vertical-align: top; */
+    vertical-align: top;
 }
 
 /* Gaya untuk judul-judul yang diminta */

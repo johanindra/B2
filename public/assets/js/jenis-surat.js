@@ -81,10 +81,22 @@ function clearForm() {
 }
 
 function openNewTab(url) {
-    var form = document.createElement('form');
-    form.setAttribute('method', 'POST');
-    form.setAttribute('action', url);
-    document.body.appendChild(form);
-    form.submit();
-}
+        var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        var form = document.createElement('form');
+        form.setAttribute('method', 'POST');
+        form.setAttribute('action', url);
+        form.setAttribute('target', '_blank');
+        
+        var csrfInput = document.createElement('input');
+        csrfInput.setAttribute('type', 'hidden');
+        csrfInput.setAttribute('name', '_token');
+        csrfInput.setAttribute('value', token);
+        
+        form.appendChild(csrfInput);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    
+
 

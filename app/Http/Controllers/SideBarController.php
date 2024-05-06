@@ -28,6 +28,10 @@ class SideBarController extends Controller
         $selesaibulanini = laporan::getDataSuratSelesaiBulanIni();
         $tabel = pengajuansurat::getDataMingguIni();
 
+        $kabar_desa = uploadberita::get();
+
+        $jumlahkabardesa = uploadberita::count();
+
         $chart->transform(function ($item) {
             $item->tanggal = Carbon::parse($item->tanggal)->format('Y-m-d H:i:s');
             return $item;
@@ -40,7 +44,11 @@ class SideBarController extends Controller
             'dataMasuk' => $suratmasuk,
             'data' => $chart,
             'selesaibulanini' => $selesaibulanini,
-            'tabel' => $tabel
+            'tabel' => $tabel,
+
+            'jumlahkabardesa' => $jumlahkabardesa,
+            'kabar_desa' => $kabar_desa
+
         ]);
     }
     public function pengajuan()
@@ -55,13 +63,56 @@ class SideBarController extends Controller
     {
         return view('Admin.pembuatan-surat'); //untuk menampilkan halaman pengajuan
     }
-    public function laporan()
+    public function laporan(Request $request)
     {
-        $tabellaporan = laporan::getDataTabel();
+        $months = [
+            '01' => 'Januari',
+            '02' => 'Februari',
+            '03' => 'Maret',
+            '04' => 'April',
+            '05' => 'Mei',
+            '06' => 'Juni',
+            '07' => 'Juli',
+            '08' => 'Agustus',
+            '09' => 'September',
+            '10' => 'Oktober',
+            '11' => 'November',
+            '12' => 'Desember'
+        ];
+
+        $current_year = date('Y');
+        $current_month = date('m');
+
+        $years = range($current_year, $current_year - 10);
+
+        $bulan = $request->input('filter_month', $current_month);
+        $tahun = $request->input('filter_year', date('Y'));
+
+        $tabellaporan = Laporan::getDataTabel($bulan, $tahun);
+
+        // Cek apakah ada data yang ditemukan
+        if ($tabellaporan->isEmpty()) {
+            // Buat pesan sesuai dengan bulan dan tahun yang dipilih
+            $bulan_tahun = $months[$bulan] . ' ' . $tahun;
+            $pesan = "Tidak ada laporan pada bulan {$bulan_tahun}";
+
+            return view('Admin.laporan', [
+                'pesan' => $pesan,
+                'months' => $months,
+                'years' => $years,
+                'current_month' => $current_month
+            ]);
+        }
+
+        // Jika ada data, tampilkan data normal
         return view('Admin.laporan', [
-            'tabel' => $tabellaporan
-        ]); //untuk menampilkan halaman pengajuan
+            'tabel' => $tabellaporan,
+            'months' => $months,
+            'years' => $years,
+            'current_month' => $current_month
+        ]);
     }
+
     public function profilDesa()
     {
         $nama = ttd::getNama();
@@ -124,12 +175,9 @@ class SideBarController extends Controller
                 // Jika ditemukan, arahkan ke halaman detail surat dengan data surat yang ditemukan
                 return view('Admin.detail-pengajuan', compact('detail_surat'));
             } else {
-                // Jika tidak ditemukan, arahkan kembali ke halaman sebelumnya atau berikan respons yang sesuai
-                return back()->with('error', 'Detail surat not found');
+                // Jika pengajuan tidak ditemukan, arahkan kembali ke halaman sebelumnya atau berikan respons yang sesuai
+                return back()->with('error', 'Pengajuan not found');
             }
-        } else {
-            // Jika pengajuan tidak ditemukan, arahkan kembali ke halaman sebelumnya atau berikan respons yang sesuai
-            return back()->with('error', 'Pengajuan not found');
         }
     }
 
@@ -189,5 +237,4 @@ class SideBarController extends Controller
         }
         return view('Admin.detail-kabar', compact('kabar_desa'));
     }
-
 }

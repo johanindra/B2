@@ -21,28 +21,37 @@
     <!-- foto kelengkapan -->
     <div class="mt-5">
         <h5 class="card-title">Foto Kelengkapan Persyaratan</h5>
-        <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200" height="200">
+        <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200"
+            height="200">
         <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFoto">Lihat Foto</button>
     </div>
     <br><br>
 
-    <form method="post">
+    <form method="post" action="{{ route('ceksurat') }}">
+        @csrf
         <div class="mb-3">
             <label for="mengetahui" class="form-label"><b>Mengetahui :</b></label>
-            <select class="form-select" id="mengetahui" aria-label="mengetahui ttd" onchange="showFields()">
-                <option value="" selected disabled>Pilih yang bertanda tangan</option>
-                <option value="Kepala Desa">Kepala Desa</option>
-                <option value="Sekretaris Desa">Sekretaris Desa</option>
+            <select class="form-select" id="mengetahui" name="mengetahui" aria-label="mengetahui ttd"
+                onchange="showFields()">
+                <option value="" selected>Pilih yang bertanda tangan</option>
+                <option value="kepaladesa">Kepala Desa</option>
+                <option value="carik">Sekretaris Desa</option>
             </select>
         </div>
         <div class="text-right" id="buttonGroup" style="display: none;">
+            <input id="no_pengajuan" name="no_pengajuan" value="{{ $detail_surat->no_pengajuan }}" type="hidden">
+            <input id="kode_surat" name="kode_surat" value="{{ $detail_surat->kode_surat }}" type="hidden">
+            <input name="simpan" value="false" type="hidden">
             <button type="submit" name="print" class="btn btn-primary">Cetak</button>
-            <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button>
+            {{-- <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button> --}}
+            <button type="submit" formaction="{{ route('ceksuratpreview') }}" formmethod="POST" formtarget="_blank"
+                class="btn btn-warning">Preview</button>
         </div>
     </form>
     <!-- Modal untuk Perbesar Foto -->
-    <div class="modal fade" id="modalFoto" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel" aria-hidden="true">
+    <div class="modal fade" id="modalFoto" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">

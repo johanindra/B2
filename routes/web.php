@@ -41,6 +41,7 @@ Route::get('dashboard', [SideBarController::class, 'dashboard'])->name('dashboar
 Route::get('pengajuan', [SideBarController::class, 'pengajuan'])->name('pengajuan');
 Route::get('pembuatan-surat', [SideBarController::class, 'pembuatan'])->name('pembuatan-surat');
 Route::get('laporan', [SideBarController::class, 'laporan'])->name('laporan');
+Route::post('laporan', [SideBarController::class, 'laporan'])->name('filter.laporan');
 Route::get('profil-desa', [SideBarController::class, 'profilDesa'])->name('profil-desa');
 Route::get('kabar-desa', [SideBarController::class, 'kabarDesa'])->name('kabar-desa');
 Route::get('/home', [SideBarController::class, 'keluar'])->name('home');
@@ -72,12 +73,13 @@ Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 //porfil-desa
-route::post('ubahpassword', [AuthController::class, 'gantipassword'])->name('ubahpassword');
+route::post('ubahpassword', [ProfilDesaController::class, 'gantipassword'])->name('ubahpassword');
 route::post('updateperangkat',[ProfilDesaController::class, 'update'])->name('updateperangkat');
 Route::post('visi-misi', [ProfilDesaController::class, 'visimisi'])->name('visimisi');
 
 
-Route::post('cek-surat', [CekSuratController::class, 'cek'])->name('ceksurat');
+Route::post('cek-surat', [CekSuratController::class, 'print'])->name('ceksurat');
+Route::post('cek-surat/preview', [CekSuratController::class, 'preview'])->name('ceksuratpreview');
 
 Route::get('/skck', [SuratController::class, 'skck'])->name('skck');
 Route::get('/surat-ijin', [SuratController::class, 'suratIjin'])->name('surat-ijin');
@@ -85,8 +87,7 @@ Route::get('/surat-mati', [SuratController::class, 'suratMati'])->name('surat-ma
 Route::get('/surat-penghasilan', [SuratController::class, 'suratPenghasilan'])->name('surat-penghasilan');
 Route::get('/sktm', [SuratController::class, 'sktm'])->name('sktm');
 
-
-
 //pembuatan surat
 route::post('/pembuatan-surat/insert',[PembuatanSurat::class, 'insert'])->name('insertsurat');
 route::post('/pembuatan-surat/preview',[PembuatanSurat::class, 'preview'])->name('previewsurat');
+

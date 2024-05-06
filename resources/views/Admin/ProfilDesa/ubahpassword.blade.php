@@ -52,7 +52,7 @@
                 notifpasswordsekarang.style.display = "none";
             }
 
-            if (passwordBaru.length < 8) {
+            if (passwordBaru.length < 6) {
                 minPasswordMessage.style.display = "block";
                 submitBtn.disabled = true;
                 return;

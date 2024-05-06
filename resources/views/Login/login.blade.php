@@ -6,8 +6,10 @@
     <title>E-Lades - Masuk</title>
     <link rel="icon" href="{{ asset('assets/img/logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel='stylesheet'
+    href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css') }}">
+
     <link rel="stylesheet" href="{{ asset('assets/css/style1.css') }}">
 
 </head>
@@ -39,7 +41,7 @@
                 <!-- Form Box -->
                 <div class="col-sm-6 form">
                     <!-- Login Form -->
-                    <div class="login form-peice">
+                    <div class="login form-peice ">
                         <form class="login-form" action="{{ route('login') }}" method="post">
                             @csrf
                             <div class="form-group">
@@ -74,7 +76,7 @@
 
                     <!-- Signup Form -->
                     <div class="signup form-peice switched">
-                        <form class="signup-form" action="#" method="post">
+                        <form class="" action="#" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>
@@ -89,10 +91,21 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="passwordCon">Konfirmasi Password</label>
-                                <input type="password" name="passwordCon" id="passwordCon">
+                                <label for="konfirmasi_passowrd">Konfirmasi Password</label>
+                                <input type="password" name="konfirmasi_passowrd" id="konfirmasi_passoword"
+                                    class="passConfirm">
                                 <span class="error"></span>
                             </div>
+
+                            <div class="form-group">
+                                <label for="kode_otp" class="col-sm-2 col-form-label">Kode OTP</label>
+                                <div class="col-sm-10 d-flex">
+                                    <input type="password" name="kode_otp" id="kode_otp" class="form-control">
+                                    <button class="btn btn-primary btn-sm ms-2">Kirim Kode OTP</button>
+                                </div>
+                            </div>
+
+
 
                             <div class="CTA">
                                 <input type="submit" value="Konfirmasi" id="submit">
@@ -105,6 +118,10 @@
             </div>
         </section>
     </div>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')}}"></script>
+
+    <script src="{{ asset('assets/js/script.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
