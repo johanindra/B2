@@ -42,7 +42,7 @@
                 <div class="col-sm-6 form">
 
                     <!-- Login Form -->
-                    <div class="login form-peice ">
+                    <div class="login form-peice switched">
                         <form class="login-form" action="{{ route('login') }}" method="post">
                             @csrf
 
@@ -80,7 +80,7 @@
 
 
                     <!-- Signup Form -->
-                    <div class="signup form-peice switched">
+                    <div class="signup form-peice ">
                         <form class="" action="#" method="post">
                             @csrf
                             <div class="form-group">

@@ -45,9 +45,9 @@
     <select class="form-select" id="status_perkawinan" name="status_perkawinan" aria-label="Status Perkawinan">
 
         <option selected>Pilih Status Perkawinan</option>
-        <option value="belum_kawin">Belum Kawin</option>
-        <option value="sudah_kawin">Sudah Kawin</option>
-        <option value="cerai_mati">Cerai Mati</option>
+        <option value="Belum Kawin">Belum Kawin</option>
+        <option value="Sudah Kawin">Sudah Kawin</option>
+        <option value="Cerai Mati">Cerai Mati</option>
     </select>
 </div>
 <div class="mb-3">

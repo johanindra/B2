@@ -35,6 +35,7 @@ class ProfilDesaController extends Controller {
                 // Perbarui nama jika entitas ditemukan
                 if ( $desa ) {
                     $desa->nama = $nama;
+                    // $desa->foto_profile;
                     $desa->save();
                 }
             }

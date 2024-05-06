@@ -21,10 +21,14 @@
     <!-- foto kelengkapan -->
     <div class="mt-5">
         <h5 class="card-title">Foto Kelengkapan Persyaratan</h5>
-        <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail" width="200"
-            height="200">
-        <br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalFoto">Lihat Foto</button>
+        <button type="button " class="btn btn-secondary" data-toggle="modal" data-target="#modalFoto">
+            <img src="{{ $photo = $detail_surat->foto_ktp ?? $detail_surat->foto_kk }}" alt="Foto Persyaratan"
+                class="img-thumbnail" width="200" height="200">
+            <br>
+            {{-- <div class="text-center "><b>KTP</b></div> --}}
+        </button>
+
+
     </div>
     <br><br>
 
@@ -50,9 +54,11 @@
         </div>
     </form>
     <!-- Modal untuk Perbesar Foto -->
+    <!-- Modal template -->
     <div class="modal fade" id="modalFoto" tabindex="-1" role="dialog" aria-labelledby="modalFotoLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog" role="document">
+
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalFotoLabel">Foto Kelengkapan Persyaratan</h5>
@@ -60,11 +66,11 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body center-image">
-                    <img src="assets/img/foto perangkat desa.jpg" alt="Foto Persyaratan" class="img-thumbnail">
-                </div>
-                <div class="modal-footer">
-                    <a type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</a>
+                <div class="modal-body">
+                    <img src="{{ $syaratFoto = $detail_surat->foto_ktp ?? $detail_surat->foto_kk }}"
+                        alt="Foto Persyaratan" class="img-fluid" width="100%" height="auto">
+                    <br>
+                    {{-- <div class="text-center "><b>KTP</b></div> --}}
                 </div>
             </div>
         </div>
