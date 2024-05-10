@@ -1,14 +1,16 @@
 <div class="mb-3">
     <label for="nik" class="form-label"><b>NIK</b></label>
-    <input type="number" class="form-control" id="nik" name="nik" required>
+    <input type="number" class="form-control" id="nik" name="nik"  required>
 </div>
 <div class="mb-3">
     <label for="nama" class="form-label"><b>Nama Lengkap</b></label>
-    <input type="text" class="form-control" id="nama" name="nama" required>
+    <input type="text" class="form-control" id="nama" name="nama" required 
+    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="tempat_tgl_lahir" class="form-label"><b>Tempat, Tanggal  Lahir</b></label>
-    <input type="text" class="form-control" id="tempat_tgl_lahir" name="tempat_tgl_lahir" required>
+    <input type="text" class="form-control" id="tempat_tgl_lahir" name="tempat_tgl_lahir" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9, ]/g, '');">
 </div>
 {{-- <div class="mb-3">
     <label for="tanggalLahir" class="form-label"><b>Tanggal Lahir</b></label>
@@ -16,7 +18,8 @@
 </div> --}}
 <div class="mb-3">
     <label for="kebangsaan" class="form-label"><b>Kewarganegaraan</b></label>
-    <input type="text" class="form-control" id="kebangsaan" name="kebangsaan" required>
+    <input type="text" class="form-control" id="kebangsaan" name="kebangsaan" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="agama" class="form-label"><b>Agama</b></label>
@@ -78,11 +81,13 @@
 </div>
 <div class="mb-3" id="otherJob" style="display: none;">
     <label for="otherPekerjaan" class="form-label"><b>Pekerjaan Lainnya</b></label>
-    <input type="text" class="form-control" id="otherPekerjaan" name="otherPekerjaan">
+    <input type="text" class="form-control" id="otherPekerjaan" name="otherPekerjaan"
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9 ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="tempat_tinggal" class="form-label"><b>Tempat Tinggal</b></label>
-    <input type="text" class="form-control" id="tempat_tinggal" name="tempat_tinggal" required>
+    <input type="text" class="form-control" id="tempat_tinggal" name="tempat_tinggal" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9 ]/g, '');">
 </div>
 <br>
 

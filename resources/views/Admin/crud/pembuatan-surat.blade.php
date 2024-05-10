@@ -1,89 +1,30 @@
+<form method="post" action="{{ route('insertsurat') }}" id="pengajuan">
 
-<form method="post" id="form">
+    @foreach ($errors->all() as $error)
+        <div class="alert-danger"></div>
+        <span class="text-danger">{{ $error }}</span>
+    @endforeach
 
     @csrf
+
     <div class="mb-3">
         <label for="jenisSurat" class="form-label"><b>Jenis Surat</b></label>
         <select class="form-select" id="jenisSurat" name="jenisSurat" aria-label="Jenis Surat" onchange="showFields()">
-            <option value="" selected>Pilih Jenis Surat</option>
-            <option value="skck">Pengantar SKCK</option>
-            <option value="sktm">SKTM</option>
-            <option value="surat_ijin">Surat Izin</option>
-            <option value="surat_kematian">Surat Kematian</option>
-
-            <option value="surat_penghasilan">Keterangan Penghasilan</option>
+            <option value="" {{ old('jenisSurat') === null ? 'selected' : '' }}>Pilih Jenis Surat</option>
+            <option value="skck" {{ old('jenisSurat') === 'skck' ? 'selected' : '' }}>Pengantar SKCK</option>
+            <option value="sktm" {{ old('jenisSurat') === 'sktm' ? 'selected' : '' }}>SKTM</option>
+            <option value="surat_ijin" {{ old('jenisSurat') === 'surat_ijin' ? 'selected' : '' }}>Surat Izin</option>
+            <option value="surat_kematian" {{ old('jenisSurat') === 'surat_kematian' ? 'selected' : '' }}>Surat Kematian
+            </option>
+            <option value="surat_penghasilan" {{ old('jenisSurat') === 'surat_penghasilan' ? 'selected' : '' }}>
+                Keterangan Penghasilan</option>
         </select>
     </div>
+
     <div id="fieldsContainer">
     </div>
-    <script>
-        function showFields() {
-            var jenisSurat = document.getElementById("jenisSurat").value;
-            var fieldsContainer = document.getElementById("fieldsContainer");
-            var formContent = "";
 
-            // Hapus semua elemen form yang ada di dalam fieldsContainer
-            while (fieldsContainer.firstChild) {
-                fieldsContainer.removeChild(fieldsContainer.firstChild);
-            }
-
-            // Tambahkan form yang sesuai berdasarkan pilihan
-            switch (jenisSurat) {
-                case "skck":
-                    formContent = `
-                        <form id="skckForm">
-                            @include('Admin.pembuatan-surat.skck')
-                        </form>
-                    `;
-                    break;
-                case "sktm":
-                    formContent = `
-                        <form id="SKTMForm">
-                            @include('Admin.pembuatan-surat.sktm')
-                        </form>
-                    `;
-                    break;
-                case "surat_ijin":
-                    formContent = `
-                        <form id="suratIzinForm">
-                            @include('Admin.pembuatan-surat.surat-ijin')
-                        </form>
-                    `;
-                    break;
-                case "surat_kematian":
-                    formContent = `
-                        <form id="suratKematianForm">
-                            @include('Admin.pembuatan-surat.surat-mati')
-                        </form>
-                    `;
-                    break;
-                case "surat_penghasilan":
-                    formContent = `
-                        <form id="suratPenghasilanForm">
-                            @include('Admin.pembuatan-surat.surat-penghasilan')
-                        </form>
-                    `;
-                    break;
-                default:
-                    // Kosongkan formContent jika tidak ada pilihan yang dipilih
-                    break;
-                    }
-            // Tambahkan formContent ke dalam fieldsContainer
-            fieldsContainer.innerHTML = formContent;
-
-
-            var ttd = document.getElementById("ttdcontainer");
-
-            if (jenisSurat) {
-                ttd.style.display = 'block';
-            }
-        }
-    </script>
-    {{-- <div class="mb-3 text-right" id="submitBtn">
-        <button type="submit" class="btn btn-primary">Buat</button>
-        <button type="reset" class="btn btn-danger" onclick="clearForm()">Hapus</button>
-    </div> --}}
-    <div class="mb-3 " id="ttdcontainer" style="display: none;">
+    <div class="mb-3" id="ttdcontainer" style="display: none;">
         <label for="mengetahui" class="form-label"><b>Mengetahui</b></label>
         <select class="form-select" id="mengetahui" name="mengetahui" aria-label="Yang bertanda tangan">
             <option selected>Yang bertanda tangan</option>
@@ -92,43 +33,100 @@
         </select>
 
         <div class="mt-3">
-            <button type="submit" class="btn btn-primary " formaction="{{ route('insertsurat') }}">Simpan dan
+            <button type="submit" class="btn btn-primary ">Simpan dan
                 Cetak</button>
-            {{-- <button type="submit" formaction="{{ route('previewsurat') }}"
-                target="_blank" class="btn btn-warning ">Preview</button> --}}
-            {{-- <button type="submit" onclick="openNewTab('{{ route('previewsurat') }}')"
-                class="btn btn-warning ">Preview</button> --}}
-            <button type="submit" formaction="{{route('previewsurat')}}" formmethod="POST" formtarget="_blank" class="btn btn-warning">Preview</button>
-            <script>
-                function openPreview() {
-                    // Ambil URL pratinjau dari route previewsurat
-                    var previewUrl = '{{ route("previewsurat") }}';
-            
-                    // Kumpulkan data formulir yang diisi
-                    var formData = new FormData(document.getElementById('form'));
-            
-                    // Buat sebuah objek XMLHTTPRequest
-                    var xhr = new XMLHttpRequest();
-            
-                    // Tetapkan tindakan yang akan dilakukan saat permintaan selesai
-                    xhr.onload = function () {
-                        // Periksa apakah permintaan selesai dan status OK
-                        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                            // Buka pratinjau dalam tab baru jika permintaan berhasil
-                            window.open(previewUrl, '_blank');
-                        } else {
-                            // Tampilkan pesan kesalahan jika permintaan gagal
-                            console.error('Gagal membuka pratinjau.');
-                        }
-                    };
-            
-                    // Buka koneksi dan kirim data formulir sebagai permintaan POST
-                    xhr.open('POST', previewUrl);
-                    xhr.send(formData);
-                }
-            </script>
-            
-            
+            <button type="submit" formaction="{{ route('previewsurat') }}" formmethod="POST" formtarget="_blank"
+                class="btn btn-warning">Preview</button>
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById('pengajuan');
+        const fieldsContainer = document.getElementById('fieldsContainer');
+        const ttdcontainer = document.getElementById('ttdcontainer');
+        const jenisSuratSelect = document.getElementById('jenisSurat');
+    
+        // Set the selected jenisSurat option and trigger the change event
+        const formData = new FormData(form);
+        const selectedJenisSurat = formData.get('jenisSurat');
+        jenisSuratSelect.value = selectedJenisSurat;
+        jenisSuratSelect.dispatchEvent(new Event('change'));
+    
+        // Add an event listener to the jenisSurat select element
+        jenisSuratSelect.addEventListener('change', showFields);
+    
+        // Define the showFields function
+        function showFields() {
+            const jenisSurat = jenisSuratSelect.value;
+    
+            // Clear the fields container
+            fieldsContainer.innerHTML = '';
+    
+            // Show/hide the ttd container
+            if (jenisSurat) {
+                ttdcontainer.style.display = 'block';
+            } else {
+                ttdcontainer.style.display = 'none';
+            }
+    
+            // Add the appropriate form fields based on the selected jenisSurat
+            switch (jenisSurat) {
+                case "skck":
+                    fieldsContainer.innerHTML = `
+                        @include('Admin.pembuatan-surat.skck')
+                    `;
+                    break;
+                case "sktm":
+                    fieldsContainer.innerHTML = `
+                        @include('Admin.pembuatan-surat.sktm')
+                    `;
+                    break;
+                case "surat_ijin":
+                    fieldsContainer.innerHTML = `
+                        @include('Admin.pembuatan-surat.surat-ijin')
+                    `;
+                    break;
+                case "surat_kematian":
+                    fieldsContainer.innerHTML = `
+                        @include('Admin.pembuatan-surat.surat-mati')
+                    `;
+                    break;
+                case "surat_penghasilan":
+                    fieldsContainer.innerHTML = `
+                        @include('Admin.pembuatan-surat.surat-penghasilan')
+                    `;
+                    break;
+                default:
+                    // Clear the fields container
+                    fieldsContainer.innerHTML = '';
+                    break;
+            }
+        }
+
+        // Handle form submission
+        // form.addEventListener('submit', (event) => {
+        //     // Prevent default form submission
+        //     event.preventDefault();
+
+        //     // Get the form data
+        //     const formData = new FormData(form);
+
+        //     // Send the form data to the server using fetch
+        //     fetch('{{ route('insertsurat') }}', {
+        //             method: 'POST',
+        //             body: formData
+        //         })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             // Handle the response from the server
+        //             alert('Form submitted successfully!');
+        //             // You can also redirect the user to a new page or perform other actions here
+        //         })
+        //         .catch(error => {
+        //             // Handle any errors that occur during the request
+        //             alert('Error submitting form: ' + error.message);
+        //             // You can also display an error message to the user or perform other actions here
+        //         });
+        // });
+    </script>
 </form>

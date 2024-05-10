@@ -42,7 +42,7 @@
     </div> -->
     </div>
 </div> --}}
-@foreach($nama as $nama,)
+@foreach($nama as $nama)
 <div class="card">
     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
