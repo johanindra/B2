@@ -38,6 +38,9 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/styless.css') }}" rel="stylesheet">
 
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+
     <!-- =======================================================
   * Template Name: NiceAdmin
   * Updated: Jan 29 2024 with Bootstrap v5.3.2
@@ -69,28 +72,43 @@
             <div class="row">
                 {{-- <div class="col-xl-8"> --}}
                 <div class="card">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    <!-- Tampilkan pesan error jika ada -->
+                    @if (session('error'))
+                        <script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: '{{ session('error') }}',
+                            });
+                        </script>
                     @endif
 
                     <!-- Tampilkan pesan sukses jika ada -->
                     @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
+                        <script>
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success!',
+                                text: '{{ session('success') }}',
+                            });
+                        </script>
                     @endif
 
-                    <!-- Tampilkan pesan error jika ada -->
-                    @if (session('error'))
-                        <div class="alert alert-danger">
-                            {{ session('error') }}
-                        </div>
+                    <!-- Tampilkan pesan error validasi jika ada -->
+                    @if ($errors->any())
+                        <script>
+                            var errorMessage = "<ul>";
+                            @foreach ($errors->all() as $error)
+                                errorMessage += "<li>{{ $error }}</li>";
+                            @endforeach
+                            errorMessage += "</ul>";
+
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Validation Error',
+                                html: errorMessage,
+                            });
+                        </script>
                     @endif
 
                     <div class="card-body pt-3">
@@ -170,6 +188,8 @@
 
     <!-- kalau mau ubah js tabel di sini -->
     <script src="{{ asset('assets/js/tabel.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 </body>
