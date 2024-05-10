@@ -13,6 +13,8 @@ use App\Models\laporan;
 
 class CekSuratController extends Controller {
     public static function print( Request $request ) {
+
+       
         $no_pengajuan = $request->input( 'no_pengajuan' );
         $simpan = $request->input('simpan') ?: true;
         $kode_surat = $request->input( 'kode_surat' );

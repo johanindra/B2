@@ -7,7 +7,7 @@
             <div class="text-center">
                 <h4>Visi</h4>
             </div>
-                <pre>{{ $visimisi->where('id', 'visi')->first()->isi ?? '' }}</pre>
+                <pre class="">{{ $visimisi->where('id', 'visi')->first()->isi ?? '' }}</pre>
            
            
         </div>
