@@ -81,6 +81,7 @@
 
                     <!-- Signup Form -->
                     <div class="signup form-peice switched">
+
                         <form class="" action="{{ route('lupa-katasandi') }}" method="post">
                             @csrf
 
