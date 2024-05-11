@@ -2,6 +2,7 @@
     <h5 class="card-title">Tabel Detail Pengajuan Surat</h5>
     <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p> -->
 
+    
     <div class="panel-body p-20" style="margin-top: 10px;">
         <table id="example" class="table table-bordered table-striped-columns" cellspacing="0" width="100%">
             @if ($detail_surat)
@@ -54,7 +55,8 @@
                 {{-- <button type="submit" name="preview" class="btn btn-warning text-white">Preview</button> --}}
                 <button type="submit" formaction="{{ route('ceksuratpreview') }}" formmethod="POST" formtarget="_blank"
                     class="btn btn-warning">Preview</button>
-                <button type="button" class="btn btn-danger" onclick="showRejectReasonPrompt()">Tolak</button>
+                <button type="button" class="btn btn-danger" onclick="showRejectReasonPrompt({{$detail_surat->no_pengajuan}}, 
+            '{{$detail_surat->kode_surat}}')">Tolak</button>
             </div>
     </form>
 
@@ -94,7 +96,7 @@
 
 
     // Fungsi untuk menampilkan popup konfirmasi SweetAlert2 dengan input teks
-    function showRejectReasonPrompt() {
+    function showRejectReasonPrompt(no_pengajuan, kode_surat) {
         Swal.fire({
             title: 'Masukkan alasan penolakan:',
             input: 'text',
@@ -105,26 +107,28 @@
             confirmButtonText: 'Kirim',
             cancelButtonText: 'Batal',
             showLoaderOnConfirm: true,
-            preConfirm: (rejectReason) => {
+            preConfirm: (alasan) => {
                 // Lakukan sesuatu dengan alasan penolakan, misalnya mengirimkan ke server
                 // Di sini Anda dapat menambahkan kode AJAX untuk mengirim alasan penolakan ke server
                 // Misalnya, Anda dapat mengirim alasan ke URL tertentu menggunakan AJAX
-                return fetch('/path-to-your-api-endpoint', {
+                return fetch('/api/tolak-detail', {
                         method: 'POST',
                         body: JSON.stringify({
-                            rejectReason: rejectReason
+                            no_pengajuan: no_pengajuan,
+                            alasan: alasan,
+                            kode_surat: kode_surat // Menggunakan parameter alasan
                         }),
                         headers: {
                             'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
-                                'content') // Jika menggunakan Laravel, untuk CSRF token
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Jika menggunakan Laravel, untuk CSRF token
                         },
                     })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(response.statusText);
                         }
-                        return response.json();
+                        // return response.json();
+                        location.reload();
                     })
                     .catch(error => {
                         Swal.showValidationMessage(
