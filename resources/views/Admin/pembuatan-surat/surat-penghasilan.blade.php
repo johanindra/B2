@@ -1,6 +1,7 @@
 <div class="mb-3">
     <label for="nama_lengkap" class="form-label"><b>Nama Lengkap</b></label>
-    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required>
+    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="nik" class="form-label"><b>NIK</b></label>
@@ -17,7 +18,8 @@
 <div class="mb-3">
     <label for="tempat_lahir" class="form-label"><b>Tempat Tanggal Lahir</b></label>
     <div class="row">
-    <input type="text" class="form-control col ms-3 me-3" id="tempat_lahir" name="tempat_lahir" required>
+    <input type="text" class="form-control col ms-3 me-3" id="tempat_lahir" name="tempat_lahir" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '');">
     <input type="date" class="form-control col me-3" id="tanggal_lahir" name="tanggal_lahir" required>
 </div>
 </div>
@@ -51,17 +53,21 @@
 </div>
 <div class="mb-3" id="otherJob" style="display: none;">
     <label for="otherPekerjaan" class="form-label"><b>Pekerjaan Lainnya</b></label>
-    <input type="text" class="form-control" id="otherPekerjaan" name="otherPekerjaan">
+    <input type="text" class="form-control" id="otherPekerjaan" name="otherPekerjaan"
+    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="alamat" class="form-label"><b>Alamat</b></label>
-    <input type="text" class="form-control" id="alamat" name="alamat" required>
+    <input type="text" class="form-control" id="alamat" name="alamat" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9,. ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="jumlah_penghasilan" class="form-label"><b>Jumlah Penghasilan</b></label>
-    <input type="text" class="form-control" id="jumlah_penghasilan" name="jumlah_penghasilan" required>
+    <input type="text" class="form-control" id="jumlah_penghasilan" name="jumlah_penghasilan" required
+    placeholder="Isi tanpa titik" oninput="this.value = this.value.replace(/[^0-9 ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="kegunaan_surat" class="form-label"><b>Kegunaan Surat</b></label>
-    <input type="text" class="form-control" id="kegunaan_surat" name="kegunaan_surat" required>
+    <input type="text" class="form-control" id="kegunaan_surat" name="kegunaan_surat" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9,. ]/g, '');">
 </div>

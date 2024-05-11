@@ -1,11 +1,13 @@
 <label><b>Data Ayah :</b></label>
 <div class="mb-3">
     <label for="nama_bapak" class="form-label"><b>Nama Lengkap</b></label>
-    <input type="text" class="form-control" id="nama_bapak" name="nama_bapak" required>
+    <input type="text" class="form-control" id="nama_bapak" name="nama_bapak" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="tempat_tanggal_lahir_bapak" class="form-label"><b>Tempat Lahir</b></label>
-    <input type="text" class="form-control" id="tempat_tanggal_lahir_bapak" name="tempat_tanggal_lahir_bapak" required>
+    <input type="text" class="form-control" id="tempat_tanggal_lahir_bapak" name="tempat_tanggal_lahir_bapak" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9, ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="pekerjaan_bapak" class="form-label"><b>Pekerjaan</b></label>
@@ -32,21 +34,25 @@
 </div>
 <div class="mb-3" id="otherJob" style="display: none;">
     <label for="otherPekerjaan" class="form-label"><b>Pekerjaan Lainnya</b></label>
-    <input type="text" class="form-control" id="otherPekerjaan" name="otherPekerjaan">
+    <input type="text" class="form-control" id="otherPekerjaan" name="otherPekerjaan"
+    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="alamat_bapak" class="form-label"><b>Alamat</b></label>
-    <input type="text" class="form-control" id="alamat_bapak" name="alamat_bapak" required>
+    <input type="text" class="form-control" id="alamat_bapak" name="alamat_bapak" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9,. ]/g, '');">
 </div>
 <br>
 <label><b>Data Ibu :</b></label>
 <div class="mb-3">
     <label for="nama_ibu" class="form-label"><b>Nama lengkap</b></label>
-    <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" required>
+    <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9 ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="tempat_tanggal_lahir_ibu" class="form-label"><b>Tempat Lahir</b></label>
-    <input type="text" class="form-control" id="tempat_tanggal_lahir_ibu" name="tempat_tanggal_lahir_ibu" required>
+    <input type="text" class="form-control" id="tempat_tanggal_lahir_ibu" name="tempat_tanggal_lahir_ibu" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9, ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="pekerjaan_ibu" class="form-label"><b>Pekerjaan</b></label>
@@ -73,21 +79,25 @@
 </div>
 <div class="mb-3" id="otherJob" style="display: none;">
     <label for="otherPekerjaan" class="form-label"><b>Pekerjaan Lainnya</b></label>
-    <input type="text" class="form-control" id="otherPekerjaan" name="otherPekerjaan">
+    <input type="text" class="form-control" id="otherPekerjaan" name="otherPekerjaan"
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9, ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="alamat_ibu" class="form-label"><b>Alamat</b></label>
-    <input type="text" class="form-control" id="alamat_ibu" name="alamat_ibu" required>
+    <input type="text" class="form-control" id="alamat_ibu" name="alamat_ibu" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9,. ]/g, '');">
 </div>
 <br>
 <label><b>Data Anak :</b></label>
 <div class="mb-3">
     <label for="nama_anak" class="form-label"><b>Nama Lengkap</b></label>
-    <input type="text" class="form-control" id="nama_anak" name="nama_anak" required>
+    <input type="text" class="form-control" id="nama_anak" name="nama_anak" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="tempat_tanggal_lahir_anak" class="form-label"><b>Tempat Lahir</b></label>
-    <input type="text" class="form-control" id="tempat_tanggal_lahir_anak" name="tempat_tanggal_lahir_anak" required>
+    <input type="text" class="form-control" id="tempat_tanggal_lahir_anak" name="tempat_tanggal_lahir_anak" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9, ]/g, '');">
 </div>
 <div class="mb-3">
     <label for="jenis_kelamin" class="form-label"><b>Jenis Kelamin</b></label>
@@ -99,5 +109,6 @@
 </div>
 <div class="mb-3">
     <label for="alamat_anak" class="form-label"><b>Alamat</b></label>
-    <input type="text" class="form-control" id="alamat_anak" name="alamat_anak" required>
+    <input type="text" class="form-control" id="alamat_anak" name="alamat_anak" required
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9,. ]/g, '');">
 </div>

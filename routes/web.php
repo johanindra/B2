@@ -68,6 +68,8 @@ Route::middleware(['auth.admin'])->group(function () {
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('lupa-katasandi/kirimkode', [AuthController::class, 'kode'])->name('kirimkode');
+Route::post('lupa-katasandi', [AuthController::class, 'lupakatasandi'])->name('lupa-katasandi');
 
 //porfil-desa
 route::post('ubahpassword', [ProfilDesaController::class, 'gantipassword'])->name('ubahpassword');
