@@ -71,6 +71,8 @@ Route::middleware(['auth.admin'])->group(function () {
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('lupa-katasandi/kirimkode', [AuthController::class, 'kode'])->name('kirimkode');
+Route::post('lupa-katasandi', [AuthController::class, 'lupakatasandi'])->name('lupa-katasandi');
 
 //porfil-desa
 route::post('ubahpassword', [ProfilDesaController::class, 'gantipassword'])->name('ubahpassword');
@@ -90,4 +92,7 @@ Route::get('/sktm', [SuratController::class, 'sktm'])->name('sktm');
 //pembuatan surat
 route::post('/pembuatan-surat/insert',[PembuatanSurat::class, 'insert'])->name('insertsurat');
 route::post('/pembuatan-surat/preview',[PembuatanSurat::class, 'preview'])->name('previewsurat');
+
+//tolak pengajuan surat
+Route::post('pengajuan-surat/tolak',[CekSuratController::class, 'tolak'])->name('tolaksurat');
 

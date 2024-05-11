@@ -1,23 +1,27 @@
 <div class="card-body">
-    <h5 class="card-title">Tabel Laporan</h5>
+    <h5 class="card-title">Tabel Laporan {{ $months[session('selected_month')] }} {{ session('selected_year') }}
+    </h5>
     <!-- <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p> -->
 
     <!-- Filter untuk melihat laporan -->
     <div class="row mt-3">
         <div class="col-md-12 text-right">
-            <form method="post" action="{{ route('filter.laporan') }}" class="form-inline justify-content-end">
+            <form method="post" action="{{ route('laporan') }}" class="form-inline justify-content-end">
                 @csrf
                 <label for="filter_month">Pilih Bulan:</label>
                 <select name="filter_month" id="filter_month" class="form-control mr-2">
                     @foreach ($months as $month_number => $month_name)
-                        <option value="{{ $month_number }}" {{ $month_number == $current_month ? 'selected' : '' }}>{{ $month_name }}</option>
+                        <option value="{{ $month_number }}"
+                            {{ $month_number == session('selected_month') ? 'selected' : '' }}>{{ $month_name }}
+                        </option>
                     @endforeach
                 </select>
 
                 <label for="filter_year">Pilih Tahun:</label>
                 <select name="filter_year" id="filter_year" class="form-control mr-2">
                     @foreach ($years as $year)
-                        <option value="{{ $year }}">{{ $year }}</option>
+                        <option value="{{ $year }}" {{ $year == session('selected_year') ? 'selected' : '' }}>
+                            {{ $year }}</option>
                     @endforeach
                 </select>
 
@@ -34,7 +38,7 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>NIK</th>
+                    <th>NIK/NAMA</th>
                     <th>Nama Lengkap</th>
                     <th>Tipe Surat</th>
                     <th>Tanggal Pengajuan</th>
@@ -44,7 +48,7 @@
             </thead>
             <tbody>
                 @php $cnt = 1; @endphp
-                @if(isset($tabel))
+                @if (isset($tabel))
                     @forelse ($tabel as $item)
                         <tr>
                             <td>{{ $cnt++ }}</td>
@@ -86,6 +90,6 @@
                 @endif
             </tbody>
         </table>
-        
+
     </div>
 </div>

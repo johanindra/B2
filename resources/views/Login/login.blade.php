@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -76,36 +76,66 @@
 
                     <!-- Signup Form -->
                     <div class="signup form-peice switched">
-                        <form class="" action="#" method="post">
+
+                        <form class="" action="{{ route('lupa-katasandi') }}" method="post">
                             @csrf
+
+                            @if (Session::has('error'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('error') }}
+                                </div>
+                            @endif
+
+                            @if (Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{ Session::get('success') }}
+                                </div>
+                            @endif
+
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" name="emailAdress" id="email">
-                                <span class="error"></span>
+
+                                <label for="username">Username</label>
+                                <input type="text" name="username" id="username" class="username"
+                                    value="{{ old('username') }}" required>
+                                @if ($errors->has('username'))
+                                    <span class="error">{{ $errors->first('username') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mt-4" style="margin-top: 10px">
+                                <div class="row d-flex">
+                                    <div class="col-sm-3 ">
+                                        <input type="number" name="kode_otp" class="form-control me-2"
+                                            placeholder="Kode OTP" style="width: 100px;" value="{{ old('kode_otp') }}">
+                                        @if ($errors->has('kode_otp'))
+                                            <span class="error">{{ $errors->first('kode_otp') }}</span>
+                                        @endif
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <button type="submit" class="btn btn-primary btn-sm"
+                                            formaction="{{ route('kirimkode') }}" style="margin-left: 20px">Kirim Kode
+                                            OTP</button>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" id="password">
-                                <span class="error"></span>
+                                <input type="password" name="password" id="password" class="pass"
+                                    value="{{ old('password') }}">
+                                @if ($errors->has('password'))
+                                    <span class="error">{{ $errors->first('password') }}</span>
+                                @endif
                             </div>
 
                             <div class="form-group">
-                                <label for="konfirmasi_passowrd">Konfirmasi Password</label>
-                                <input type="password" name="konfirmasi_passowrd" id="konfirmasi_passoword"
-                                    class="passConfirm">
-                                <span class="error"></span>
+                                <label for="konfirmasi_password">Konfirmasi Password</label>
+                                <input type="password" name="konfirmasi_password" id="konfirmasi_password"
+                                    class="passConfirm" value="{{ old('konfirmasi_password') }}">
+                                @if ($errors->has('konfirmasi_password'))
+                                    <span class="error">{{ $errors->first('konfirmasi_password') }}</span>
+                                @endif
                             </div>
-
-                            <div class="form-group">
-                                <label for="kode_otp" class="col-sm-2 col-form-label">Kode OTP</label>
-                                <div class="col-sm-10 d-flex">
-                                    <input type="password" name="kode_otp" id="kode_otp" class="form-control">
-                                    <button class="btn btn-primary btn-sm ms-2">Kirim Kode OTP</button>
-                                </div>
-                            </div>
-
-
 
                             <div class="CTA">
                                 <input type="submit" value="Konfirmasi" id="submit">
@@ -118,8 +148,11 @@
             </div>
         </section>
     </div>
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')}}"></script>
+
+    <!-- partial -->
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js') }}">
+    </script>
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js') }}"></script>
 
     <script src="{{ asset('assets/js/script.js') }}"></script>
 

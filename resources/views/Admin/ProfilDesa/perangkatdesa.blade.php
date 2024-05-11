@@ -35,7 +35,7 @@
     <div class="row mb-3">
         <label for="nama_sekretaris_desa" class="col-md-4 col-form-label">Sekretaris Desa</label>
         <div class="col-md-8">
-            <input type="text" class="form-control" id="nama_sekretaris_desa" name="nama[sekretarisdesa]"
+            <input type="text" class="form-control" id="nama_sekretaris_desa" name="nama[carik]"
                 value="{{ $nama->where('id', 'carik')->first()->nama ?? '' }}">
         </div>
     </div>
@@ -43,7 +43,7 @@
     <div class="row mb-3">
         <label for="gambar_sekretaris_desa" class="col-md-4 col-form-label">Unggah Gambar Sekretaris Desa</label>
         <div class="col-md-8">
-            <input type="file" class="form-control-file" id="gambar_sekretaris_desa" name="gambar[sekretarisdesa]">
+            <input type="file" class="form-control-file" id="gambar_sekretaris_desa" name="gambar[carik]">
         </div>
     </div>
 

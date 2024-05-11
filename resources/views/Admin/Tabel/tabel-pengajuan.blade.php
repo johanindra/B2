@@ -8,7 +8,7 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>NIK</th>
+                    <th>NIK/NAMA</th>
                     <th>Nama Lengkap</th>
                     <th>Tipe Surat</th>
                     <th>tanggal Pengajuan</th>
@@ -21,6 +21,9 @@
                 @endphp
                 @foreach($tabel as $item)
                 <tr>
+                    @php
+                        // dd($item);
+                    @endphp
                     <td>{{ $cnt++}}</td>
                     <td>{{ $item->nik }}</td>
                     <td>{{ $item->nama }}</td>
@@ -41,7 +44,7 @@
                                 Detail
                             </button>
                             
-                        <a href="#" class="btn btn-m btn-danger" onclick="showRejectReasonPrompt()">Tolak</a>
+                        <a href="#" class="btn btn-m btn-danger" onclick="showRejectReasonPrompt({{$item->id}})">Tolak</a>
                         </form>
                     </td>
                 </tr>
@@ -53,8 +56,7 @@
 
 
 <script>
-    // Fungsi untuk menampilkan popup konfirmasi SweetAlert2 dengan input teks
-    function showRejectReasonPrompt() {
+    function showRejectReasonPrompt(id) {
         Swal.fire({
             title: 'Masukkan alasan penolakan:',
             input: 'text',
@@ -65,14 +67,15 @@
             confirmButtonText: 'Kirim',
             cancelButtonText: 'Batal',
             showLoaderOnConfirm: true,
-            preConfirm: (rejectReason) => {
+            preConfirm: (alasan) => {
                 // Lakukan sesuatu dengan alasan penolakan, misalnya mengirimkan ke server
                 // Di sini Anda dapat menambahkan kode AJAX untuk mengirim alasan penolakan ke server
                 // Misalnya, Anda dapat mengirim alasan ke URL tertentu menggunakan AJAX
-                return fetch('/path-to-your-api-endpoint', {
+                return fetch('/api/tolak', {
                         method: 'POST',
                         body: JSON.stringify({
-                            rejectReason: rejectReason
+                            id: id,
+                            alasan: alasan, // Menggunakan parameter alasan
                         }),
                         headers: {
                             'Content-Type': 'application/json',
@@ -83,7 +86,8 @@
                         if (!response.ok) {
                             throw new Error(response.statusText);
                         }
-                        return response.json();
+                        // return response.json();
+                        location.reload();
                     })
                     .catch(error => {
                         Swal.showValidationMessage(
