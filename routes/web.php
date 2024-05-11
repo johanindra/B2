@@ -90,3 +90,6 @@ Route::get('/sktm', [SuratController::class, 'sktm'])->name('sktm');
 route::post('/pembuatan-surat/insert',[PembuatanSurat::class, 'insert'])->name('insertsurat');
 route::post('/pembuatan-surat/preview',[PembuatanSurat::class, 'preview'])->name('previewsurat');
 
+//tolak pengajuan surat
+Route::post('pengajuan-surat/tolak',[CekSuratController::class, 'tolak'])->name('tolaksurat');
+

@@ -2,6 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CekSuratController;
+
+
+
+//tolak pengajuan surat web
+Route::post('tolak',[CekSuratController::class, 'tolak'])->name('tolaksurat');
+Route::post('tolak-detail',[CekSuratController::class, 'tolakdetail'])->name('tolaksuratdetail');
 
 /*
 |--------------------------------------------------------------------------

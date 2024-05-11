@@ -14,12 +14,11 @@ use App\Models\laporan;
 class CekSuratController extends Controller {
     public static function print( Request $request ) {
 
-       
         $no_pengajuan = $request->input( 'no_pengajuan' );
-        $simpan = $request->input('simpan') ?: true;
+        $simpan = $request->input( 'simpan' ) ?: true;
         $kode_surat = $request->input( 'kode_surat' );
 
-        // dd($kode_surat);
+        // dd( $kode_surat );
         switch ( $kode_surat ) {
             case 'skck':
             $detail_surat = skck::where( 'no_pengajuan', $no_pengajuan )->first();
@@ -42,15 +41,14 @@ class CekSuratController extends Controller {
             break;
         }
 
-        $laporan = laporan::getlaporan($no_pengajuan, $kode_surat);
+        $laporan = laporan::getlaporan( $no_pengajuan, $kode_surat );
 
         $ttd = ttd::find( $request->input( 'mengetahui' ) );
         $ttd->print = true;
-        if($simpan){
-            laporan::updatestatus($no_pengajuan, $kode_surat);
+        if ( $simpan ) {
+            laporan::updatestatus( $no_pengajuan, $kode_surat );
         }
-        // dd($ttd);
-
+        // dd( $ttd );
 
         switch ( $kode_surat ) {
             case 'skck':
@@ -69,17 +67,17 @@ class CekSuratController extends Controller {
             return redirect()->route( 'sktm' )->with( compact( 'detail_surat', 'ttd', 'laporan' ) );
             break;
             default:
-            return redirect()->abort(404);
+            return redirect()->abort( 404 );
             break;
         }
     }
 
-    public static function preview(Request $request){
+    public static function preview( Request $request ) {
         $no_pengajuan = $request->input( 'no_pengajuan' );
 
         $kode_surat = $request->input( 'kode_surat' );
 
-        // dd($kode_surat);
+        // dd( $kode_surat );
         switch ( $kode_surat ) {
             case 'skck':
             $detail_surat = skck::where( 'no_pengajuan', $no_pengajuan )->first();
@@ -102,10 +100,9 @@ class CekSuratController extends Controller {
             break;
         }
 
-        $laporan = laporan::getlaporan($no_pengajuan, $kode_surat);
+        $laporan = laporan::getlaporan( $no_pengajuan, $kode_surat );
 
         $ttd = ttd::find( $request->input( 'mengetahui' ) );
-
 
         switch ( $kode_surat ) {
             case 'skck':
@@ -124,8 +121,38 @@ class CekSuratController extends Controller {
             return redirect()->route( 'sktm' )->with( compact( 'detail_surat', 'ttd', 'laporan' ) );
             break;
             default:
-            return redirect()->abort(404);
+            return redirect()->abort( 404 );
             break;
+        }
+    }
+
+    public function tolak( Request $request ) {
+        try {
+            $id = $request->input( 'id' );
+            $alasan = $request->input( 'alasan' );
+
+            // Contoh penyimpanan alasan penolakan ke dalam database
+            laporan::where( 'id', $id )->update( [ 'alasan' => $alasan, 'status' => 'Tolak' ] );
+
+            // Memberi respons bahwa data telah diterima dan diproses
+            return response()->json( [ 'message' => 'Data diterima dan diproses' ] );
+        } catch ( QueryException $e ) {
+            // Jika terjadi kesalahan dalam melakukan query
+            return response()->json( [ 'error' => 'Gagal memperbaharui data. Silakan coba lagi.' ] );
+        }
+    }
+
+    public function tolakdetail( Request $request ) {
+        try {
+            $no_pengajuan = $request->input( 'no_pengajuan' );
+            $kode_surat = $request->input( 'kode_surat' );
+            $alasan = $request->input( 'alasan' );
+
+            laporan::tolakdetail($no_pengajuan,$kode_surat, $alasan);
+            return response()->json( [ 'message' => 'Data diterima dan diproses' ] );
+        } catch ( QueryException $e ) {
+            // Jika terjadi kesalahan dalam melakukan query
+            return response()->json( [ 'error' => 'Gagal memperbaharui data. Silakan coba lagi.' ] );
         }
     }
 

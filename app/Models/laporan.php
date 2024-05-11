@@ -68,4 +68,14 @@ class laporan extends Model
         'alasan' => 'Silahkan Ambil Surat di Kantor Desa Pesudukuh'
     ]);
     }
+
+    public static function tolakdetail($no_pengajuan,$kode_surat,$alasan){
+        return self::join('pengajuan_surat', 'laporan.id', '=', 'pengajuan_surat.id')
+     ->where('pengajuan_surat.kode_surat', $kode_surat)
+     ->where('pengajuan_surat.no_pengajuan', $no_pengajuan)
+     ->update([
+         'status' => 'Tolak',
+         'alasan' => $alasan
+     ]);
+     }
 }
