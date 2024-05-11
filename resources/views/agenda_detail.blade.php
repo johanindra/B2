@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail Agenda Desa</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="path/to/fontawesome/css/all.css">
-</head>
-<body>
+@extends('layout')
+@section('content')
     <!-- Breadcrumbs -->
     <section class="breadcrumbs">
         <div class="container">
@@ -43,13 +36,5 @@
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Kembali ke atas -->
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa fa-arrow-up"></i></a>
-
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
-</html>
+    </section>   
+    @endsection
