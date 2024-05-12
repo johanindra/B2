@@ -17,7 +17,7 @@
             <div class="row gy-4">
                 <div class="col-lg-8">
                     <div class="portfolio-details-slider">
-                        <img src="{{ asset('assets/img/agenda/' . $agenda->foto) }}" class="img-fluid" alt="{{ $agenda->judul }}">
+                        <img src="{{ url('/data_foto_berita/'.$agenda->foto) }}" class="img-fluid" alt="{{ $agenda->judul }}">
                     </div>
                 </div>
 
