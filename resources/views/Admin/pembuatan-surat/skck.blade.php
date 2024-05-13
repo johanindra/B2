@@ -1,6 +1,7 @@
 <div class="mb-3">
     <label for="nik" class="form-label"><b>NIK</b></label>
-    <input type="number" class="form-control" id="nik" name="nik"  required>
+    <input type="number" class="form-control" id="nik" name="nik"  required
+    oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 </div>
 <div class="mb-3">
     <label for="nama" class="form-label"><b>Nama Lengkap</b></label>
@@ -87,7 +88,7 @@
 <div class="mb-3">
     <label for="tempat_tinggal" class="form-label"><b>Tempat Tinggal</b></label>
     <input type="text" class="form-control" id="tempat_tinggal" name="tempat_tinggal" required
-    oninput="this.value = this.value.replace(/[^a-zA-Z0-9 ]/g, '');">
+    oninput="this.value = this.value.replace(/[^a-zA-Z0-9,. ]/g, '');">
 </div>
 <br>
 

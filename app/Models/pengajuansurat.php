@@ -34,4 +34,14 @@ public static function getPengajuanSurat(){
    
 }
 
+//mobile
+public static function getDataMobile($username){
+    return self::join( 'laporan', 'pengajuan_surat.id', '=', 'laporan.id' )
+    ->where( 'pengajuan_surat.username', $username )
+    ->whereIn( 'laporan.status', [ 'Tolak', 'Selesai' ] )
+    ->orderBy( 'laporan.tanggal', 'DESC' )
+    // ->limit( 20 )
+    ->get();
+}
+
 }
