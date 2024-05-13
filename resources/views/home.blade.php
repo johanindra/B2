@@ -288,6 +288,7 @@
           </div>
         </div>
 
+<<<<<<< Updated upstream
         <div class="tab-pane" id="tab-4">
           <div class="row">
             <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
@@ -310,6 +311,37 @@
             </div>
           </div>
         </div>
+=======
+        <!-- ======= Struktur Staff Desa Section ======= -->
+        <section id="team" class="team_member section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Struktur Pemerintahan Desa</h2>
+                    <p>Berikut adalah struktur pemerintahan desa kami.</p>
+                </div>
+                <div class="row text-center">
+                    @foreach ($strukturDesa as $anggota)
+                        <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s"
+                            data-wow-delay="0.1s" data-wow-offset="0">
+                            <div class="our-team">
+                                <div class="team_img">
+                                    @if (!empty($anggota->foto_profil) && file_exists(public_path('/data_foto_perangkat/' . $anggota->foto_profil)))
+                                        <img src="{{ url('/data_foto_perangkat/' . $anggota->foto_profil) }}"
+                                            alt="Profil {{ $anggota->nama }}" style="width: 300px; height: 300px;">
+                                    @else
+                                        <img src="{{ asset('assets/img/team/team-1.jpg') }}" alt="Default Foto"
+                                            style="width: 300px; height: 300px;">
+                                    @endif
+                                </div>
+                                <div class="team-content">
+                                    <h3 class="title">{{ $anggota->nama }}</h3>
+                                    <span class="post">{{ $anggota->pangkat }}</span>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    @endforeach
+>>>>>>> Stashed changes
 
 
         <div class="tab-pane" id="tab-5">
