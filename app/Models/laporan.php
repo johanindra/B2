@@ -42,8 +42,8 @@ class laporan extends Model
     {
         return self::join('pengajuan_surat', 'pengajuan_surat.id', '=', 'laporan.id')
             ->join('surat', 'pengajuan_surat.kode_surat', '=', 'surat.kode_surat')
-            ->whereMonth('pengajuan_surat.tanggal', $bulan)
-            ->whereYear('pengajuan_surat.tanggal', $tahun)
+            ->whereMonth('laporan.tanggal', $bulan)
+            ->whereYear('laporan.tanggal', $tahun)
             ->select('pengajuan_surat.nik', 'pengajuan_surat.nama', 'pengajuan_surat.tanggal', 'pengajuan_surat.id', 'pengajuan_surat.kode_surat', 'surat.Keterangan', 'laporan.status')
             ->orderBy('pengajuan_surat.tanggal', 'desc')
             ->get();

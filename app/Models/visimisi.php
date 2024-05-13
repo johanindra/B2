@@ -9,6 +9,8 @@ class visimisi extends Model
 {
     use HasFactory;
     protected $table = 'visi_misi';
+    protected $primaryKey = 'id';
+    public $incrementing = false; 
     protected $keyType = 'string';
     public $timestamps = false; 
 

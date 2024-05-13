@@ -8,7 +8,7 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>NIK/NAMA</th>
+                    <th>NIK</th>
                     <th>Nama Lengkap</th>
                     <th>Tipe Surat</th>
                     <th>tanggal Pengajuan</th>

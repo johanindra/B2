@@ -5,15 +5,17 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-                <li><a class="nav-link scrollto" href="#services">Visi-Misi</a></li>
-                <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">Pengumuman</a></li>
-                <li><a class="nav-link scrollto" href="#team">Susunan Pemerintahan</a></li>
-                <li><a class="nav-link scrollto" href="#footer">Kontak</a></li>
+                <li><a class="nav-link scrollto active" href="{{ url('/') }}">Beranda</a></li>
+                <li><a class="nav-link scrollto" href="{{ url(('/') . '#services') }}">Visi-Misi</a></li>
+                <li><a class="nav-link scrollto" href="{{ url(('/') . '#about') }}">Tentang</a></li>
+                <li><a class="nav-link scrollto" href="{{ url(('/') . '#portfolio') }}">Pengumuman</a></li>
+                <li><a class="nav-link scrollto" href="{{ url(('/') . '#team') }}">Susunan Pemerintahan</a></li>
+                <li><a class="nav-link scrollto" href="{{ url(('/') . '#footer') }}">Kontak</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
+        </nav>
+
+
 
         <a href="{{ url('/login') }}" class="get-started-btn scrollto">Login</a>
     </div>
