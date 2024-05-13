@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CekSuratController;
+use App\Http\Controllers\MobileApi\Login;
+use App\Http\Controllers\MobileApi\NotifikasiMobile;
+
 
 
 
@@ -30,7 +33,8 @@ return 'yowes ndang login';
 });
 
 Route::prefix('/MobileAPI')->group(function () {
-
-    Route::get('/login');
+   Route::post('login', [Login::class, 'login'])->name('login');
+   Route::post('register', [Login::class, 'register'])->name('register');
+   Route::get('get_notifikasi', [NotifikasiMobile::class, 'getNotifikasi']);
     
 });
