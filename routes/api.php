@@ -8,6 +8,7 @@ use App\Http\Controllers\MobileApi\NotifikasiMobile;
 
 
 
+
 //tolak pengajuan surat web
 Route::post('tolak',[CekSuratController::class, 'tolak'])->name('tolaksurat');
 Route::post('tolak-detail',[CekSuratController::class, 'tolakdetail'])->name('tolaksuratdetail');
