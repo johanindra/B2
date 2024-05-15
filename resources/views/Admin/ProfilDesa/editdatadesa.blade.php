@@ -23,7 +23,7 @@
         </div>
         <div class="input-group">
             <textarea id="visi" name="visi" class="form-control" aria-label="With textarea" style="min-height: 100px; height:200px;">
-            {{$visimisi->where('id','visi')->first()->isi ?? ''}}</textarea>
+                {{$visimisi->where('id','visi')->first()->isi ?? ''}}</textarea>
           </div>
     </div>
 
