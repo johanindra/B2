@@ -7,11 +7,13 @@
     <link rel="icon" href="{{ asset('assets/img/logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Bootstrap CSS -->
     <link rel='stylesheet'
-    href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css') }}">
-
+        href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css') }}">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style1.css') }}">
-
 </head>
 
 <body>
@@ -28,7 +30,8 @@
                 <!-- Brand Box -->
                 <div class="col-sm-6 brand">
                     <div class="heading">
-                        <a class="logo"><img src="{{ asset('assets/img/Logokab.png') }}" alt="Logo" style="max-width: 120px;"></a>
+                        <a class="logo"><img src="{{ asset('assets/img/Logokab.png') }}" alt="Logo"
+                                style="max-width: 120px;"></a>
                         <h2>Pemerintah</h2>
                         <p>Desa Pesudukuh</p>
                     </div>
@@ -149,15 +152,11 @@
         </section>
     </div>
 
-    <!-- partial -->
+    <!-- Script Bootstrap dan jQuery -->
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js') }}"></script>
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js') }}">
     </script>
-    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js') }}"></script>
-
-    <script src="{{ asset('assets/js/script.js') }}"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom Script -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
 </body>
 
