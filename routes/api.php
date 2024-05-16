@@ -33,8 +33,14 @@ return 'yowes ndang login';
 });
 
 Route::prefix('/MobileAPI')->group(function () {
+    //login, register, lupa password
    Route::post('login', [Login::class, 'login'])->name('login');
    Route::post('register', [Login::class, 'register'])->name('register');
+   Route::post('kirimkodeotp', [Login::class, 'kirimkodeotp'])->name('kirimkodeotp');
+   Route::post('cekkodeotp', [Login::class, 'cekkodeotp']);
+   Route::post('ubahpassword', [Login::class, 'ubahpassword']);
+
+   
    Route::get('get_notifikasi', [NotifikasiMobile::class, 'getNotifikasi']);
     
 });
