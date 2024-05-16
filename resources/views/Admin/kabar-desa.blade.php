@@ -140,7 +140,7 @@
                 Swal.fire({
                   icon: 'success',
                   title: 'Success',
-                  text: 'Paket berhasil ditambahkan.'
+                  text: 'Agenda berhasil ditambahkan.'
                 }).then((result) => {
                   if (result.isConfirmed || result.isDismissed) {
                     window.location.reload();

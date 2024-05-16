@@ -147,6 +147,7 @@ class SideBarController extends Controller
 
         // Temukan pengajuan berdasarkan ID
         $pengajuan = pengajuansurat::find($id_pengajuan);
+        // dd($pengajuan);
 
         if ($pengajuan) {
             // Ambil no_pengajuan setelah menemukan pengajuan
@@ -168,6 +169,7 @@ class SideBarController extends Controller
                     break;
                 case 'surat_penghasilan':
                     $detail_surat = surat_penghasilan::where('no_pengajuan', $no_pengajuan)->first();
+                    // dd($id_pengajuan);
                     break;
                     // Tambahkan case lain jika ada jenis surat lainnya
                 default:

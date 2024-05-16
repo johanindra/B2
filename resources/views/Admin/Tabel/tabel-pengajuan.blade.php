@@ -20,6 +20,7 @@
                 $cnt = 1;
                 @endphp
                 @foreach($tabel as $item)
+                
                 <tr>
                     @php
                         // dd($item);
