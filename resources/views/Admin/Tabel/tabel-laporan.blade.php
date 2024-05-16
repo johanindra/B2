@@ -41,7 +41,7 @@
                     <th>NIK</th>
                     <th>Nama Lengkap</th>
                     <th>Tipe Surat</th>
-                    <th>Tanggal Pengajuan</th>
+                    <th>Tanggal Selesai</th>
                     <th>Status</th>
                     <th>Aksi</th>
                 </tr>
