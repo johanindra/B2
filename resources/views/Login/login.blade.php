@@ -16,6 +16,43 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style1.css') }}">
 </head>
 
+<style>
+    .back-button {
+        position: fixed;
+        /* Tetap pada posisi saat halaman digulir */
+        top: 10px;
+        /* Jarak dari atas */
+        left: 10px;
+        /* Jarak dari kiri */
+        z-index: 1000;
+        /* Pastikan berada di atas elemen lainnya */
+    }
+
+    .back-button .btn {
+        background-color: transparent;
+        /* Latar belakang transparan */
+        color: #ffffff;
+        /* Warna teks */
+        text-decoration: none;
+        padding: 10px;
+        /* Padding untuk kenyamanan */
+        border: none;
+        /* Tidak ada batasan */
+        cursor: pointer;
+        /* Gaya kursor */
+    }
+
+    .back-button .btn:hover {
+        color: #000;
+        /* Warna teks saat di-hover */
+    }
+
+    .back-button .btn .fas {
+        font-size: 25px;
+        /* Ukuran ikon */
+    }
+</style>
+
 <body>
     <!-- Tombol Kembali ke Landing Page dengan Ikon Panah -->
     <div class="back-button">
