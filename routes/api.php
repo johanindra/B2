@@ -39,6 +39,9 @@ Route::prefix('/MobileAPI')->group(function () {
    Route::post('kirimkodeotp', [Login::class, 'kirimkodeotp'])->name('kirimkodeotp');
    Route::post('cekkodeotp', [Login::class, 'cekkodeotp']);
    Route::post('ubahpassword', [Login::class, 'ubahpassword']);
+   Route::post('save_google_email', [Login::class, 'logingoogle']);
+
+
 
    
    Route::get('get_notifikasi', [NotifikasiMobile::class, 'getNotifikasi']);

@@ -222,8 +222,52 @@ class Login extends Controller {
     
         return response()->json($response);
     }
-    
-    
+
+    public function logingoogle( Request $request ) {
+        try {
+            $data = $request->json()->all();
+            // dd( $data );
+            
+            if ( $data['email'] !== null ) {
+                $email = $data[ 'email' ];
+
+                $user = akun_user::logingoogle( $email );
+                // dd( $user );
+
+                if ( $user ) {
+                    $response = [
+                        'status' => 'success',
+                        'message' => 'Login successful',
+                        'username' => $user->username,
+                        'email' => $user->email,
+                        'nama' => $user->nama,
+                        'foto_profil' => $user->foto_profil,
+                        'kode_otp' => $user->kode_otp,
+                        'created' => $user->created,
+                    ];
+                    // Tambahkan data pengguna lainnya ke $response jika diperlukan
+                } else {
+                    $response = [
+                        'status' => 'errorValid',
+                        'message' => 'Invalid username or password',
+                    ];
+                }
+            } else {
+                $response = [
+                    'status' => 'error',
+                    'message' => 'Invalid data format',
+                ];
+            }
+        } catch ( Exception $e ) {
+            $response = [
+                'status' => 'error',
+                'message' => 'Error: ' . $e->getMessage(),
+            ];
+        }
+
+        return response()->json( $response );
+    }
+
     
 
 }
