@@ -435,6 +435,7 @@
                 </div>
                 <div class="row text-center">
                     @foreach ($strukturDesa as $anggota)
+                    {{-- {{dd($anggota)}} --}}
                         <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s"
                             data-wow-delay="0.1s" data-wow-offset="0">
                             <div class="our-team">
