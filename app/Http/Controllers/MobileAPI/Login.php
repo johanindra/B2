@@ -222,7 +222,7 @@ class Login extends Controller {
     
         return response()->json($response);
     }
-    
+
     public function logingoogle( Request $request ) {
         try {
             $data = $request->json()->all();
@@ -267,6 +267,7 @@ class Login extends Controller {
 
         return response()->json( $response );
     }
+
     
 
 }
