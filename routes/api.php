@@ -42,6 +42,7 @@ Route::prefix('/MobileAPI')->group(function () {
    Route::post('save_google_email', [Login::class, 'logingoogle']);
 
 
+
    
    Route::get('get_notifikasi', [NotifikasiMobile::class, 'getNotifikasi']);
     
