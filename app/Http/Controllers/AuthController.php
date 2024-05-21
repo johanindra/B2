@@ -61,6 +61,11 @@ class AuthController extends Controller {
 
     public function lupakatasandi(Request $request){
         try {
+            $validateData = $request->validate([
+                'password' => 'required|min:8|regex:/^\S*$/|confirmed',
+                'konfirmasi_password' => 'required|min:8',
+            ]);
+            
             $username = $request->input('username');
             $kode_otp = (int) $request->input('kode_otp');
             $password = $request->input('password');

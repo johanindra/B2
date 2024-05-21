@@ -38,6 +38,7 @@ class PembuatanSurat extends Controller {
 
         $kode_surat = $request->input('jenisSurat');
         $ttd = ttd::find($request->input('mengetahui'));
+        $ttd->print = true;
         // dd($detail_surat);
 
         switch ($kode_surat) {

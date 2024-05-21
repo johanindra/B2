@@ -60,7 +60,7 @@
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <i class="bi bi-briefcase"></i>
                             <h4>Visi Desa Pesudukuh</h4>
-                            <p>{{ $visi->isi }}</p>
+                            <p>{{ $visi->isi ?? "" }}</p>
                         </div>
                     </div>
                     <div class="col-md-6 mt-4 mt-md-0">
@@ -69,7 +69,7 @@
                             <h4>Misi Desa Pesudukuh</h4>
                             @php
                                 // Memisahkan teks berdasarkan titik dan menghapus item yang tidak diperlukan
-                                $misiItems = explode('.', $misi->isi);
+                                $misiItems = explode('.', $misi->isi ?? "");
 
                                 // Menghapus item yang hanya angka atau kosong
                                 $misiItems = array_unique(
@@ -435,6 +435,7 @@
                 </div>
                 <div class="row text-center">
                     @foreach ($strukturDesa as $anggota)
+                    {{-- {{dd($anggota)}} --}}
                         <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s"
                             data-wow-delay="0.1s" data-wow-offset="0">
                             <div class="our-team">

@@ -26,4 +26,8 @@ class akun_user extends Model
                 ->where('password', $password)
                 ->first();
     }
+    public static function logingoogle($email){
+       return self::where('email', $email)
+                ->first();
+    }
 }
