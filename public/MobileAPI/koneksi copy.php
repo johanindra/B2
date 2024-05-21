@@ -1,9 +1,8 @@
 <?php
 $host = "localhost";
-$username = "tifz1761_root"; 
-$password = "tifnganjuk123"; 
-$database = "tifz1761_elades";
-
+$username = "root"; 
+$password = ""; 
+$database = "fix_elades";
 
 $koneksi = new mysqli($host, $username, $password, $database);
 

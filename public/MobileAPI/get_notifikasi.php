@@ -1,4 +1,5 @@
-f:\php\get_status.php f:\php\login.php<?php
+
+<?php
 
 // Koneksi ke database SQL
 $servername = "localhost";

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ttd;
 use App\Models\visimisi;
+
 use App\Models\KabarDesa;
 use App\Models\SuratMasuk;
 
@@ -13,7 +14,6 @@ class LandingPageController extends Controller {
         // Section pertama: Nama Kepala Desa
         $kepalaDesa = Ttd::where( 'id', 'kepaladesa' )->first();
 
-        // Section pertama: Visi dan Misi Desa
         $visi = visimisi::where( 'id', 'visi' )->first();
         $misi = visimisi::where( 'id', 'misi' )->first();
 

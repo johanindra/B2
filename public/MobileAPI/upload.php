@@ -2,6 +2,7 @@
 // upload.php
 
 $uploadDir = '../foto_profil/'; // Sesuaikan dengan direktori penyimpanan gambar di server
+
 $filePath = $uploadDir . basename($_FILES['file']['name']); // Nama file
 
 if (!file_exists($uploadDir)) {

@@ -36,6 +36,7 @@ try {
             $response['kode_otp'] = $user['kode_otp'];
             $response['created'] = $user['created'];
             $response['no_hp'] = $user['no_hp'];
+
             // Tambahkan data pengguna lainnya ke $response jika diperlukan
         } else {
             $response['status'] = 'errorValid';

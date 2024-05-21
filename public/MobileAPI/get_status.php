@@ -1,7 +1,7 @@
 <?php
 
-// Koneksi ke database
 include 'koneksi.php';
+
 // Ambil data username dari permintaan
 $username = $_GET['username'];
 
