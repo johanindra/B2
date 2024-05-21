@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$username = "root"; 
-$password = ""; 
-$database = "laravel_elades";
+$username = "tifz1761_root"; 
+$password = "tifnganjuk123"; 
+$database = "tifz1761_elades";
 
 $koneksi = new mysqli($host, $username, $password, $database);
 

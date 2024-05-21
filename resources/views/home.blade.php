@@ -442,13 +442,13 @@
                                 <div class="team_img">
                                     @if (!empty($anggota->foto_profil) && file_exists(public_path('/data_foto_perangkat/' . $anggota->foto_profil)))
                                         <img src="{{ url('/data_foto_perangkat/' . $anggota->foto_profil) }}"
-                                            alt="Profil {{ $anggota->nama }}" style="width: 100px; height: 100px;">
+                                            alt="Profil {{ $anggota->nama }}" style="height: 100px;">
                                     @else
                                         <img src="{{ asset('assets/img/team/team-1.jpg') }}" alt="Default Foto"
-                                            style="width: 100px; height: 100px;">
+                                            style="height: 100px;">
                                     @endif
                                 </div>
-                                <div class="team-content">
+                                <div class="team-content mt-1">
                                     <h3 class="title">{{ $anggota->nama }}</h3>
                                     <span class="post">{{ $anggota->pangkat }}</span>
                                 </div>
