@@ -7,7 +7,7 @@ use App\Models\laporan;
 use App\Models\pengajuansurat;
 use App\Models\surat;
 use App\Models\ttd;
-use App\Models\kabarDesa;
+use App\Models\KabarDesa;
 use App\Models\skck;
 use App\Models\sktm;
 use App\Models\surat_ijin;
@@ -129,7 +129,7 @@ class SideBarController extends Controller
     }
     public function kabarDesa()
     {
-        $kabardesa = kabarDesa::getdata();
+        $kabardesa = KabarDesa::getdata();
         return view('Admin.kabar-desa', [
             'kabar_desa' => $kabardesa,
         ]); //untuk menampilkan halaman pengajuan

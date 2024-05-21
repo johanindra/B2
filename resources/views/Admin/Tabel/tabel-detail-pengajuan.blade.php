@@ -25,7 +25,7 @@
     <div class="mt-5">
         <h5 class="card-title">Foto Kelengkapan Persyaratan</h5>
         <button type="button " class="btn btn-secondary" data-toggle="modal" data-target="#modalFoto">
-            <img src="{{ $photo = $detail_surat->foto_ktp ?? $detail_surat->foto_kk }}" alt="Foto Persyaratan"
+            <img src="{{ url('/foto_kelengkapan/'.$photo = $detail_surat->foto_ktp ?? $detail_surat->foto_kk ?? '') }}" alt="Foto Persyaratan"
                 class="img-thumbnail" width="200" height="200">
             <br>
             {{-- <div class="text-center "><b>KTP</b></div> --}}
@@ -73,7 +73,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{$syaratFoto = $detail_surat->foto_ktp?? $detail_surat->foto_kk;}}" alt="Foto Persyaratan" class="img-fluid" width="100%" height="auto">
+                <img src="{{ url('/foto_kelengkapan/'.$photo = $detail_surat->foto_ktp ?? $detail_surat->foto_kk ?? '') }}" alt="Foto Persyaratan" class="img-fluid" width="100%" height="auto">
                 <br>
                 {{-- <div class="text-center "><b>KTP</b></div> --}}
             </div>
