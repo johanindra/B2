@@ -31,6 +31,7 @@ class Login extends Controller {
                         'nama' => $user->nama,
                         'foto_profil' => $user->foto_profil,
                         'kode_otp' => $user->kode_otp,
+                        'no_hp' => $user->no_hp,
                         'created' => $user->created,
                     ];
                     // Tambahkan data pengguna lainnya ke $response jika diperlukan
@@ -244,6 +245,7 @@ class Login extends Controller {
                         'foto_profil' => $user->foto_profil,
                         'kode_otp' => $user->kode_otp,
                         'created' => $user->created,
+                        'no_hp' => $user->no_hp,
                     ];
                     // Tambahkan data pengguna lainnya ke $response jika diperlukan
                 } else {

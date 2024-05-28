@@ -3,42 +3,51 @@
 require_once 'koneksi.php';
 
 // Periksa apakah ada parameter userId dalam permintaan POST
-if(isset($_POST['userId'])) {
+if (isset($_POST['userId'])) {
     $userId = $_POST['userId'];
 
-
     // Periksa apakah ada file gambar yang dikirim
-    if(isset($_FILES['image'])) {
+    if (isset($_FILES['image'])) {
         $file = $_FILES['image'];
 
         // Periksa apakah tidak ada error pada file yang dikirim
-        if($file['error'] === UPLOAD_ERR_OK) {
+        if ($file['error'] === UPLOAD_ERR_OK) {
             // Tentukan direktori penyimpanan
-            $uploadDir = '../foto_profil/';
+            $uploadDir = '../foto_kelengkapan/';
             // Buat nama unik untuk file gambar
-            $fileName = uniqid() . '_' . $file['name'];
+            $fileName = uniqid() . '_' . basename($file['name']);
             // Gabungkan direktori penyimpanan dengan nama file
             $uploadPath = $uploadDir . $fileName;
 
-            // Pindahkan file gambar yang diunggah ke direktori penyimpanan
-            if(move_uploaded_file($file['tmp_name'], $uploadPath)) {
-                // Query untuk menyimpan nama file ke dalam database
-                $sql = "UPDATE akun_user SET foto_profil = '$fileName' WHERE username = $userId";
+            // Siapkan query untuk mengupdate foto_ktp
+            $sql = "UPDATE sktm
+                    SET foto_kk = ? 
+                    WHERE username = ? 
+                    AND no_pengajuan = (SELECT MAX(no_pengajuan) FROM sktm WHERE username = ?)";
 
-                // Jalankan query
-                if ($conn->query($sql) === TRUE) {
+            // Gunakan prepared statement untuk menghindari SQL Injection
+            $stmt = $koneksi->prepare($sql);
+            $stmt->bind_param('sss', $fileName, $userId, $userId);
+
+            // Jalankan query
+            if ($stmt->execute()) {
+                // Pindahkan file gambar yang diunggah ke direktori penyimpanan
+                if (move_uploaded_file($file['tmp_name'], $uploadPath)) {
                     // Kirim respons berhasil
                     echo json_encode(array('status' => 'success'));
                 } else {
-                    // Jika query gagal dieksekusi, kirimkan respons dengan status kode 500 (Internal Server Error)
+                    // Jika gagal memindahkan file, kirimkan respons dengan status kode 500 (Internal Server Error)
                     http_response_code(500);
-                    echo json_encode(array('error' => 'Gagal menyimpan data gambar ke database'));
+                    echo json_encode(array('error' => 'Gagal menyimpan file gambar'));
                 }
             } else {
-                // Jika gagal memindahkan file, kirimkan respons dengan status kode 500 (Internal Server Error)
+                // Jika query gagal dieksekusi, kirimkan respons dengan status kode 500 (Internal Server Error)
                 http_response_code(500);
-                echo json_encode(array('error' => 'Gagal menyimpan file gambar'));
+                echo json_encode(array('error' => 'Gagal menyimpan data gambar ke database: ' . $stmt->error));
             }
+
+            // Tutup statement
+            $stmt->close();
         } else {
             // Jika terjadi kesalahan pada file yang diunggah, kirimkan respons dengan status kode 400 (Bad Request)
             http_response_code(400);

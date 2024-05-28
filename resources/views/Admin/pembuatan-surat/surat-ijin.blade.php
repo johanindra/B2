@@ -1,6 +1,6 @@
 <div class="mb-3">
     <label for="Nik" class="form-label"><b>NIK</b></label>
-    <input type="number" class="form-control" id="Nik" name="Nik" required>
+    <input type="number" class="form-control" id="Nik" name="NIK" required>
 </div>
 <div class="mb-3">
     <label for="Nama" class="form-label"><b>Nama Lengkap</b></label>
@@ -22,7 +22,7 @@
 </div>
 <div class="mb-3">
     <label for="kewarganegaraan" class="form-label"><b>Kewarganegaraan</b></label>
-    <input type="text" class="form-control" id="kewarganegaraan" name="kewarganegaraan" required>
+    <input type="text" class="form-control" id="kewarganegaraan" name="Kewarganegaraan" required>
 </div>
 <div class="mb-3">
     <label for="Agama" class="form-label"><b>Agama</b></label>

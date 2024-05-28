@@ -18,8 +18,8 @@ $jumlah_penghasilan = $data->jumlah_penghasilan;
 $kegunaan_surat = $data->kegunaan_surat;
 
 // Masukkan nilai ke dalam database
-$query = "INSERT INTO surat_penghasilan (username, nama_lengkap, nik, jenis_kelamin, tempat_lahir, tanggal_lahir, pekerjaan, alamat, jumlah_penghasilan, kegunaan_surat) 
-VALUES ('$username','$Nama','$Nik','$Jenis_kelamin','$tempat_lahir','$tanggal_lahir','$pekerjaan','$Alamat','$jumlah_penghasilan','$kegunaan_surat')";
+$query = "INSERT INTO surat_penghasilan (username, nama_lengkap, nik, jenis_kelamin, tempat_lahir, tanggal_lahir, pekerjaan, alamat, jumlah_penghasilan, kegunaan_surat, foto_ktp) 
+VALUES ('$username','$Nama','$Nik','$Jenis_kelamin','$tempat_lahir','$tanggal_lahir','$pekerjaan','$Alamat','$jumlah_penghasilan','$kegunaan_surat', null)";
 $result = mysqli_query($koneksi, $query);
 
 if ($result) {
