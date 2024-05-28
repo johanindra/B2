@@ -6,6 +6,7 @@ require_once 'koneksi.php';
 if(isset($_POST['userId'])) {
     $userId = $_POST['userId'];
 
+
     // Periksa apakah ada file gambar yang dikirim
     if(isset($_FILES['image'])) {
         $file = $_FILES['image'];
