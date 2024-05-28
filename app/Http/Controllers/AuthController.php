@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller {
     public function showLoginForm() {
@@ -26,27 +27,23 @@ class AuthController extends Controller {
     }
 
     public function kode( Request $request ) {
-        try {
-            $credentials = $request-> only( 'username', 'password' );
+        $username = $request->input('username');
+        $user = User::where('username', $username)->first();
 
-            $user = User::where( 'username', $credentials[ 'username' ] )->first();
-            if ($user) {
-                $kode = rand(000000,999999);
-                $user->kode_otp= $kode;
-                $user->save();
+        if ($user) {
+            $kode = rand(000000, 999999);
+            $user->kode_otp = $kode;
+            $user->save();
 
-                Mail::send('template-email.email-otp', ['kode' => $kode], function ($message) use ($user) {
-                    $message->to($user->email);
-                    $message->subject('Kode OTP Anda');
-                });
+            // Kirim kode OTP ke email user
+            Mail::send('template-email.email-otp', ['kode' => $kode], function ($message) use ($user) {
+                $message->to($user->email);
+                $message->subject('Kode OTP Anda');
+            });
 
-                return redirect()->back()->with( 'success', 'silahkan cek kode otp' )->withInput($request->all());
-            } else {
-                return redirect()->back()->with( 'error', 'Username tidak ditemukan' )->withInput($request->all());
-            }
-        } catch(QueryException $e){
-            
-            return redirect()->back()->with( 'error', 'terjadi kesalahan pada sql error : '.$e )->withInput($request->all());
+            return response()->json(['success' => true, 'message' => 'Kode OTP telah dikirim.'], Response::HTTP_OK);
+        } else {
+            return response()->json(['success' => false, 'message' => 'Username tidak ditemukan.'], Response::HTTP_NOT_FOUND);
         }
     }
 

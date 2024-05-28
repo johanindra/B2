@@ -2,13 +2,17 @@
 include 'koneksi.php';
 
 $keyword = $_GET['keyword'];
+$username = $_GET['username'];
 
 $query = "SELECT pengajuan_surat.*, 
 laporan.tanggal AS laporan_tanggal, 
 laporan.status,
 laporan.alasan
 FROM pengajuan_surat
-LEFT JOIN laporan ON pengajuan_surat.id = laporan.id WHERE nama LIKE '%$keyword%'";
+LEFT JOIN laporan ON pengajuan_surat.id = laporan.id 
+WHERE pengajuan_surat.nama LIKE '%$keyword%' 
+AND pengajuan_surat.username = '$username'
+ORDER BY pengajuan_surat.id DESC";
 
 $result = $koneksi->query($query);
 

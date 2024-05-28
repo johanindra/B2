@@ -73,7 +73,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{ url('/foto_kelengkapan/'.$photo = $detail_surat->foto_ktp ?? $detail_surat->foto_kk ?? '') }}" alt="Foto Persyaratan" class="img-fluid" width="100%" height="auto">
+                <img src="{{ url('/foto_kelengkapan/'.$photo = $detail_surat->foto_ktp ?? $detail_surat->foto_kk ?? '') }}"
+                alt="Foto Persyaratan" class="img-fluid" width="100%" height="auto">
                 <br>
                 {{-- <div class="text-center "><b>KTP</b></div> --}}
             </div>

@@ -1,18 +1,6 @@
 
 <?php
-
-// Koneksi ke database SQL
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "fix_elades";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Cek koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
+include 'koneksi.php';
 
 // Endpoint untuk mengambil data laporan berdasarkan username
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -41,6 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
 
-$conn->close();
+$koneksi->close();
 
 ?>

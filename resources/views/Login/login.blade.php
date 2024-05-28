@@ -65,9 +65,9 @@
         <section id="formHolder">
             <div class="row">
                 <!-- Brand Box -->
-                <div class="col-sm-6 brand">
+                <div class="col-sm-6 brand" style="z-index: 100">
                     <div class="heading">
-                        <a class="logo"><img src="{{ asset('assets/img/Logokab.png') }}" alt="Logo"
+                        <a class="logo"><img src="{{ url('assets/img/Logokab.png') }}" alt="Logo"
                                 style="max-width: 120px;"></a>
                         <h2>Pemerintah</h2>
                         <p>Desa Pesudukuh</p>
@@ -102,7 +102,7 @@
 
                             <div class="CTA">
                                 <input type="submit" value="Masuk">
-                                <a href="#" class="switch">Lupa Katasandi</a>
+                                <a href="#" id="lupa-katasandi" class="switch">Lupa Katasandi</a>
                             </div>
 
                             @if (session('error'))
@@ -152,8 +152,8 @@
                                         @endif
                                     </div>
                                     <div class="col-sm-3 ">
-                                        <button type="submit" class="btn btn-primary btn-sm"
-                                            formaction="{{ route('kirimkode') }}" style="margin-left: 20px">Kirim Kode
+                                        <button type="button" class="btn btn-primary btn-sm" id="kirim-otp"
+                                            style="margin-left: 20px" onclick="requestOTP()">Kirim Kode
                                             OTP</button>
                                     </div>
                                 </div>
@@ -193,8 +193,66 @@
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js') }}"></script>
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js') }}">
     </script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/sweetalert2@11') }}"></script>
     <!-- Custom Script -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
+
+
+
+    <script>
+        function requestOTP() {
+            // Mendapatkan nilai username dari inputan
+            var username = document.getElementById('username').value;
+
+            // Kirim permintaan POST ke route Laravel
+            fetch('/api/kirimkodeotpweb', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}' // Menggunakan token CSRF Laravel
+                    },
+                    body: JSON.stringify({
+                        username: username
+                    })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                })
+                .then(data => {
+                    if (data.success) {
+                        // Tampilkan SweetAlert untuk memberi tahu pengguna bahwa permintaan OTP berhasil dikirim
+                        Swal.fire({
+                            title: 'Berhasil!',
+                            text: data.message,
+                            icon: 'success',
+                            timer: 2000, // Menutup SweetAlert setelah 2 detik
+                            timerProgressBar: true,
+                            showConfirmButton: false
+                        });
+                    } else {
+                        // Tampilkan SweetAlert jika username tidak ditemukan
+                        Swal.fire({
+                            title: 'Oops...',
+                            text: data.message,
+                            icon: 'error'
+                        });
+                    }
+                })
+                .catch(error => {
+                    // Tampilkan SweetAlert jika ada kesalahan saat mengirim permintaan
+                    Swal.fire({
+                        title: 'Oops...',
+                        text: 'Terjadi kesalahan saat mengirim permintaan.',
+                        icon: 'error'
+                    });
+                });
+
+        }
+    </script>
 </body>
 
 </html>

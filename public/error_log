@@ -1,0 +1,596 @@
+[20-May-2024 19:37:37 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:37:42 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:02 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:04 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:05 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:10 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:12 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:13 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:43 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:44 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:45 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:45 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:46 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:46 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:46 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:46 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:47 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:38:47 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 /home/tifz1761/public_html/elades/public/MobileAPI/login.php(4): include('/home/tifz1761/...')
+#2 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:39:48 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:39:49 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:39:50 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:39:51 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:39:51 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:39:51 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:39:51 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[20-May-2024 19:39:52 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php:7
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php(7): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/koneksi.php on line 7
+[21-May-2024 10:10:18 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:10:25 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:11:01 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:11:03 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:11:15 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:12:52 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:14:16 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:21:46 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:22:01 Asia/Jakarta] PHP Warning:  move_uploaded_file(images/profil/d3495025-29b9-4011-aaf1-4a513ff9dcb7.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:22:01 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php5IKvdj' to 'images/profil/d3495025-29b9-4011-aaf1-4a513ff9dcb7.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:22:09 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:23:24 Asia/Jakarta] PHP Warning:  move_uploaded_file(images/profil/90a6cfac-93d2-4f23-a4b3-3575701f820e.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:23:24 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpJfF3Or' to 'images/profil/90a6cfac-93d2-4f23-a4b3-3575701f820e.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:23:25 Asia/Jakarta] PHP Warning:  move_uploaded_file(images/profil/b802b886-7507-464e-be28-fe97b2db757e.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:23:25 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php2ZBsD8' to 'images/profil/b802b886-7507-464e-be28-fe97b2db757e.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:23:29 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:29:29 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/558a0404-3627-4e9e-bda1-670104345aee.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:29:29 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpp57McD' to '../foto_profil/558a0404-3627-4e9e-bda1-670104345aee.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:29:29 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/2cf20324-cdbb-4e7a-95b7-5156f2f1eca5.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:29:29 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpYSAP85' to '../foto_profil/2cf20324-cdbb-4e7a-95b7-5156f2f1eca5.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:29:32 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:29:40 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:30:48 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/f2d86bd5-e37a-4c64-ad87-1512e1f6f069.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:30:48 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phphbbztr' to '../foto_profil/f2d86bd5-e37a-4c64-ad87-1512e1f6f069.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:30:50 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/c5748155-2603-4fcb-97a9-4fb6b2c25c72.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:30:50 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpkDpe3E' to '../foto_profil/c5748155-2603-4fcb-97a9-4fb6b2c25c72.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:30:53 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:31:49 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:31:55 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:32:08 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:32:10 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:32:22 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:34:27 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:34:52 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:38:59 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:42:08 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:42:15 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:42:17 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:42:31 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:43:03 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:43:07 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php:4
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php(4): mysqli_connect()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_status.php on line 4
+[21-May-2024 10:45:37 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:45:44 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:46:19 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:46:22 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:46:43 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:47:02 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:48:45 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/f04c09a1-024c-41a5-b762-65f8f96e5a00.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:48:45 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php2qTiNs' to '../foto_profil/f04c09a1-024c-41a5-b762-65f8f96e5a00.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:48:46 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/b8051b4d-78d1-4751-9fab-981ecc9e6541.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:48:46 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpfVG4wh' to '../foto_profil/b8051b4d-78d1-4751-9fab-981ecc9e6541.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:49:30 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/352192a4-8d96-4a83-8972-8db44f083a3c.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:49:30 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpYj0kP3' to '../foto_profil/352192a4-8d96-4a83-8972-8db44f083a3c.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:49:32 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/7649ad88-5361-40a6-a8c0-210cf6a33047.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:49:32 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpYFfDzF' to '../foto_profil/7649ad88-5361-40a6-a8c0-210cf6a33047.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[21-May-2024 10:54:09 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:59:02 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 10:59:51 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 11:00:24 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 11:00:40 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 11:01:14 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 11:01:46 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[21-May-2024 11:04:08 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[22-May-2024 09:57:51 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[22-May-2024 10:00:43 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_kelengkapan/4e2200fe-2b40-4942-82a9-dc90b7fa4c93.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 12
+[22-May-2024 10:00:43 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpOgHtAg' to '../foto_kelengkapan/4e2200fe-2b40-4942-82a9-dc90b7fa4c93.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 12
+[22-May-2024 10:03:31 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/38e2e722-fa70-458e-9069-04d200f374dc.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[22-May-2024 10:03:31 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpV1Lfkz' to '../foto_profil/38e2e722-fa70-458e-9069-04d200f374dc.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[22-May-2024 10:03:32 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/6dbedbd0-ee7f-43dc-9c21-ddec99043748.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[22-May-2024 10:03:32 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpbLoG99' to '../foto_profil/6dbedbd0-ee7f-43dc-9c21-ddec99043748.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[22-May-2024 10:05:48 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[22-May-2024 10:26:44 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[22-May-2024 10:45:43 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[22-May-2024 10:52:23 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:9
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(9): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 9
+[22-May-2024 11:03:59 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_profil/3ed9a1d5-2b19-413d-8eda-787403fc9987.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[22-May-2024 11:03:59 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php2Kv0Sq' to '../foto_profil/3ed9a1d5-2b19-413d-8eda-787403fc9987.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 12
+[22-May-2024 11:11:32 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 11:11:32 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 11:19:44 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 11:19:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 11:24:06 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 11:24:06 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 11:33:53 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 11:52:44 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 11:52:44 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 11:53:12 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_kelengkapan/f39db64e-5840-4882-8d57-199c30d89493.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 11:53:12 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php7gXlP7' to '../foto_kelengkapan/f39db64e-5840-4882-8d57-199c30d89493.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 12:16:12 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_kelengkapan/8ee9e3a1-a3bd-4db0-b339-e6618f6b4b3d.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 12:16:12 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpuA2eaj' to '../foto_kelengkapan/8ee9e3a1-a3bd-4db0-b339-e6618f6b4b3d.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 15:19:14 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 15:22:34 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 15:50:54 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 15:50:58 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 15:54:23 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_kelengkapan/61cf8afe-41da-4813-af9e-31f9e516f023.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 15:54:23 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php3UZU2g' to '../foto_kelengkapan/61cf8afe-41da-4813-af9e-31f9e516f023.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 15:57:42 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 15:58:00 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 17:14:31 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_kelengkapan/02e6f4eb-56b2-454c-badf-06e1ed36b5f2.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 17:14:31 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpHurArF' to '../foto_kelengkapan/02e6f4eb-56b2-454c-badf-06e1ed36b5f2.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 17:14:32 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_kelengkapan/99d74b0a-7613-4602-861b-98b9143c2454.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 17:14:32 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpy80zrp' to '../foto_kelengkapan/99d74b0a-7613-4602-861b-98b9143c2454.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 17:16:44 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 19:21:54 Asia/Jakarta] PHP Warning:  Undefined array key "keyword" in /home/tifz1761/public_html/elades/public/MobileAPI/search_pengajuan.php on line 4
+[22-May-2024 19:21:54 Asia/Jakarta] PHP Warning:  Undefined array key "username" in /home/tifz1761/public_html/elades/public/MobileAPI/search_pengajuan.php on line 5
+[22-May-2024 19:28:14 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 19:28:25 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 19:28:25 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 19:31:06 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 20:30:20 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 20:30:20 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload.php on line 58
+[22-May-2024 20:31:19 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 20:31:19 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 20:33:22 Asia/Jakarta] PHP Warning:  move_uploaded_file(../foto_kelengkapan/f746210c-7d62-480f-8401-c99be8977861.jpg): Failed to open stream: No such file or directory in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 20:33:22 Asia/Jakarta] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpPc1uNU' to '../foto_kelengkapan/f746210c-7d62-480f-8401-c99be8977861.jpg' in /home/tifz1761/public_html/elades/public/MobileAPI/upload_ktp_izin.php on line 13
+[22-May-2024 20:33:24 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/uploadKtpSkck.php on line 31
+[22-May-2024 20:33:24 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/tifz1761/public_html/elades/public/MobileAPI/uploadKtpSkck.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/uploadKtpSkck.php on line 31
+[22-May-2024 20:37:30 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 20:44:01 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 20:44:16 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 20:57:01 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php:10
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php(10): mysqli->__construct()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/get_notifikasi.php on line 10
+[22-May-2024 21:24:58 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:24:58 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:25:12 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:25:12 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:25:16 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:25:16 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:25:26 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:25:26 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:25:49 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:25:49 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:26:29 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:26:29 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:27:33 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 21:27:33 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 21:27:40 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 21:27:40 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 21:28:08 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 21:28:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 21:28:21 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:28:21 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:28:47 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:28:47 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:29:03 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:29:03 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:61
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 61
+[22-May-2024 21:30:15 Asia/Jakarta] PHP Warning:  Undefined variable $conn in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 21:30:15 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 25
+[22-May-2024 21:47:45 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: Illegal double '664e05919' value found during parsing in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php:28
+Stack trace:
+#0 /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php(28): mysqli_query()
+#1 {main}
+  thrown in /home/tifz1761/public_html/elades/public/MobileAPI/upload_pp.php on line 28
